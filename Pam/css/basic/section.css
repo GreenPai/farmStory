@@ -11,7 +11,7 @@
         box-sizing: border-box;
         float: left;
         border-right: 0px solid transparent;
-        background: url("/Pam/images/sub_aside_bg_line.png") repeat-y right; 
+        background: url("/Pam/images/sub_aside_bg_line.png") no-repeat right; 
         
      }
 
