@@ -1,0 +1,90 @@
+      /* font-family : Inter*/
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        font: 400 12px "Inter";
+        line-height: 14.52px;
+      }
+
+      ul li{
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #wrapper {
+        /*전체: 1920px 메인:980px*/
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+      }
+
+      header {
+        width: 980px;
+        height: 142px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        border-top: 0px solid transparent;
+        background: url("/Pam/images/sub_page_nav_ico.gif") repeat-x top;   
+    }
+
+      header #link{
+        width: 100%;
+        height: 92px; 
+        position: relative;
+        box-sizing: border-box;
+        /* border: 1px solid red; */
+      }
+
+      header > #link > div:nth-child(1){
+        position: absolute;
+        top: 17px;
+        left: 610px;      
+      }
+
+      header > #link > div > article > .logo {
+        position: absolute;
+        left: 395px;
+        top: 20px;
+      }
+
+      header > #link > div > article > .head_txt_img {
+        position: absolute;
+        left: 751px;
+        top: 59px;
+      }
+
+      /* header list */
+      header #list{
+        width: 100%;
+        height: auto;
+        border-style: 0px solid transparent;
+        }
+
+      header nav > ul{
+        width: 100%;
+        height: 100%;
+      }
+
+      header nav > ul > li{
+        float: left;
+        width: 19.7%;
+        height: 100%;
+        border-top: 5px solid transparent; 
+        border-image: url("/Pam/images/head_menu_line.png") 30 stretch; 
+        margin-right: 0.3%;
+        box-sizing: border-box;
+      }
+
+      header nav > ul > li > a{
+        display: block;
+        width: 196px;
+        height: 50px;
+        text-align: center;
+        line-height: 32px;
+      }
