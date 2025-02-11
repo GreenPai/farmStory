@@ -25,12 +25,16 @@
       }
 
       header {
+        /*header : 980px , Background : 184px 
+          Background css 만들기 애매해서 header에 합쳤습니다.
+        */
+
         width: 980px;
-        height: 142px;
+        height: 326px;
         box-sizing: border-box;
         margin: 0 auto;
         border-top: 0px solid transparent;
-        background: url("/Pam/images/sub_page_nav_ico.gif") repeat-x top;   
+        background: url("/Pam/images/head_top_line.png") repeat-x top;   
     }
 
       header #link{
@@ -38,7 +42,6 @@
         height: 92px; 
         position: relative;
         box-sizing: border-box;
-        /* border: 1px solid red; */
       }
 
       header > #link > div:nth-child(1){
@@ -57,14 +60,16 @@
         position: absolute;
         left: 751px;
         top: 59px;
+        width: 229px;
+        height: 15px;
       }
 
       /* header list */
       header #list{
-        width: 100%;
-        height: auto;
+        width: 980px;
+        height: 50px;
         border-style: 0px solid transparent;
-        }
+      }
 
       header nav > ul{
         width: 100%;
@@ -87,4 +92,20 @@
         height: 50px;
         text-align: center;
         line-height: 32px;
+      }
+
+      /*Background*/
+      header > .background{
+        width: 980px;
+        height: 184px;
+        background-image: url('/Pam/images/sub_top_bg.jpg');
+        position: relative;
+      }
+
+      header > .background > .introduction{
+        width: 326px;
+        height: 37px;
+        position: absolute;
+        left: 10px;
+        top: 137px;
       }
