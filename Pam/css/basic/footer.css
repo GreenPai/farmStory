@@ -1,8 +1,11 @@
 footer{
     width: 980px;
     height: 120px;
+    top: 637px;
+    
     margin: 0 auto;
     position: relative;
+    
   }
 
   footer .footer_logo{
@@ -20,7 +23,7 @@ footer{
     left: 254.52px;
     top: 27px
   }
-
+  
   footer p{
     font-family: "Inter";
     font-weight: 400;
