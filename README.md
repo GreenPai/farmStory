@@ -1,5 +1,5 @@
-팜스토리 
-    메인: index.html
+팜스토리                                        
+    메인: index.html                                   
     인사말: pam/intro.html
     찾아오시는길: pam/location.html
 

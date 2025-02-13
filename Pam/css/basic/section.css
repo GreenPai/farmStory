@@ -157,15 +157,3 @@
       border-bottom: 1px solid #EEEEEE;
       background: #E5ECEF;
     }
-
-
-    /* 테이블 크기 조절*/
-    /*
-    main > .right_section .content > table > thead th:nth-child(1) {width: 100px; height: 38;}
-    main > .right_section .content > table > thead th:nth-child(2) {width: 76.19px; height: 38;}
-    main > .right_section .content > table > thead th:nth-child(3) {width: 311.54px; height: 38;}
-    main > .right_section .content > table > thead th:nth-child(4) {width: 91.44px; height: 38;}
-    main > .right_section .content > table > thead th:nth-child(5) {width: 91.44px; height: 38;}
-    main > .right_section .content > table > thead th:nth-child(6) {width: 91.44px; height: 38;}
-    */
-    
