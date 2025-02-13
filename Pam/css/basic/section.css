@@ -1,0 +1,159 @@
+    /* 왼쪽 섹션*/
+     main {
+        margin: 0 auto;
+        width: 980px;
+        /* height: 650px; */
+        height: auto;
+        overflow: hidden;
+        
+        /**/
+     }
+
+     main > .left_section{
+        width: 176px;
+        height: 650px;
+        box-sizing: border-box;
+        float: left;
+        border-right: 0px solid transparent;
+        background: url("/Pam/images/sub_aside_bg_line.png") no-repeat right; 
+        
+     }
+
+     main > .left_section > aside >  article:nth-of-type(1){
+        width: 175px;
+        height: 81px;
+        position: relative;
+     }
+
+     main > .left_section > aside >  article:nth-of-type(2){
+        width: 175px;
+        height: 233px;
+        background: url("/Pam/images/sub_aside_bg_lnb.png");
+        position: relative;
+     }
+     
+     main > .left_section > aside >  article:nth-child(1) > ul > li > img{
+         position: absolute;
+         left: 16px;
+         top : 16px;
+    }
+        
+    main > .left_section > aside > article:nth-child(2) > ul > li:nth-child(1) img{
+        width: 175px;
+        height: 29px;
+        position: absolute;
+        top: 26px;
+    }
+        
+    main > .left_section > aside >  article:nth-child(2) > ul > li:nth-child(2) img{
+        width: 175px;
+        height: 29px;
+        position: absolute;
+        top: 61px;
+    }
+    
+    main > .left_section > aside >  article:nth-child(2) > ul > li:nth-child(3) img{
+        width: 175px;
+        height: 29px;
+        position: absolute;
+        top: 96px;
+    }
+    
+    /*오른쪽 섹션*/
+    main > .right_section{
+        width: 802px;
+        height: auto;
+        float: right;
+  
+        box-sizing: border-box;
+    }
+
+    main > .right_section .content > div{
+      width: 762px;
+      height: auto;
+      margin-top: 41px;
+    }
+
+    /* 글씨 형식*/
+    main > .right_section p{
+      color: #666666;
+      font-size: 12px;
+    }
+
+    
+    main > .right_section .content > div p{
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 20px;
+      letter-spacing: 0%;
+
+    }
+
+    /* 세션 강조 글씨*/
+    main > .right_section >  article .eco_txt{
+      color: #91BA15;
+      line-height: 14.52px;
+      font-weight: 700;
+    }
+
+
+    /* 오른쪽 section 전체 공간 배치*/
+    main > .right_section > article > div{
+      width: 762px;
+      height: auto;
+      float: right;
+      box-sizing: border-box;
+    }
+
+    /*right_section 첫번째 공간*/
+    main > .right_section > article > div:nth-child(1){
+      width: 762px;
+      height: 72px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #C2C2C2;
+    }
+
+    /*장보기, 인사말 등 이미지 위치*/
+     main > .right_section > article > div > .sub_nav_tit > img{
+      margin-top: 41px;
+      float: left;
+     }
+
+     /*Home>장보기>장보기*/
+     main > .right_section > article > div > div:nth-child(2){
+      float: right;
+      margin-top: 50px;
+      box-sizing: border-box;
+     }
+
+    /*Content 부분 크기*/
+    main > .right_section > article > div:nth-child(2){
+      width: 762px;
+      height: 578px;
+    }
+
+
+    /* 장보기 CSS*/
+    main > .right_section > article > .content .black_txt{
+      font-size: 11px;
+      color: black;
+    }
+
+    /* 테이블 스타일*/
+    main > .right_section .content > table{
+      width: 762;
+      height: 564;
+      top: 139px;
+      left: 40px;
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+    main > .right_section .content > table> thead{
+      border-bottom: 1px solid #EEEEEE;
+    }
+
+    main > .right_section .content > table th{
+      border-bottom: 1px solid #EEEEEE;
+      background: #E5ECEF;
+    }
