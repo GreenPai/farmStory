@@ -1,3 +1,10 @@
+#user {
+  height: 600px;
+  display: flex;
+  justify-content: center; /* 가로 중앙 */
+  align-items: center; /* 세로 중앙 */
+}
+
 #user > .login{
   position: relative;
   width: 360px;
@@ -7,6 +14,8 @@
   margin: 100px auto;
   top: -100px;
 }
+
+
 #user > .login >  div> form > table{
   margin-left: 52px;
   margin-top: 30px;
@@ -62,34 +71,3 @@
   top: -30px;
   left: 70px;
 }
-
-#user {
-    width: 359px;
-    height: 279px;
-    border-width: 1px;
-    position: absolute;
-    top: 242px;
-    left: 50%;
-    transform: translateX(-50%); 
-  }
-
-
-
-
-   #input .btnLogin{
-    width: 60px;
-    height: 50px;
-    top: 59px;
-    left: 247px;
-    border-width: 1px solid #bebebe;
-  }
-  
-  #input{
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-250%);
-    width: 135px;
-
-  }
-
