@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/Pam/css/basic/header.css">
     <link rel="stylesheet" href="/Pam/css/basic/footer.css">
     <link rel="stylesheet" href="/Pam/css/user/login.css">
+    <link rel="stylesheet" href="/Pam/css/basic/section.css">
     <title>로그인</title>
 </head>
 <body>
@@ -55,42 +56,36 @@
       <!-- 메인 시작선-->
       <main id="user">
         <section class="login">
-
-          <form action="#">
-            <table border="0">
-              <tbody>
-
-                <tr id="Row">
-                  <td>
-                    <img src="/Pam/images/user/login_ico_id.png" alt="아이디">
-                  </td>
-                  <td>
-                    <input type="text" name="uid" placeholder="아이디 입력">
-                  </td>
-                </tr>
-
-                <tr id="Row">
-                  <td>
-                    <img src="/Pam/images/user/login_ico_pw.png" alt="비밀번호">
-                  </td>
-                  <td>
-                    <input type="password" name="pass" placeholder="비밀번호 입력">
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
-            <img src="/Pam/images/user/login_favicon.png" alt="네카구">
-
-            
-          </form>
-          
-          <div id="input">
-            <input type="submit" value="로그인" class="btnLogin">
-         </div>
-          
-
-          <div id="PBH">
+          <div> 
+            <form action="#">
+              <table border="0">
+                <tbody>
+  
+                  <tr>
+                    <td>
+                      <img src="/Pam/images/user/login_ico_id.png" alt="아이디">
+                    </td>
+                    <td>
+                      <input type="text" name="uid" placeholder="아이디 입력">
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td>
+                      <img src="/Pam/images/user/login_ico_pw.png" alt="비밀번호">
+                    </td>
+                    <td>
+                      <input type="password" name="pass" placeholder="비밀번호 입력">
+                    </td>
+                  </tr>
+  
+                </tbody>
+              </table>
+              <input type="submit" value="로그인" class="btnLogin">
+              <img src="/Pam/images/user/login_favicon.png" alt="네카구">
+            </form>
+          </div>
+          <div>
             <h3>회원 로그인 안내</h3>
             <p>아직 회원이 아니시면 회원으로 가입하세요.</p>
             <div style="text-align: right;">
@@ -99,7 +94,6 @@
               <a href="#">회원가입</a>
             </div>
           </div>
-         
         </section>
       </main>
       <!-- 메인 끝선-->
