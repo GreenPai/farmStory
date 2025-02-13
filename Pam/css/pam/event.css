@@ -1,0 +1,58 @@
+header > .background > .event {
+    width: 140px;
+    height: 37px;
+    position: absolute;
+    left: 10px;
+    top: 137px;
+  }
+  
+  .calendar_container {
+    width: 300px;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: #fdefde;
+  }
+  
+  .calendar_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0
+  }
+  
+  .calendar_header > #month {
+    font-size: 20px;
+  }
+
+  .day {
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .calendar_dates {
+    float: left;
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0px;
+  }
+  
+  .date {
+    cursor: pointer;
+    text-align: right;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    line-height: 30px;
+    height: 30px;
+  }
+  
+  .date:hover {
+    background-color: #eaeaea;
+    font-weight: bold;
+    color: #d9534f;
+  }
+  
