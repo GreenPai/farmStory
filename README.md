@@ -14,7 +14,7 @@
     텃밭가꾸기: pam/pam_story/grow.html
     귀농학교: pam/pam_story/school.html
 
-이벤트 켈린더:
+이벤트 켈린더: pam/pam_event/event.html
 
 커뮤니티
     공지사항(글목록):
