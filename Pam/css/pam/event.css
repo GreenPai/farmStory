@@ -6,13 +6,12 @@ header > .background > .event {
     top: 137px;
   }
   
-  .calendar_container {
-    width: 300px;
-    margin: 30px auto;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    background-color: #fdefde;
+  main > .right_section > article > div:nth-child(2) {
+    display:inline-block;
+    height: auto;
+    margin: 15px auto;
+    border: 1px solid white;
+    padding: 5px;
   }
   
   .calendar_header {
@@ -21,38 +20,71 @@ header > .background > .event {
     align-items: center;
     margin: 10px 0
   }
-  
-  .calendar_header > #month {
+
+  .calendar_header > div:nth-child(1) {
     font-size: 20px;
   }
 
-  .day {
-    padding: 5px;
-    text-align: center;
+  .calendar_header > div > button {
+    width: 50px;
+    height: 30px;
+    border-radius: 10%;
+    background-color: rgb(66, 57, 59);
   }
-  
+
+  .calendar_header > div > #btntoday {
+    margin-right: 8px;
+    width: 60px;
+    font-size: 15px;
+    background-color: gray;
+    color: white;
+  }
+  .calendar_header > div > button > i {
+    font-size: 15px;
+    color: white;
+  }
   .calendar_dates {
-    float: left;
-    width: auto;
-    height: auto;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 5fr);
     grid-gap: 0px;
   }
   
-  .date {
+  .calendar_dates > .day {
     cursor: pointer;
-    text-align: right;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    line-height: 15px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .calendar_dates > .day:first-child {
+    color: red;
+  }
+
+  .calendar_dates > .day:nth-child(7) {
+    color: blue;
+  }
+
+  .calendar_dates > .date {
+    cursor: pointer;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #fff;
     line-height: 30px;
-    height: 30px;
+    height: 80px;
+    text-align: right;
+    vertical-align: top;
+    padding: 0px 5px;
   }
-  
+
+  .date.today {
+    background-color: #f7eaa2;
+  }
+
   .date:hover {
-    background-color: #eaeaea;
     font-weight: bold;
-    color: #d9534f;
+    background-color: gray;
   }
   

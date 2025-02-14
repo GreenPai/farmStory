@@ -27,7 +27,7 @@
 
      main > .left_section > aside >  article:nth-of-type(2){
         width: 175px;
-        height: 233px;
+        height: 240px;
         background: url("/Pam/images/sub_aside_bg_lnb.png");
         position: relative;
      }
@@ -57,6 +57,20 @@
         height: 29px;
         position: absolute;
         top: 96px;
+    }
+
+    main > .left_section > aside >  article:nth-child(2) > ul > li:nth-child(4) img{
+      width: 175px;
+      height: 29px;
+      position: absolute;
+      top: 131px;
+    }
+
+    main > .left_section > aside >  article:nth-child(2) > ul > li:nth-child(5) img{
+      width: 175px;
+      height: 29px;
+      position: absolute;
+      top: 166px;
     }
     
     /*오른쪽 섹션*/
