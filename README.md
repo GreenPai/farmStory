@@ -17,7 +17,7 @@
 이벤트 켈린더: pam/pam_event/event.html
 
 커뮤니티
-    공지사항(글목록):
+    공지사항(글목록): pam/pam_community/notion.html
     오늘의식단(글쓰기):
     나도요리사(글쓰기):
     고객문의(글수정)
