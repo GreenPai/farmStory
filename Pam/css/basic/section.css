@@ -140,34 +140,3 @@
       box-sizing: border-box;
      }
 
-    /*Content 부분 크기*/
-    main > .right_section > article > div:nth-child(2){
-      width: 762px;
-      height: 578px;
-    }
-
-
-    /* 장보기 CSS*/
-    main > .right_section > article > .content .black_txt{
-      font-size: 11px;
-      color: black;
-    }
-
-    /* 테이블 스타일*/
-    main > .right_section .content > table{
-      width: 762;
-      height: 564;
-      top: 139px;
-      left: 40px;
-      border-top-width: 1px;
-      border-bottom-width: 1px;
-    }
-
-    main > .right_section .content > table> thead{
-      border-bottom: 1px solid #EEEEEE;
-    }
-
-    main > .right_section .content > table th{
-      border-bottom: 1px solid #EEEEEE;
-      background: #E5ECEF;
-    }
