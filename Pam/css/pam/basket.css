@@ -1,9 +1,145 @@
-main .right_section article .content table tbody tr td span.table_pb {
+/* 장보기 CSS*/
+main > .right_section > article > .content{
+    margin-top: 40px;
+}
+
+/* 전체 | 과일 | 아채 | 곡류 부분 마진*/
+main > .right_section > article > .content > p{
+    margin-bottom: 10px;
+}
+
+/*테이블 크기 조정*/
+main > .right_section > article > .content > table{
+    width: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-bottom: 1px solid #111111;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(1){
+    width: 100px;
+    height: 38px;
+    box-sizing: border-box;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(2){
+    width: 76.19px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(3){
+    width: 311.5px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(4){
+    width: 91.44px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(5){
+    width: 91.44px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(6){
+    width: 91.44px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table td{
+    height: 105px;
+}
+
+/* 테이블 이미지 크기 조정*/
+main > .right_section > article > .content > table img{
+    width: 80px;
+    height: 80px;
+}
+
+/* 테이블 스타일*/
+main > .right_section .content > table> thead{
+    border-bottom: 1px solid #EEEEEE;
+}
+
+main > .right_section .content > table th{
+    border-bottom: 1px solid #EEEEEE;
+    background: #E5ECEF;
+}
+
+
+
+/* 테이블 글자 스타일*/
+main > .right_section > article > .content > table tr > td{
+    text-align: center;
+}
+
+main > .right_section > article > .content > table tr > td:nth-child(3){
+    text-align: left;
+}
+
+main .right_section article .content table tbody tr td span.tr_b {
     font-family: Inter;
     font-weight: 700;
-    font-size: 110.13px;
+    font-size: 10.13px;
     line-height: 12.25px;
     letter-spacing: 0%;
     text-align: center;
+    color: black;
 }
+
+main .right_section article .content table tbody tr td span.tr_g {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 9.75px;
+    line-height: 11.8px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: line-through;
+}
+
+
+main > .right_section > article > .content .black_txt{
+    font-size: 11px;
+    color: black;
+}
+
+main > .right_section > article > .content > table tr > td:nth-child(2){
+    color : #777777;
+} 
+
+main > .right_section > article > .content .gray_txt{
+    font-size: 11px;
+    color : #777777;
+}
+
+/* 페이징 영역 : 문자 p*/
+main > section > article > .page {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+main > section > article > .page > p{
+    text-align: center;
+}
+
+/* 상세 정보*/
+main > .right_section > article > .content > .black_bold_txt{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.36px;
+    letter-spacing: 0%;
+    color: black;
+} 
+
+main > .right_section > article > .content > .info{
+    width: 762px;
+    height: 270px;
+    border: 1px solid black;
+}
+
+
+
+
+
 
