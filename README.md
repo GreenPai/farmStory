@@ -4,9 +4,9 @@
     찾아오시는길: pam/location.html
 
 장보기
-    상품목록: product_list.html
-    장바구니: 
-    상품상세보기:
+    상품목록: shop/product_list.html
+    장바구니: shop/product_basket.html
+    상품상세보기: shop/product_detail.html
     주문하기:
 
 농작물이야기
