@@ -85,7 +85,10 @@
     main > .right_section .content > div{
       width: 762px;
       height: auto;
-      margin-top: 41px;
+    }
+
+    .m-40{
+      margin-top: 40px;
     }
 
     /* 글씨 형식*/
@@ -136,7 +139,10 @@
      /*Home>장보기>장보기*/
      main > .right_section > article > div > div:nth-child(2){
       float: right;
-      margin-top: 50px;
       box-sizing: border-box;
+     }
+
+     .intro{
+      margin-top: 50px;
      }
 

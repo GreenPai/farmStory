@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="/Pam/css/basic/footer.css">
   <link rel="stylesheet" href="/Pam/css/basic/section.css"> 
   <link rel="stylesheet" href="/Pam/css/pam/basket.css">
-  <title>팜스토리 장바구니</title>
+  <title>팜스토리 주문하기기</title>
   <style>
-    
+ 
   </style>
 </head>
 
@@ -105,22 +105,18 @@
                     <div class="basket_table">
                       <table>
                         <thead>
-                          <th style="width: 76.19px;"><input type="checkbox"></th>
-                          <th style="width: 76.19px;">이미지</th>
-                          <th style="width: 76.19px;" >종류</th>
-                          <th style="width: 148.69px;">상품명</th>
-                          <th style="width: 76.19px;" >수량</th>
-                          <th style="width: 76.19px;" >할인</th>
-                          <th style="width: 76.19px;" >포인트</th>
-                          <th style="width: 76.19px;" >가격</th>
-                          <th style="width: 76.19px;" >소개</th>
+                          <th style="width: 80px;" >이미지</th>
+                          <th style="width: 76.19px;">종류</th>
+                          <th style="width: 224.88px;">상품명</th>
+                          <th style="width: 76.19px;">수량</th>
+                          <th style="width: 76.19px;">할인</th>
+                          <th style="width: 76.19px;">포인트</th>
+                          <th style="width: 76.19px;">가격</th>
+                          <th style="width: 76.19px;">소개</th>
                         </thead>
                         <tbody>
-                          <tr class="none_item">
-                            <td colspan="8">장바구니에 상품이 없습니다.</td>
-                          </tr>
+                          
                           <tr>
-                            <td><input type="checkbox"></td>
                             <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
                             <td class="table_gray_txt">과일</td>
                             <td>사과 500g</td>
@@ -131,7 +127,6 @@
                             <td>3,600<span class="table_gray_txt">원</span></td>
                           </tr>
                           <tr>
-                            <td><input type="checkbox"></td>
                             <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
                             <td class="table_gray_txt">과일</td>
                             <td>사과 500g</td>
@@ -142,7 +137,6 @@
                             <td>3,600<span class="table_gray_txt">원</span></td>
                           </tr>
                           <tr>
-                            <td><input type="checkbox"></td>
                             <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
                             <td class="table_gray_txt">과일</td>
                             <td>사과 500g</td>
@@ -157,8 +151,62 @@
                     </div>
                 </div>
 
-                <div style="margin-top: 10px;" class="total">
-                  <button style="float: left; width: 60px; height: 29px;" class="red_btn" type="button">선택삭제</button>
+                <div class="total" style="margin-top: 15px;" >
+                  <p style="margin-bottom: 10px;">주문번호 입력</p>
+                  <div style="float: left;">
+                    <form action="#">
+                      <table class="order">
+                        <tr>
+                          <td>주문자</td>
+                          <td><input class="input_1" type="text" value="홍길동" name="name"></td>
+                        </tr>
+                        <tr>
+                          <td>휴대폰</td>
+                          <td><input class="input_1" type="text" value="010-1234-1001" name="hp"></td>
+                        </tr>
+                        <tr>
+                          <td>포인트사용</td>
+                          <td><input class="input_1" type="text" placeholder="홍길동"></td>
+                        </tr>
+                        <tr>
+                          <td>받는분</td>
+                          <td><input class="input_1" type="text" placeholder="홍길동"></td>
+                        </tr>
+                        <tr>
+                          <td>연락처</td>
+                          <td>
+                            <input class="input_1" type="text" placeholder="홍길동">
+                            <button type="button">사용하기</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>배송주소</td>
+                          <td><input class="input_1" type="text" placeholder="홍길동"></td>
+                          <td><input class="input_2" type="text" placeholder="기본주소 검색"></td>
+                          <td><input class="input_2" type="text" placeholder="상세주소 입력"></td>
+                        </tr>
+                        <tr>
+                          <td>결제방법</td>
+                          <td>
+                            <input type="radio" name="payment" id="payment_bank" value="계좌이체">
+                            <label for="payment_bank">계좌이체</label>
+                            <input type="radio" name="payment" id="payment_credit" value="계좌이체">
+                            <label for="payment_credit">신용카드</label>
+                            <input type="radio" name="payment" id="payment_check" value="계좌이체">
+                            <label for="payment_check">체크카드</label>
+                            <input type="radio" name="payment" id="payment_phone" value="계좌이체">
+                            <label for="payment_phone">휴대폰</label>
+    
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>기타</td>
+                          <td><textarea style="width: 322px; height: 62px;" name="other_info"></textarea></td>
+                        </tr>
+                      </table>
+                    </form>  
+                  </div>
+
                   <div style="margin: 0px;" class="total_table">
                     <table>
                       <tr>
@@ -173,7 +221,7 @@
                         <td>27,000</td>
                       </tr>
                       <tr>
-                        <td>할인금액</td>
+                        <td>할인소금액</td>
                         <td>5,0000원</td>
                       </tr>
                       <tr>
@@ -190,7 +238,7 @@
                       </tr>
 
                     </table>
-                      <button style="margin-top: 10px;" class="total_red_btn">주문하기</button>
+                      <button style="margin-top: 10px;" class="total_red_btn">결제하기</button>
                   </div>
                 </div>
 

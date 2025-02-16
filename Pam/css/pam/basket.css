@@ -252,67 +252,40 @@ main > section > article > .detail > table tr td:nth-child(2){
 
 /*장보기 > 장바구니*/
 
-.content > .basket_table2 > table{
+.content > .basket_table > table{
     border-collapse: collapse;
     border-bottom: 1px solid #111111 ;
+    width: 100%;
 }
 
-.content > .basket_table2 thead th{
+.content > .basket_table thead th{
     height: 38px;
     background-color: #E5ECEF;
     border-top: 1px solid #111111;
 }
 
 
-.content > .basket_table2 tbody tr{
+.content > .basket_table tbody tr{
     height: 85px;
     border-bottom: 1px solid #EEEEEE;
 }
 
-.content > .basket_table2 tbody tr:last-child{
+.content > .basket_table tbody tr:last-child{
     border-bottom: 1px solid #111111;
 }
 
-.content > .basket_table2 tbody .none_item{
+.content > .basket_table tbody .none_item{
     height: 38px;
 }
 
-.content > .basket_table2 tbody .none_item td{
+.content > .basket_table tbody .none_item td{
     text-align: center;
     vertical-align: middle;
     color: #777777;
 }
 
-.content > .basket_table2 tbody tr td{
+.content > .basket_table tbody tr td{
     text-align: center;
-}
-
-.basket_table2 thead th:nth-child(1){
-    width: 76.19px;
-}
-.basket_table2 thead th:nth-child(2){
-    width: 76.19px;
-}
-.basket_table2 thead th:nth-child(3){
-    width: 148.69px;
-}
-.basket_table2 thead th:nth-child(4){
-    width: 76.19px;
-}
-.basket_table2 thead th:nth-child(5){
-    width: 76.19px;
-}
-.basket_table2 thead th:nth-child(6){
-    width: 76.19px;
-}
-.basket_table2 thead th:nth-child(7){
-    width: 76.19px;
-}
-.basket_table2 thead th:nth-child(8){
-    width: 76.19px;
-}
-.basket_table2 thead th:nth-child(9){
-    width: 76.19px;
 }
 
 /*테이블 글꼴*/
@@ -321,7 +294,7 @@ main > section > article > .detail > table tr td:nth-child(2){
 }
 
 /* 테이블 이미지 크기*/
-.basket_table2 img{
+.basket_table img{
     width: 60px;
     height: 60px;
 }
@@ -363,6 +336,80 @@ main > section > article > .detail > table tr td:nth-child(2){
     width: 100%;
     height: 37px;
 }
+
+/* 장보기 주문하기*/
+
+.order{
+    align-items: center;
+    border-collapse: collapse;
+    border-top: 1px solid #BE0808;
+}
+
+.order tr{
+    border-bottom: 1px solid #D7D7D7;
+}
+
+.order td{
+    padding-left: 10px
+}
+
+.order tr td:nth-child(1){
+    width: 105.19px;
+    background-color: #F7F7F7;
+}
+
+.order tr td:nth-child(2){
+    width: 342px;
+}
+
+.order tr:nth-child(1){
+    height: 41px;
+}
+
+.order tr:nth-child(2){
+    height: 41px;
+}
+
+.order tr:nth-child(3){
+    height: 59px;
+}
+
+.order tr:nth-child(4){
+    height: 41px;
+}
+
+.order tr:nth-child(5){
+    height: 41px;
+}
+
+.order tr:nth-child(6){
+    height: 85.75px;
+}
+
+.order tr:nth-child(7){
+    height: 44px;
+}
+
+.order tr:nth-child(8){
+    height: 87px;
+}
+
+.input_1{
+    width: 149px;
+    height: 20px;
+}
+
+.input_2{
+    width: 322px;
+    height: 20px;
+}
+
+
+
+
+
+
+
 
 
 
