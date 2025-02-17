@@ -343,14 +343,17 @@ main > section > article > .detail > table tr td:nth-child(2){
     align-items: center;
     border-collapse: collapse;
     border-top: 1px solid #BE0808;
+    box-sizing: border-box;
 }
 
 .order tr{
     border-bottom: 1px solid #D7D7D7;
+    box-sizing: border-box;
 }
 
 .order td{
-    padding-left: 10px
+    padding-left: 10px;
+    box-sizing: border-box;
 }
 
 .order tr td:nth-child(1){
@@ -403,18 +406,3 @@ main > section > article > .detail > table tr td:nth-child(2){
     width: 322px;
     height: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
