@@ -1,0 +1,48 @@
+/*기본 설정*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+input {
+    outline: none;
+}
+
+.wrapper{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+header{
+    width: 980px;
+    height: 60px;
+    background-image: url(/Pam/images/admin/admin_bg.jpg);
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative; 
+    color: white;
+}
+
+.head_logo{
+    width: 170px;
+    height: 32px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+
+
+
+  
