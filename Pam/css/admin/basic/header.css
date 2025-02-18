@@ -44,8 +44,8 @@ header{
     width: 170px;
     height: 32px;
     position: absolute;
-    top: 12px;
-    left: 12px;
+    top: 15px;
+    left: 15px;
 }
 
 header > p{
