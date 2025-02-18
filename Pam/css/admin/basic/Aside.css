@@ -44,5 +44,45 @@ aside > div:nth-child(2) > div > a{
     margin-left: 10px;
 }
 
+.right_section > .title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20.57px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+article > .product{
+    border-collapse: collapse;
+    border-top: 1px solid black;
+}
+
+article > .product tr th{
+    background-color: #FBFBFB;
+}
 
 
+article > .product tr th:nth-child(1){
+    width: 146.23px;
+    height: 42.5px;
+}
+article > .product tr th:nth-child(2){
+    width: 152.33px;
+    height: 42.5px;
+}
+article > .product tr th:nth-child(3){
+    width: 97.48px;
+    height: 42.5px;
+}
+article > .product tr th:nth-child(4){
+    width: 127.95px;
+    height: 42.5px;
+}
+article > .product tr th:nth-child(5){
+    width: 97.48px;
+    height: 42.5px;
+}
+article > .product tr th:nth-child(6){
+    width: 162.52px;
+    height: 42.5px;
+}
