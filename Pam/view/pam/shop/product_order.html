@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="/Pam/css/basic/footer.css">
   <link rel="stylesheet" href="/Pam/css/basic/section.css"> 
   <link rel="stylesheet" href="/Pam/css/pam/basket.css">
-  <title>팜스토리 주문하기기</title>
+  <title>팜스토리 주문하기</title>
   <style>
- 
+    
   </style>
 </head>
 
@@ -101,7 +101,7 @@
                 
                 
                 <div class="content">
-                    <p>장바구니 전체(10)</p>
+                    <p style="display: inline-block;">장바구니 전체(10)</p>
                     <div class="basket_table">
                       <table>
                         <thead>
@@ -152,63 +152,66 @@
                 </div>
 
                 <div class="total" style="margin-top: 15px;" >
-                  <p style="margin-bottom: 10px;">주문번호 입력</p>
-                  <div style="float: left;">
-                    <form action="#">
-                      <table class="order">
-                        <tr>
-                          <td>주문자</td>
-                          <td><input class="input_1" type="text" value="홍길동" name="name"></td>
-                        </tr>
-                        <tr>
-                          <td>휴대폰</td>
-                          <td><input class="input_1" type="text" value="010-1234-1001" name="hp"></td>
-                        </tr>
-                        <tr>
-                          <td>포인트사용</td>
-                          <td><input class="input_1" type="text" placeholder="홍길동"></td>
-                        </tr>
-                        <tr>
-                          <td>받는분</td>
-                          <td><input class="input_1" type="text" placeholder="홍길동"></td>
-                        </tr>
-                        <tr>
-                          <td>연락처</td>
-                          <td>
-                            <input class="input_1" type="text" placeholder="홍길동">
-                            <button type="button">사용하기</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>배송주소</td>
-                          <td>
-                            <input class="input_1" type="text" placeholder="홍길동"><br>
-                            <input class="input_2" type="text" placeholder="기본주소 검색"><br>
-                            <input class="input_2" type="text" placeholder="상세주소 입력">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>결제방법</td>
-                          <td>
-                            <input type="radio" name="payment" id="payment_bank" value="계좌이체">
-                            <label for="payment_bank">계좌이체</label>
-                            <input type="radio" name="payment" id="payment_credit" value="계좌이체">
-                            <label for="payment_credit">신용카드</label>
-                            <input type="radio" name="payment" id="payment_check" value="계좌이체">
-                            <label for="payment_check">체크카드</label>
-                            <input type="radio" name="payment" id="payment_phone" value="계좌이체">
-                            <label for="payment_phone">휴대폰</label>
-    
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>기타</td>
-                          <td><textarea style="width: 322px; height: 62px;" name="other_info"></textarea></td>
-                        </tr>
-                      </table>
-                    </form>  
+                  <div>
+                    <p style="margin-bottom: 10px;">주문번호 입력</p>
+                    <div style="float: left;">
+                      <form action="#">
+                        <table class="order">
+                          <tr>
+                            <td>주문자</td>
+                            <td><input class="input_1" type="text" value="홍길동" name="name"></td>
+                          </tr>
+                          <tr>
+                            <td>휴대폰</td>
+                            <td><input class="input_1" type="text" value="010-1234-1001" name="hp"></td>
+                          </tr>
+                          <tr>
+                            <td>포인트사용</td>
+                            <td><input class="input_1" type="text" placeholder="홍길동">
+                              <button type="button" class="btn_use">사용하기</button>
+                              <p style="margin-top: 5px;">사용가능 2,000</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>받는분</td>
+                            <td><input class="input_1" type="text" placeholder="홍길동"></td>
+                          </tr>
+                          <tr>
+                            <td>연락처</td>
+                            <td>
+                              <input class="input_1" type="text" placeholder="홍길동">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>배송주소</td>
+                            <td>
+                              <input class="input_1" type="text" placeholder="홍길동"><br>
+                              <input class="input_2" type="text" placeholder="기본주소 검색"><br>
+                              <input class="input_2" type="text" placeholder="상세주소 입력">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>결제방법</td>
+                            <td>
+                              <input type="radio" name="payment" id="payment_bank" value="계좌이체">
+                              <label for="payment_bank">계좌이체</label>
+                              <input type="radio" name="payment" id="payment_credit" value="계좌이체">
+                              <label for="payment_credit">신용카드</label>
+                              <input type="radio" name="payment" id="payment_check" value="계좌이체">
+                              <label for="payment_check">체크카드</label>
+                              <input type="radio" name="payment" id="payment_phone" value="계좌이체">
+                              <label for="payment_phone">휴대폰</label>
+      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>기타</td>
+                            <td><textarea style="width: 322px; height: 62px;" name="other_info"></textarea></td>
+                          </tr>
+                        </table>
+                      </form>  
+                    </div>
                   </div>
-
                   <div style="margin: 0px;" class="total_table">
                     <table>
                       <tr>

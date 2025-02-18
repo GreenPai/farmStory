@@ -17,11 +17,17 @@
         color: black;
       }
 
+      /*textarea 영역 크기 조절 방지*/
+      textarea{
+        resize: none;
+      }
+
       #wrapper {
         /*전체: 1920px 메인:980px*/
         width: 980px;
         height: auto;
         box-sizing: border-box;
+        margin: 0 auto;
       }
 
       header {
