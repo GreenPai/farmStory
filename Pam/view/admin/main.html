@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>farm story</title>
     <link rel="stylesheet" href="/Pam/css/admin/basic/header.css">
+    <link rel="stylesheet" href="/Pam/css/admin/basic/footer.css">
+    <link rel="stylesheet" href="/Pam/css/admin/basic/Aside.css">
     <style>
    
 
@@ -13,13 +15,6 @@ main {
   height: 658px;
   margin: 0px auto;
   border: 1px solid blue;
-}
-footer{
-  width: 980px;
-  height: 41px;
-  border: 1px solid blue;
-  box-sizing: border-box;
-  margin: 0px auto;
 }
 
 </style>
@@ -34,14 +29,33 @@ footer{
             <p>
                 <a href="#"><span>HOME |</span></a>
                 <a href="#"><span>로그아웃 |</span></a>
-                <a href="#"><span>고객센터 |</span></a>
+                <a href="#"><span>고객센터&nbsp;</span></a>
             </p>
         </header>
         <main>
-            <p>main</p>
-            <aside>주요기능</aside>
-            <section>관리자메인</section>
-            <section>section
+            <section class="left_section">
+                <aside>
+                    <div>
+                        <p>주요기능</p>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <div>
+                            <p>상품관리</p>
+                            <a href="#">L 상품목록</a><br>
+                            <a href="#">L 상품등록</a>
+                        </div>
+                        <div>
+                            <p>주문관리</p>
+                            <a href="#">L 주문목록</a>
+                        </div>
+                        <div>
+                            <p>회원관리</p>
+                            <a href="#">L 회원목록</a>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+            <section class="right_section">section
                 <article>상품현황
                     <table>
                         <tr>
@@ -162,7 +176,14 @@ footer{
     
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <p>
+                FARMSTORY ADMINISTRATOR Version 1.0.1
+            </p>
+            <p>
+                Copyrightⓒ 김철학(개발에반하다.) All rights reserved.
+            </p>
+        </footer>
     </div>
 </body>
 </html>
