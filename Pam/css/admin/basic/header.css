@@ -24,10 +24,11 @@ input {
     outline: none;
 }
 
-.wrapper{
+#wrapper{
     width: 100%;
     height: auto;
     box-sizing: border-box;
+    margin: 0px auto;
 }
 
 header{

@@ -339,6 +339,8 @@ main > section > article > .detail > table tr td:nth-child(2){
 
 /* 장보기 주문하기*/
 
+
+
 .order{
     align-items: center;
     border-collapse: collapse;
@@ -397,6 +399,16 @@ main > section > article > .detail > table tr td:nth-child(2){
     height: 87px;
 }
 
+.order input{
+    border: 1px solid #D7D7D7;
+}
+
+.order textarea{
+    border: 1px solid #D7D7D7;
+    width: 322px;
+    height: 62px;
+}
+
 .input_1{
     width: 149px;
     height: 20px;
@@ -405,4 +417,10 @@ main > section > article > .detail > table tr td:nth-child(2){
 .input_2{
     width: 322px;
     height: 20px;
+}
+
+.btn_use{
+    width: 52px;
+    height: 21px;
+    border: 1px solid #767676;
 }
