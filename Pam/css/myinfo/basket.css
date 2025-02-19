@@ -1,0 +1,53 @@
+#wrapper{
+    width: 1920px;
+    height: 1200px;
+}
+
+.left_section > aside{
+    width: 176px;
+    height: 650px;
+    position: absolute;
+}
+
+header > .background{
+    width: 980px;
+    height: 184px;
+    background-image: url(/Pam/images/myinfo/myinfo_top_bg.png);
+}
+
+header > .background> .myinfo_top_tit{
+    width: 326px;
+    height: 37px;
+    position: absolute;
+    left: 10px;
+    top: 137px;
+}
+
+.left_section > aside > .myinfo_menu_tit{
+    width: 129px;
+    height: 44px;
+    position: relative;
+    top: 16px;
+    left: 16px;
+}
+
+
+.left_section > aside > ul{
+    width: 175px;
+    height: 233px;
+    position: absolute;
+    top: 80px;
+    background: url(/Pam/images/sub_aside_bg_lnb.png);
+    
+
+}   
+
+.left_section > aside > ul >li{
+    width: 175px;
+    height: 29px;
+    position: relative;
+    top: 26px;
+}
+
+
+
