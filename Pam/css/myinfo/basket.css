@@ -1,3 +1,8 @@
+#wrapper{
+    width: 1920px;
+    height: 1200px;
+}
+
 .left_section > aside{
     width: 176px;
     height: 650px;
@@ -44,15 +49,5 @@ header > .background> .myinfo_top_tit{
     top: 26px;
 }
 
-.right_section > article > nav> div:nth-child(1){
-    width: 762px;
-    height: 72px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #c2c2c2;
-}
 
-.right_section > article > nav > div > .myinfo_nav_tit1{
-    margin-top: 41px;
-    float: left;
-}
 

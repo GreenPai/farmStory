@@ -1,7 +1,33 @@
-header > .background > img {
-    width: 280px;
-    height: 37px;
-    position: absolute;
-    left: 10px;
-    top: 137px;
-  }
+#wrapper{
+  margin: 0 auto;
+}
+
+#notice >.right_section{
+  border: 1px solid red;
+}
+
+#notice >.right_section > article > div:nth-child(1){
+  border: 1px solid orange;
+}
+
+#notice >.right_section > article > div:nth-child(2){
+  border: 1px solid blue;
+}
+
+#notice >.right_section > article > div:nth-child(2)>nav >h1{
+  border: 5px solid green;
+  width: 36px;
+  height: 14px;
+  float: left;
+  margin-top: 35px;
+}
+
+#notice >.right_section > article > div:nth-child(2)>nav> form{
+  border: 3px solid pink;
+  width: 252px;
+  height: 31px;
+  float: right;
+
+}
+
+

@@ -10,7 +10,9 @@
     <title>로그인</title>
     <style>
       
-
+      #wrapper{
+        margin: 0 auto;  /* 수평 중앙 정렬 */
+      }
 
     </style>
 </head>
@@ -22,12 +24,12 @@
           <div>
             <div id="home">
               <a href="#">HOME |</a>
-              <a href="#">로그인 |</a>
-              <a href="#">회원가입 |</a>
+              <a href="/Pam/view/user/login.html">로그인 |</a>
+              <a href="/Pam/view/user/reigister.html">회원가입 |</a>
               <a href="#">나의정보 |</a>
               <a href="#">로그아웃 |</a>
-              <a href="#">관리자 |</a>
-              <a href="#">고객센터 </a>
+              <a href="/Pam/view/admin/main.html">관리자 |</a>
+              <a href="/Pam/view/">고객센터 </a>
             </div>
           </div>
   
@@ -47,11 +49,11 @@
         <div id="list">
           <nav>
             <ul>
-              <li><a href="#"><img src="/Pam/images/head_menu1.png" alt="팜스토리소개"></a></li>
-              <li><a href="#"><img src="/Pam/images/head_menu2.png" alt="장보기"></a></li>
-              <li><a href="#"><img src="/Pam/images/head_menu3.png" alt="농작물이야기"></a></li>
-              <li><a href="#"><img src="/Pam/images/head_menu4.png" alt="이벤트"></a></li>
-              <li><a href="#"><img src="/Pam/images/head_menu5.png" alt="커뮤니티"></a></li>
+              <li><a href="/Pam/view/pam/intro.html"><img src="/Pam/images/head_menu1.png" alt="팜스토리소개"></a></li>
+              <li><a href="/Pam/view/pam/shop/product_basket.html"><img src="/Pam/images/head_menu2.png" alt="장보기"></a></li>
+              <li><a href="/Pam/view/pam/pam_story/story.html"><img src="/Pam/images/head_menu3.png" alt="농작물이야기"></a></li>
+              <li><a href="/Pam/view/pam/pam_event/event.html"><img src="/Pam/images/head_menu4.png" alt="이벤트"></a></li>
+              <li><a href="/Pam/view/pam/pam_community/notion.html"><img src="/Pam/images/head_menu5.png" alt="커뮤니티"></a></li>
             </ul>
           </nav>
         </div>
@@ -87,16 +89,21 @@
                 </tbody>
               </table>
               <input type="submit" value="로그인" class="btnLogin">
-              <img src="/Pam/images/user/login_favicon.png" alt="네카구" class="favicon">
+              <img src="/Pam/images/user/login_favicon.png" alt="Favicon Image" class="favicon" usemap="#faviconmap">
+              <map name="faviconmap">
+                <area shape="rect" coords="0,0,32,32" href="http://naver.com" alt="Naver">
+                <area shape="rect" coords="34,0,66,32" href="http://kakao.com" alt="Kakao">
+                <area shape="rect" coords="68,0,100,32" href="http://google.com" alt="Google">
+              </map>
             </form>
           </div>
           <div>
             <h3>회원 로그인 안내</h3>
             <p>아직 회원이 아니시면 회원으로 가입하세요.</p>
             <div style="text-align: right;">
-              <a href="#">아이디 |</a>
-              <a href="#">비밀번호찾기 |</a>
-              <a href="#">회원가입</a>
+              <a href="/Pam/view/user/userId.html">아이디 |</a>
+              <a href="/Pam/view/user/password.html">비밀번호찾기 |</a>
+              <a href="/Pam/view/user/reigister.html">회원가입</a>
             </div>
           </div>
         </section>
