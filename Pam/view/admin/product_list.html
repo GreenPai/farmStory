@@ -1,155 +1,102 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>팜스토리 관리자 페이지</title>
-    <link rel="stylesheet" href="style.css"> <!-- CSS 파일 연결 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Chart.js 추가 (그래프 사용) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>farm story</title>
+    <link rel="stylesheet" href="/Pam/css/admin/basic/header.css">
+    <link rel="stylesheet" href="/Pam/css/admin/basic/footer.css">
+    <link rel="stylesheet" href="/Pam/css/admin/basic/Aside.css">
+    <link rel="stylesheet" href="/Pam/css/admin/main.css">
+    <link rel="stylesheet" href="/Pam/css/admin/product_list.css">
+    <style>
+   
+
+main {
+  width: 980px;
+  height: 658px;
+  margin: 0px auto;
+}
+
+</style>
 </head>
 <body>
-    <div class="container">
+    <div id="wrapper">
+
         <header>
-            <div class="logo">
-                <img src="logo.png" alt="팜스토리 로고"> <!-- 로고 이미지 경로 수정 -->
-            </div>
-            <div class="user-info">
-                <span>홍길동 님</span>
-                <a href="#">로그아웃</a>
-            </div>
+            <a href="#">
+                <img class="head_logo" src="/Pam/images/admin/admin_logo.jpg" alt="ADMINISTRATOR">
+            </a>
+            <p>
+                <a href="#"><span>HOME |</span></a>
+                <a href="#"><span>로그아웃 |</span></a>
+                <a href="#"><span>고객센터&nbsp;</span></a>
+            </p>
         </header>
-
-        <aside>
-            <nav>
-                <ul>
-                    <li><a href="#"><i class="fas fa-tachometer-alt"></i> 대시보드</a></li>
-                    <li><a href="#"><i class="fas fa-shopping-cart"></i> 상품 관리</a></li>
-                    <li><a href="#"><i class="fas fa-shopping-bag"></i> 주문 관리</a></li>
-                    <li><a href="#"><i class="fas fa-newspaper"></i> 게시글 관리</a></li>
-                    <li><a href="#"><i class="fas fa-users"></i> 회원 관리</a></li>
-                    <li><a href="#"><i class="fas fa-chart-bar"></i> 통계</a></li>
-                </ul>
-            </nav>
-        </aside>
-
         <main>
-            <section class="greeting">
-                <h2>안녕하세요, 팜스토리 관리자님!</h2>
-                <p>오늘은 2024년 10월 27일입니다.</p>
+            <section class="left_section">
+                <aside>
+                        <p>주요기능</p>
+                    <div style="margin-top: 20px;">
+                        <div>
+                            <p>상품관리</p>
+                            <a href="#">L 상품목록</a><br>
+                            <a href="#">L 상품등록</a>
+                        </div>
+                        <div>
+                            <p>주문관리</p>
+                            <a href="#">L 주문목록</a>
+                        </div>
+                        <div>
+                            <p>회원관리</p>
+                            <a href="#">L 회원목록</a>
+                        </div>
+                    </div>
+                </aside>
             </section>
-
-            <section class="sales-chart">
-                <h2>매출 현황</h2>
-                <canvas id="salesChart"></canvas>
-            </section>
-
-            <section class="status">
-                <div class="status-card">
-                    <h3>오늘의 방문자</h3>
-                    <p>123 명</p>
-                </div>
-                <div class="status-card">
-                    <h3>오늘의 주문</h3>
-                    <p>45 건</p>
-                </div>
-                <div class="status-card">
-                    <h3>미확인 문의</h3>
-                    <p>10 건</p>
-                </div>
-                <div class="status-card">
-                    <h3>새로운 리뷰</h3>
-                    <p>5 개</p>
-                </div>
-            </section>
-
-            <section class="recent-orders">
-                <h2>최근 주문 목록</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>주문 번호</th>
-                            <th>상품명</th>
-                            <th>결제 금액</th>
-                            <th>주문 일시</th>
-                            <th>주문 상태</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>12345</td>
-                            <td>사과 5kg</td>
-                            <td>25,000원</td>
-                            <td>2024-10-27 10:00</td>
-                            <td><span class="order-status pending">결제 대기</span></td>
-                        </tr>
-                        <tr>
-                            <td>12346</td>
-                            <td>귤 10kg</td>
-                            <td>30,000원</td>
-                            <td>2024-10-27 11:30</td>
-                            <td><span class="order-status processing">배송 준비중</span></td>
-                        </tr>
-                        <tr>
-                            <td>12347</td>
-                            <td>배 5kg</td>
-                            <td>35,000원</td>
-                            <td>2024-10-27 12:45</td>
-                            <td><span class="order-status completed">배송 완료</span></td>
-                        </tr>
-                        <!-- 주문 목록 데이터 반복 -->
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="recent-posts">
-                <h2>최근 게시글 목록</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>게시글 번호</th>
-                            <th>제목</th>
-                            <th>작성자</th>
-                            <th>작성 일시</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>10</td>
-                            <td>팜스토리 이벤트 안내</td>
-                            <td>관리자</td>
-                            <td>2024-10-26 18:00</td>
-                        </tr>
-                        <!-- 게시글 목록 데이터 반복 -->
-                    </tbody>
-                </table>
+            <section class="right_section">
+                <p class="title">상품목록</p> 
+                
+                <article>
+        
+                    <table class="product">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>사진</th>
+                                <th>상품번호</th>
+                                <th>상품명</th>
+                                <th>구분</th>
+                                <th>가격</th>
+                                <th>재고</th>
+                                <th>등록일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
+                                <td>1011</td>
+                                <td>사과500g</td>
+                                <td>과일</td>
+                                <td>4000원</td>
+                                <td>100</td>
+                                <td>2023-01-01</td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </article>
+               
+    
             </section>
         </main>
+        <footer>
+            <p>
+                CopyrightⓒFarmstory All rights reserved. FARMSTORY ADMINISTRATOR Version 1.0.1
+            </p>
+            
+        </footer>
     </div>
-
-    <script>
-        // Chart.js를 사용하여 그래프를 그립니다.
-        const salesChart = new Chart(document.getElementById('salesChart'), {
-            type: 'bar', // 막대 그래프
-            data: {
-                labels: ['전체 매출', '이번 달 매출'],
-                datasets: [{
-                    label: '매출 (원)',
-                    data: [1000000, 300000], // 예시 데이터
-                    backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(255, 99, 132, 0.5)'],
-                    borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true // y축 시작점을 0으로 설정
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
