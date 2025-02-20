@@ -1,0 +1,114 @@
+
+.right_section > .title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20.57px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+article > p > span > a {
+    float: right;
+}
+
+article > table{
+    border-collapse: collapse;
+    border-top: 1px solid black;
+}
+
+article > table td {
+    height: 42px;
+    text-align: center;
+}
+
+article > table tr {
+    height: 42px;
+}
+
+article > table tr th{
+    background-color: #FBFBFB;
+}
+
+article > table tbody tr {
+    border-bottom: 1px dashed #999999;
+}
+
+
+
+
+article > .product tr th{
+    height: 42.5px;
+}
+article > .product tr th:nth-child(1){width: 146.23px;}
+article > .product tr th:nth-child(2){width: 152.33px;}
+article > .product tr th:nth-child(3){
+    width: 97.48px;
+    height: 42.5px;
+}
+article > .product tr th:nth-child(4){
+    width: 127.95px;
+    height: 42.5px;
+}
+article > .product tr th:nth-child(5){
+    width: 97.48px;
+    height: 42.5px;
+}
+article > .product tr th:nth-child(6){
+    width: 162.52px;
+    height: 42.5px;
+}
+
+article > .order tr th:nth-child(1){
+    width: 105.89px;
+    height: 42.5px;
+}
+article > .order tr th:nth-child(2){
+    width: 110.31px;
+    height: 42.5px;
+}
+article > .order tr th:nth-child(3){
+    width: 105.89px;
+    height: 42.5px;
+}
+article > .order tr th:nth-child(4){
+    width: 70.59px;
+    height: 42.5px;
+}
+article > .order tr th:nth-child(5){
+    width: 92.66px;
+    height: 42.5px;
+}
+article > .order tr th:nth-child(6){
+    width: 92.66px;
+    height: 42.5px;
+}
+article > .order tr th:nth-child(7){
+    width: 88.25px;
+    
+}
+article > .order tr th:nth-child(8){
+    width: 117.75px; 
+}
+
+article > .client tr th:nth-child(1){
+    width: 120.8px;   
+}
+article > .client tr th:nth-child(2){
+    width: 90.7px;
+}
+article > .client tr th:nth-child(3){
+    width: 100.98px;
+}
+article > .client tr th:nth-child(4){
+    width: 140.09px;
+}
+article > .client tr th:nth-child(5){
+    width: 177.42;
+}
+article > .client tr th:nth-child(6){
+    width: 90.16px;
+}
+article > .client tr th:nth-child(7){
+    width: 120.84px;
+}
+
