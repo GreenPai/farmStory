@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/Pam/css/basic/header.css">
     <link rel="stylesheet" href="/Pam/css/basic/footer.css">
     <link rel="stylesheet" href="/Pam/css/basic/section.css">
-    <link rel="stylesheet" href="/Pam/css/myinfo/basket.css">
+    <link rel="stylesheet" href="/Pam/css/pam/basket.css">
     <title>장바구니</title>
     <style>
         
@@ -70,94 +70,116 @@
     <main>
         <section class="left_section">
             <aside>
-                <img src="/Pam/images/myinfo/myinfo_menu_tit.png" alt="MyINFO" class="myinfo_menu_tit">
-                <ul>
-                    <li><img src="/Pam/images/myinfo/myinfo_menu1_ov.png" alt="basket"></li>
-                    <li><img src="/Pam/images/myinfo/myinfo_menu2.png" alt="order_details"></li>
-                    <li><img src="/Pam/images/myinfo/myinfo_menu3.png" alt="edit_information"></li>
-                </ul>
+              <article>
+                  <ul>
+                      <li>
+                          <img src="/Pam/images/myinfo/myinfo_menu_tit.png" alt="나의정보보" >
+                      </li>
+                  </ul>
+              </article>
+  
+              <article>   
+                  <ul>
+                      <li>
+                          <a href="#">
+                              <img src="/Pam/images/myinfo/myinfo_menu1_ov.png" alt="장바구니니">
+                          </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <img src="/Pam/images/myinfo/myinfo_menu2.png" alt="주문내역역">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                            <img src="/Pam/images/myinfo//myinfo_menu3.png" alt="정보수정정">
+                        </a>
+                      </li>
+
+                  </ul>
+              </article>
             </aside>
         </section>
 
         <section class="right_section">
             <article>
-                <nav>
-                  <div>
-                    <div>
-                        <img src="/Pam/images/myinfo/myinfo_nav_tit1.png" alt="basket" class="myinfo_nav_tit1">
-                    </div>
-                    <div>
-                        <p>
-                            <img src="/Pam/images/sub_page_nav_ico.gif" alt="basket">
-                            Home>나의정보><span class="green_txt">장바구니&nbsp;</span>
-                        </p>
-                    </div>
+                <div>
+                  <div class="sub_nav_tit">
+                    <img src="/Pam/images/myinfo/myinfo_nav_tit1.png" class="sub_nav_tit_cate1_tit2" alt="찾아오시는길">
                   </div>
-                </nav>
+                  <div>
+                    <p class="intro">
+                       <img src="/Pam/images/sub_page_nav_ico.gif" alt="인사말">
+                         HOME > 나의정보 > <span class="eco_txt">장바구니&nbsp </span>
+                    </p>
+                  </div>  
+                </div>
+                
+                
+                <div class="content">
+                    <p>장바구니 전체(10)</p>
+                    <div class="basket_table">
+                      <table>
+                        <thead>
+                          <th style="width: 76.19px;"><input type="checkbox"></th>
+                          <th style="width: 76.19px;">이미지</th>
+                          <th style="width: 76.19px;" >종류</th>
+                          <th style="width: 148.69px;">상품명</th>
+                          <th style="width: 76.19px;" >수량</th>
+                          <th style="width: 76.19px;" >할인</th>
+                          <th style="width: 76.19px;" >포인트</th>
+                          <th style="width: 76.19px;" >가격</th>
+                          <th style="width: 76.19px;" >소개</th>
+                        </thead>
+                        <tbody>
+                          <tr class="none_item">
+                            <td colspan="8">장바구니에 상품이 없습니다.</td>
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
+                            <td class="table_gray_txt">과일</td>
+                            <td>사과 500g</td>
+                            <td class="table_gray_txt">1</td>
+                            <td class="table_gray_txt">10%</td>
+                            <td class="table_gray_txt">40P</td>
+                            <td class="table_gray_txt">4,000</td>
+                            <td>3,600<span class="table_gray_txt">원</span></td>
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
+                            <td class="table_gray_txt">과일</td>
+                            <td>사과 500g</td>
+                            <td class="table_gray_txt">1</td>
+                            <td class="table_gray_txt">10%</td>
+                            <td class="table_gray_txt">40P</td>
+                            <td class="table_gray_txt">4,000</td>
+                            <td>3,600<span class="table_gray_txt">원</span></td>
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
+                            <td class="table_gray_txt">과일</td>
+                            <td>사과 500g</td>
+                            <td class="table_gray_txt">1</td>
+                            <td class="table_gray_txt">10%</td>
+                            <td class="table_gray_txt">40P</td>
+                            <td class="table_gray_txt">4,000</td>
+                            <td>3,600<span class="table_gray_txt">원</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
 
-                <section class="basket_table">
-                  <p>장바구니 전체(10)</p>
-                  <table border="1">
-                    <thead>
-                      <th><input type="checkbox"></th>
-                      <th>이미지</th>
-                      <th>종류</th>
-                      <th>상품명</th>
-                      <th>수량</th>
-                      <th>할인</th>
-                      <th>포인트</th>
-                      <th>가격</th>
-                      <th>소계</th>
-                    </thead>
-                    <tbody>
+                <div style="margin-top: 10px;" class="total">
+                  <button style="float: left; width: 60px; height: 29px;" class="red_btn" type="button">선택삭제</button>
+                  <div style="margin: 0px;" class="total_table">
+                    <table>
                       <tr>
-                        <td>장바구니에 상품이 없습니다.</td>
+                        <td colspan="2">전체합계</td>
                       </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
-                        <td class="table_gray_txt">과일</td>
-                        <td class="table_gray_txt">사과 500g</td>
-                        <td class="table_gray_txt">1</td>
-                        <td class="table_gray_txt">10%</td>
-                        <td class="table_gray_txt">40p</td>
-                        <td class="table_gray_txt">4,000</td>
-                        <td class="table_gray_txt"><strong>3,600</strong><span>원</span></td>
-                      </tr>
-                      <tr>
-                        <td>장바구니에 상품이 없습니다.</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
-                        <td class="table_gray_txt">과일</td>
-                        <td class="table_gray_txt">사과 500g</td>
-                        <td class="table_gray_txt">1</td>
-                        <td class="table_gray_txt">10%</td>
-                        <td class="table_gray_txt">40p</td>
-                        <td class="table_gray_txt">4,000</td>
-                        <td class="table_gray_txt"><strong>3,600</strong><span>원</span></td>
-                      </tr>
-                      <tr>
-                        <td>장바구니에 상품이 없습니다.</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td><img src="/Pam/images/market_item1.jpg" alt="사과"></td>
-                        <td class="table_gray_txt">과일</td>
-                        <td class="table_gray_txt">사과 500g</td>
-                        <td class="table_gray_txt">1</td>
-                        <td class="table_gray_txt">10%</td>
-                        <td class="table_gray_txt">40p</td>
-                        <td class="table_gray_txt">4,000</td>
-                        <td class="table_gray_txt"><strong>3,600</strong><span>원</span></td>
-                      </tr>
-                     <button type="button">선택삭제</button>
-                    </tbody>
-                  </table>
-                  <table border="0">
-                    <tbody>
-                      <caption>전체합계</caption>
                       <tr>
                         <td>상품수</td>
                         <td>1</td>
@@ -182,11 +204,13 @@
                         <td>전체주문금액</td>
                         <td class="red_tt">22,000</td>
                       </tr>
-                    </tbody>
-                  </table>
-                  <button type="button" class="btn_order">주문하기</button>
 
-                </section>
+                    </table>
+                      <button style="margin-top: 10px;" class="total_red_btn">주문하기</button>
+                  </div>
+                </div>
+
+                
             </article>
         </section>
       </main>
