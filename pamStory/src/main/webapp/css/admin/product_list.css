@@ -1,0 +1,30 @@
+
+
+
+article > .product tr th{
+    height: 42.5px;
+}
+article > .product tr th:nth-child(1){width: 57.2px;}
+article > .product tr th:nth-child(2){width: 129.89px;}
+article > .product tr th:nth-child(3){width: 111.33px;}
+article > .product tr th:nth-child(4){width: 115.97px;}
+article > .product tr th:nth-child(5){width: 74.22px;}
+article > .product tr th:nth-child(6){width: 91.41px;}
+article > .product tr th:nth-child(7){width: 74.22px;}
+article > .product tr th:nth-child(8){width: 123.77px;}
+
+
+
+table tbody tr td img{
+    width: 60px;
+    height: 60px;
+}
+
+.page {
+    display: flex;
+    justify-content: center; /* 가로축 가운데 정렬 */
+    margin-top: 20px;
+  }
+.delete-button-container {
+    margin-top: 14px;
+}

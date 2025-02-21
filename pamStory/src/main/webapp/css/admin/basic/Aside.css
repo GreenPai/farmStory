@@ -1,0 +1,51 @@
+.left_section{
+    float: left;
+    width: 176px;
+    height: 400px;
+}
+
+.right_section{
+    float: right;
+    width: 784px;
+    height: auto;
+}
+
+.m-10{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+aside > div:nth-child(1){
+    width: 156px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #E5E5E5;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #CCCCCC;
+}
+
+aside > div:nth-child(1) > p{
+    margin-left: 20px;
+}
+
+aside > div:nth-child(2){
+    width: 156px;
+    height: 234px;
+}
+
+aside > div:nth-child(2) > div{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+aside > div:nth-child(2) > div > p{
+    margin-bottom: 10px;
+}
+
+aside > div:nth-child(2) > div > a{
+    margin-left: 10px;
+}
+

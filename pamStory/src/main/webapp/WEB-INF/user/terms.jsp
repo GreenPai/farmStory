@@ -1,5 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="./_header.jsp" %>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>팜스토리 이용약관</title>
+    <link rel="stylesheet" href="/pamStory/css/layout.css"/>
+    <link rel="stylesheet" href="/pamStory/css/user/terms.css"/>
+    <style>
+	    header {
+	        width: 980px;
+	        height: 142px;
+	    }
+    </style>
+    
+</head>
+<%@ include file="../layout/_header.jsp" %>
 <script>
 	// 문서 로드 이후 실행	
 	document.addEventListener('DOMContentLoaded', function(){
@@ -19,6 +33,8 @@
 		}
 	});
 </script>
+
+
 <main id="user">
     <section class="terms">
         <h2 class="tit">사이트 이용약관</h2>
@@ -42,10 +58,11 @@
         </table>
         
         <div>
-            <a href="/jboard/user/login.do" class="btn btnCancel">취소</a>
-            <a href="/jboard/user/register.do" class="btn btnNext">다음</a>
+            <a href="/pamStory/user/login.do" class="btn btnCancel">취소</a>
+            <a href="/pamStory/user/register.do" class="btn btnNext">다음</a>
         </div>
 
     </section>
 </main>
-<%@ include file="./_footer.jsp" %>
+
+<%@ include file="../layout/_footer.jsp" %>    

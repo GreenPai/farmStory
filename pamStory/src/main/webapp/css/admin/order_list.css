@@ -1,0 +1,28 @@
+.m-10{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+article > .orderlist tr th{
+    height: 42.5px;
+}
+article > .orderlist tr th:nth-child(1){width: 41.36px;}
+article > .orderlist tr th:nth-child(2){width: 80.48px;}
+article > .orderlist tr th:nth-child(3){ width: 83.84px;}
+article > .orderlist tr th:nth-child(4){width: 80.48px;}
+article > .orderlist tr th:nth-child(5){ width: 53.66px;}
+article > .orderlist tr th:nth-child(6){width: 70.42px;}
+article > .orderlist tr th:nth-child(7){width: 76.64px;}
+article > .orderlist tr th:nth-child(8){width: 67.48px;}
+article > .orderlist tr th:nth-child(9){width: 140.5px;}
+article > .orderlist tr th:nth-child(10){width: 89.53px;}
+
+.page {
+    display: flex;
+    justify-content: center; /* 가로축 가운데 정렬 */
+    margin-top: 20px;
+  }
+
+.delete-button-container {
+    margin-top: 14px;
+}

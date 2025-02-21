@@ -1,0 +1,149 @@
+#wrapper{
+  margin: 0 auto;
+}
+
+#notice >.right_section{
+
+}
+
+#notice >.right_section > article > div:nth-child(1){
+  border-bottom: 1px solid #C2C2C2;
+  
+  
+}
+
+#notice >.right_section > article > div:nth-child(2){
+
+}
+
+#notice >.right_section > article > div:nth-child(2)>nav >h1{
+  width: 36px;
+  height: 14px;
+  float: left;
+  margin-top: 40px;
+
+}
+
+
+#notice >.right_section > article > div:nth-child(2)>nav> form{
+
+  position: relative;
+  float: right;
+  margin-top: 35px;
+  display: flex;
+}
+
+#notice >.right_section > article > div:nth-child(2)>nav> form > input:nth-child(1){
+ width: 202px;
+ height: 28px;
+ border: 1px solid #d7d7d7;
+  
+}
+#notice >.right_section > article > div:nth-child(2)>nav> form > input:nth-child(2){
+  width: 38px;
+  height: 31px;
+  border: 1px solid #d7d7d7;
+}
+
+#notice >.right_section >article > table{
+  width: 762px;
+  height: 84px;
+  border-top: 2px solid #111111;
+  position: relative;
+  float: right;
+}
+
+#notice >.right_section >article > table >tbody > tr > .table_title{
+  width: auto;
+  background-color: #e5ecef;
+  border-bottom: 1px solid #d1dee2;
+  
+}
+
+#notice >.right_section >article > table >tbody > tr > td{
+  width: auto;
+  height: 41px;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+#notice >.right_section >article > table >tbody > tr > td:nth-child(2){
+  text-align: left;
+}
+
+#notice>.right_section> article>.page{
+  text-align: center;
+  margin-top: 10px;
+  
+  
+}
+
+#notice > .right_section > article > .page > .prev {
+  width: 42px;
+  height: 35px;
+  border: 1px solid #d7d7d7;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  background-color: #f2f2f2;
+
+  cursor: pointer;
+  padding: 0; /* padding을 0으로 설정 */
+  box-sizing: border-box; /* 테두리와 패딩 포함 */
+}
+
+
+.current{
+  width: 24px;
+  height: 35px;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #6d6d6d;
+  background-color: #888888 !important;
+  color: white !important;
+
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#notice>.right_section> article>.page >.num{
+  width: 24px;
+  height: 35px;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #d7d7d7;
+  background-color: #f2f2f2;
+
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+#notice>.right_section> article>.page >.next{
+  width: 42px;
+  height: 35px;
+  border: 1px solid #d7d7d7;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  background-color: #f2f2f2;
+
+  cursor: pointer;
+  padding: 0; /* padding을 0으로 설정 */
+  box-sizing: border-box; /* 테두리와 패딩 포함 */
+}
+.btn{
+  width: 54px;
+  height: 35px;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  float: right;
+  border: 1px solid #3b3c3f;
+  background-color: #4b5452;
+  color: white;
+  overflow: hidden;
+}

@@ -1,0 +1,45 @@
+.m-10{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+article > .user_list tr th{
+    height: 42.5px;
+}
+article > .user_list tr th:nth-child(1){width: 40.17px;}
+article > .user_list tr th:nth-child(2){width: 65.14px;}
+article > .user_list tr th:nth-child(3){ width: 65.14px;}
+article > .user_list tr th:nth-child(4){width: 71.66px;}
+article > .user_list tr th:nth-child(5){ width: 155.66px;}
+article > .user_list tr th:nth-child(6){width: 106.41px;}
+article > .user_list tr th:nth-child(7){width: 56.45px;}
+article > .user_list tr th:nth-child(8){width: 136.45px;}
+article > .user_list tr th:nth-child(9){width: 86.92px;}
+
+.page {
+    display: flex;
+    justify-content: center; /* 가로축 가운데 정렬 */
+    margin-top: 20px;
+  }
+
+select {
+    width: 28px;
+    height: 18px;
+    appearance: none; /* 기본 스타일 제거 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #efefef; /* 배경색 설정 */
+    border: 1px solid #767676; /* 테두리 설정 */
+    padding: 1px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  /* 선택 박스의 크기를 지정해 아이콘이 남지 않도록 함 */
+  select::-ms-expand {
+    display: none; /* IE에서 화살표 숨기기 */
+  }
+
+.delete-button-container {
+    margin-top: 14px;
+}

@@ -1,0 +1,90 @@
+header > .background > .event {
+    width: 140px;
+    height: 37px;
+    position: absolute;
+    left: 10px;
+    top: 137px;
+  }
+  
+  main > .right_section > article > div:nth-child(2) {
+    display:inline-block;
+    height: auto;
+    margin: 15px auto;
+    border: 1px solid white;
+    padding: 5px;
+  }
+  
+  .calendar_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0
+  }
+
+  .calendar_header > div:nth-child(1) {
+    font-size: 20px;
+  }
+
+  .calendar_header > div > button {
+    width: 50px;
+    height: 30px;
+    border-radius: 10%;
+    background-color: rgb(66, 57, 59);
+  }
+
+  .calendar_header > div > #btntoday {
+    margin-right: 8px;
+    width: 60px;
+    font-size: 15px;
+    background-color: gray;
+    color: white;
+  }
+  .calendar_header > div > button > i {
+    font-size: 15px;
+    color: white;
+  }
+  .calendar_dates {
+    display: grid;
+    grid-template-columns: repeat(7, 5fr);
+    grid-gap: 0px;
+  }
+  
+  .calendar_dates > .day {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    line-height: 15px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .calendar_dates > .day:first-child {
+    color: red;
+  }
+
+  .calendar_dates > .day:nth-child(7) {
+    color: blue;
+  }
+
+  .calendar_dates > .date {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    line-height: 30px;
+    height: 80px;
+    text-align: right;
+    vertical-align: top;
+    padding: 0px 5px;
+  }
+
+  .date.today {
+    background-color: #f7eaa2;
+  }
+
+  .date:hover {
+    font-weight: bold;
+    background-color: gray;
+  }
+  

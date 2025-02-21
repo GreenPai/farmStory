@@ -129,7 +129,14 @@
                                     <td>
                                         <div class="file-input-container">
                                             <p>상품목록 이미지 (약 120 x 120)</p>
-                                            <input type="file" name="file1">
+                                            <label for="file1">
+                                                <div style="width: 100px; height: 20px; background-color: gray; 
+                                                display: flex; align-items: center; justify-content: center;">
+                                                Choose File
+                                            </div>
+
+                                            </label>
+                                            <input type="file" name="file1" id="file1" style="display: none;">
                                         
                                             <p>기본정보 이미지 (약 240 x 240)</p>
                                             <input type="file" name="file2">
