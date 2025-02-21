@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>farm story</title>
+    
+    <link rel="stylesheet" href="/Pam/css/admin/basic/header.css">
+    <link rel="stylesheet" href="/Pam/css/admin/basic/footer.css">
+    <link rel="stylesheet" href="/Pam/css/admin/basic/Aside.css">
+    <link rel="stylesheet" href="/Pam/css/admin/main.css">
+    <link rel="stylesheet" href="/Pam/css/admin/register.css">
+    <style>
+        main {
+        width: 980px;
+        height: 658px;
+        margin: 0px auto;
+        }
+
+</style>
+</head>
+<body>
+    <div id="wrapper">
+
+        <header>
+            <a href="#">
+                <img class="head_logo" src="/Pam/images/admin/admin_logo.jpg" alt="ADMINISTRATOR">
+            </a>
+            <p>
+                <a href="#"><span>HOME |</span></a>
+                <a href="#"><span>로그아웃 |</span></a>
+                <a href="#"><span>고객센터&nbsp;</span></a>
+            </p>
+        </header>
+        <main>
+            <section class="left_section">
+                <aside>
+                        <p>주요기능</p>
+                    <div style="margin-top: 20px;">
+                        <div>
+                            <p>상품관리</p>
+                            <a href="#">L 상품목록</a><br>
+                            <a href="#">L 상품등록</a>
+                        </div>
+                        <div>
+                            <p>주문관리</p>
+                            <a href="#">L 주문목록</a>
+                        </div>
+                        <div>
+                            <p>회원관리</p>
+                            <a href="#">L 회원목록</a>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+            <section class="right_section">
+                <p class="title">상품등록</p>
+                <article>
+                    <form action="#">
+                        <table class="register">
+                            <tbody>
+                                <tr>
+                                    <td >상품명</td>
+                                    <td>
+                                        <input type="text" name="name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>종류</td>
+                                    <td>
+                                        <select>
+                                             <option value="option">종류</option>
+                                             <option value="option">과일</option>
+                                             <option value="option">곡류</option>
+                                             <option value="option">야채</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>가격</td>
+                                    <td>
+                                        <input type="text" name="name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>포인트</td>
+                                    <td>
+                                        <input type="text" name="name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>할인</td>
+                                    <td>
+                                        <select>
+                                            <option value="discount">5%</option>
+                                            <option value="discount">10%</option>
+                                            <option value="discount">15%</option>
+                                            <option value="discount">20%</option>
+                                       </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>배송비</td>
+                                    <style>
+                                        td input[type="radio"] {
+                                          margin-right: 5px; /* 라디오 버튼과 텍스트 사이 간격 */
+                                        }
+                                        
+                                        td label {
+                                          margin-right: 15px; /* 각 옵션 사이의 간격 */
+                                        }
+                                      </style>
+                                      
+                                      <td>
+                                        <input type="radio" id="price1" name="price"><label for="price1">2000원</label>
+                                        <input type="radio" id="price2" name="price"><label for="price2">3000원</label>
+                                        <input type="radio" id="price3" name="price"><label for="price3">5000원</label>
+                                        <input type="radio" id="price4" name="price"><label for="price4">무료</label>
+                                      </td> 
+                                </tr>
+                                <tr>
+                                    <td>재고</td>
+                                    <td>
+                                        <input type="text" name="name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>상품이미지</td>
+                                    <td>
+                                        <div class="file-input-container">
+                                            <p>상품목록 이미지 (약 120 x 120)</p>
+                                            <input type="file" name="file1">
+                                        
+                                            <p>기본정보 이미지 (약 240 x 240)</p>
+                                            <input type="file" name="file2">
+                                        
+                                            <p>상품설명 이미지 (약 750 x Auto)</p>
+                                            <input type="file" name="file3">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>기타</td>
+                                        <td>
+                                            <input type="text" name="name" style="width: 157px; height: 32px;">
+                                        </td>
+                                </tr>
+                               
+                            </tbody>
+
+                        </table>
+                    </form>
+                        <div class="button-container">
+                        <a href="#" class="button">취소</a>
+                        <a href="#" class="button">상품등록</a>
+                      </div>
+                </article>
+                
+            </section>
+        </main>
+        <footer>
+            <p>
+                FARMSTORY ADMINISTRATOR Version 1.0.1
+            </p>
+            <p>
+                Copyrightⓒ 김철학(개발에반하다.) All rights reserved.
+            </p>
+
+
+        </footer>
+    </div>
+</body>
+</html>
