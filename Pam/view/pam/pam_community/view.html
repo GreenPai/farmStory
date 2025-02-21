@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글보기</title>
+    <link rel="stylesheet" href="/Pam/css/basic/footer.css">
+    <link rel="stylesheet" href="/Pam/css/basic/section.css">
+    <link rel="stylesheet" href="/Pam/css/basic/header.css">
+    <link rel="stylesheet" href="/Pam/css/pam/community.css">
+    
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 시작선-->
+        <header>
+          <div id="link">
+            <div>
+              <div id="home">
+                <a href="#">HOME |</a>
+                <a href="#">로그인 |</a>
+                <a href="#">회원가입 |</a>
+                <a href="#">나의정보 |</a>
+                <a href="#">로그아웃 |</a>
+                <a href="#">관리자 |</a>
+                <a href="#">고객센터 </a>
+              </div>
+            </div>
+    
+            <div>
+              <article>
+                <a href="#" class="logo">
+                  <img src="/Pam/images/logo.png" alt="팜스토리" />
+                </a>
+    
+                <img src="/Pam/images/head_txt_img.png" class="head_txt_img"   alt="3만원이상 무료배송 팜카드 10%적립" />
+    
+              </article>
+            </div>
+          </div>
+    
+          <div id="list">
+            <nav>
+              <ul>
+                <li><a href="#"><img src="/Pam/images/head_menu1.png" alt="팜스토리소개"></a></li>
+                <li><a href="#"><img src="/Pam/images/head_menu2.png" alt="장보기"></a></li>
+                <li><a href="#"><img src="/Pam/images/head_menu3.png" alt="농작물이야기"></a></li>
+                <li><a href="#"><img src="/Pam/images/head_menu4.png" alt="이벤트"></a></li>
+                <li><a href="#"><img src="/Pam/images/head_menu5.png" alt="커뮤니티"></a></li>
+              </ul>
+            </nav>
+          </div>
+    
+          <div class="background">
+                <img src="/Pam/images/sub_top_tit5.png" alt="COMMUNITY" class="community">
+          </div>
+        </header>
+        <!-- 헤더 끝선-->
+    
+        <!-- 메인 시작선-->
+        <main id="notice">
+            <section class="left_section">
+                <aside>
+                  <article>
+                      <ul>
+                          <li>
+                              <img src="/Pam/images/sub_aside_cate5_tit.png" alt="커뮤니티">
+                          </li>
+                      </ul>
+                  </article>
+      
+                  <article>   
+                      <ul>
+                          <li>
+                            <a href="#">
+                                <img src="/Pam/images/sub_cate5_lnb1.png" alt="공지사항">
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="/Pam/images/sub_cate5_lnb2.png" alt="오늘의식단">
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="/Pam/images/sub_cate5_lnb3_ov.png" alt="나도요리사">
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="/Pam/images/sub_cate5_lnb4.png" alt="1:1고객문의">
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <img src="/Pam/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
+                            </a>
+                          </li>
+                      </ul>
+                  </article>
+                </aside>
+            </section>
+    
+            <section class="right_section">
+                <article>
+                    <div>
+                      <div class="sub_nav_tit">
+                        <img src="/Pam/images/sub_nav_tit_cate5_tit3.png" alt="나도 요리사">
+                      </div>
+                      <div>
+                        <p class="intro">
+                           <img src="/Pam/images/sub_page_nav_ico.gif" alt="공지사항">
+                             HOME > 커뮤니티 > <span class="eco_txt">나도요리사&nbsp </span>
+                        </p>
+                      </div>  
+                    </div>
+
+                    <div>
+                        <nav>
+                            <h1>
+                                글보기
+                            </h1>
+                        </nav>
+                    </div>
+                   
+                    <table border="0">
+                        <tbody>
+                            <tr>
+                                <th>제목</th>
+                                <td>
+                                    <input type="text" name="title" value="제목입니다." readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>파일</th>
+                                <td>
+                                    <a href="#">2020년 상반기 매출자료.xls</a>
+                                    &nbsp;
+                                    <span>7</span>
+                                    회 다운로드 <br>
+                                    <a href="#">교육 운영 관리자료.hwp</a>
+                                    &nbsp;
+                                    <span>7</span>
+                                    회 다운로드 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>내용</th>
+                                <td>
+                                    <textarea name="content" readonly></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="text-align: right; margin-top: 10px; margin-bottom: 10px;">
+                    <a href="#" class="btn btnRemove">삭제</a>
+                     <a href="#" class="btn btnModify">수정</a>
+                     <a href="#" class="btn btnList">목록</a>
+                    </div>
+                    <!--댓글목록-->
+                    <section class="commentList">
+                        <h3>댓글목록</h3>
+                        <article>
+                            <span class="nick">길동이</span>
+                            <span class="date">2024-05-20</span>
+                            <p class="content">댓글 샘플 입니다.</p>
+                            <div>
+                                <a href="#" class="remove">삭제</a>
+                                <a href="#" class="modify">수정</a>
+                            </div>
+                        </article>
+                        <p class="empty">등록된 댓글이 없습니다.</p>
+                    </section>
+
+                    <!--댓글쓰기-->
+                    <section class="commentForm">
+                        <h3>댓글쓰기</h3>
+                        <form action="#">
+                            <textarea name="content"></textarea>
+                            <div>
+                                <a href="#" class="btn btnCancel">취소</a>
+                                <input type="submit" value="작성완료" class="btn btnComplete">
+                            </div>
+                        </form>
+                    </section>
+    
+                    
+                </article>
+            </section>
+        </main>
+        <!-- 메인 끝선-->
+    
+        <!-- 푸터 시작선-->
+        <footer>
+          <img src="/Pam/images/footer_logo.png" alt="farmStory" class="footer_logo">
+    
+          <div>
+            <p class="Typography">
+              (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호 <br>
+              등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동 <br>
+              대표 : 김철학 / 이메일 : chhak0503@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123 <br>
+              <span class="span_left">copyrightⓒ 김철학(개발에반하다) All rights reserved.</span>
+              <span class="span_right">farmstory ver1.0.1</span>
+            </p>
+          </div>
+        </footer>
+        <!-- 푸터 끝선-->
+    
+      </div>
+</body>
+</html>
