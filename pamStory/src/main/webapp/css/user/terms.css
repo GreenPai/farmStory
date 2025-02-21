@@ -1,0 +1,51 @@
+#user > .terms{
+    width: 600px;
+    height: auto;
+    margin: 60px auto;
+    overflow: hidden;
+}
+
+#user > .terms > h2{
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+#user > .terms > table{
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 2px solid #111;
+}
+
+#user > .terms > table tr > td{
+    padding: 6px;
+    border: 1px solid #e9e9e9;
+    box-sizing: border-box;
+}
+
+#user > .terms > table tr > td > textarea{
+    width: 100%;
+    height: 200px;
+    resize: none;
+    background: #f7f7f7;
+    border: 1px solid #e4eaec;
+    padding: 2px;
+    box-sizing: border-box;
+}
+#user > .terms > table tr > td > label{
+    float: right;
+}
+
+#user > .terms > div {
+    float: right;
+    margin-top: 10px;
+}
+
+.btn{
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid #bebebe;
+    text-align: center;
+    cursor: pointer;
+}

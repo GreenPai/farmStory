@@ -1,0 +1,426 @@
+/* 장보기 CSS*/
+main > .right_section > article > .content{
+    margin-top: 40px;
+}
+
+/* 전체 | 과일 | 아채 | 곡류 부분 마진*/
+main > .right_section > article > .content > p{
+    margin-bottom: 10px;
+}
+
+/*테이블 크기 조정*/
+main > .right_section > article > .content > table{
+    width: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-bottom: 1px solid #111111;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(1){
+    width: 100px;
+    height: 38px;
+    box-sizing: border-box;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(2){
+    width: 76.19px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(3){
+    width: 311.5px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(4){
+    width: 91.44px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(5){
+    width: 91.44px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table th:nth-of-type(6){
+    width: 91.44px;
+    height: 38px;
+}
+
+main > .right_section > article > .content > table td{
+    height: 105px;
+}
+
+/* 테이블 이미지 크기 조정*/
+main > .right_section > article > .content > table img{
+    width: 80px;
+    height: 80px;
+}
+
+/* 테이블 스타일*/
+main > .right_section .content > table> thead{
+    border-bottom: 1px solid #EEEEEE;
+}
+
+main > .right_section .content > table th{
+    border-bottom: 1px solid #EEEEEE;
+    background: #E5ECEF;
+}
+
+
+
+/* 테이블 글자 스타일*/
+main > .right_section > article > .content > table tr > td{
+    text-align: center;
+}
+
+main > .right_section > article > .content > table tr > td:nth-child(3){
+    text-align: left;
+}
+
+main .right_section article .content table tbody tr td span.tr_b {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 10.13px;
+    line-height: 12.25px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: black;
+}
+
+main .right_section article .content table tbody tr td span.tr_g {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 9.75px;
+    line-height: 11.8px;
+    letter-spacing: 0%;
+    text-align: center;
+    text-decoration: line-through;
+}
+
+
+main > .right_section > article > .content .black_txt{
+    font-size: 11px;
+    color: black;
+}
+
+main > .right_section > article > .content > table tr > td:nth-child(2){
+    color : #777777;
+} 
+
+main > .right_section > article > .content .gray_txt{
+    font-size: 11px;
+    color : #777777;
+}
+
+.gray_tt{
+    font-size: 12px;
+    color : #777777;    
+}
+
+.red_tt{
+    color: red;
+}
+
+/* 페이징 영역 : 문자 p*/
+main > section > article > .page {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+main > section > article > .page > p{
+    text-align: center;
+}
+
+/* 상세 정보*/
+
+main > .right_section > article > .content > .black_bold_txt{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.36px;
+    letter-spacing: 0%;
+    color: black;
+} 
+
+/*장바구니 기본정보*/
+main > .right_section > article > .content > .info{
+    width: 762px;
+    height: 270px;
+    margin-top: 0px;
+    width: 100%;
+    height: 270px;
+}
+
+/* 무농약 재배 딸기 Sample 이미지*/
+main > .right_section > article > .content .info_img{
+    width : 240px;
+    height: 240px;
+    float: left;
+    background-image: url(/Pam/images/market_item_thumb.jpg);
+    background-size: cover;
+}
+
+/* 테이블:
+    상품명, 상품코드, 배송비, 판매가격, 고객수량, 합계*/
+main > .right_section > article > .content .info_form{
+    width : 457.19px;
+    height: 200px;
+    float: right;
+    border-top: 2px solid #E7E7E7;
+    border-bottom: 2px solid #E7E7E7;
+}
+
+
+.info_form table{
+    width: 100%;
+    border-collapse: collapse;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: flex-start; /* 왼쪽 정렬 */
+
+}
+
+.info_form > form > table tr td {
+    height: 33.3px;
+}
+.info_form > form > table tr td:nth-child(1) {
+    width : 25%;
+}
+
+/*버튼 스타일 조정*/
+
+.buttons{
+    margin-top: 10px;
+    float: right;
+}
+.green_btn{
+    width: 100px;
+    height: 40px;
+    background-color: #769B0A;
+    color: white;
+    border: none;
+}
+
+.red_btn{
+    width: 100px;
+    height: 40px;
+    background-color: #960D1A;
+    color: white;
+    border: none;
+}
+
+
+main > section > article .black_title_txt{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.36px;
+    letter-spacing: 0%;
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+main > section > article > .detail p{
+    color: black;
+}
+
+/*교환/반품 테이블*/
+main > section > article > .detail > table{
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    border-collapse: collapse;
+
+}
+
+main > section > article > .detail > table tr td:nth-child(1){
+    width: 35%;
+    height: 93px;
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-color: #CCCCCC;
+    padding-left: 10px;
+}
+
+main > section > article > .detail > table tr td:nth-child(2){
+    width: 65%;
+    height: 57px;
+    border-width: 1px 0px 1px 1px;
+    border-style: solid;
+    border-color: #CCCCCC;
+    padding-left: 10px;
+    line-height: 17px;
+}
+
+/*장보기 > 장바구니*/
+
+.content > .basket_table > table{
+    border-collapse: collapse;
+    border-bottom: 1px solid #111111 ;
+    width: 100%;
+}
+
+.content > .basket_table thead th{
+    height: 38px;
+    background-color: #E5ECEF;
+    border-top: 1px solid #111111;
+}
+
+
+.content > .basket_table tbody tr{
+    height: 85px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.content > .basket_table tbody tr:last-child{
+    border-bottom: 1px solid #111111;
+}
+
+.content > .basket_table tbody .none_item{
+    height: 38px;
+}
+
+.content > .basket_table tbody .none_item td{
+    text-align: center;
+    vertical-align: middle;
+    color: #777777;
+}
+
+.content > .basket_table tbody tr td{
+    text-align: center;
+}
+
+/*테이블 글꼴*/
+.table_gray_txt{
+    color: #777777;
+}
+
+/* 테이블 이미지 크기*/
+.basket_table img{
+    width: 60px;
+    height: 60px;
+}
+
+
+/* 전체합계 테이블*/
+.total_table{
+    width: 304.8px;
+    height: 262px;
+    float: right;
+    border: 1px solid #D7D7D7;
+    padding: 5px;
+}
+
+.total_table table tr:nth-child(1){
+    text-align: center;
+}
+
+.total_table table tr td:nth-child(1){
+    width: 180px;
+    height: 26px;
+}
+
+.total_table table tr td:nth-child(2){
+    width: 100px;
+    height: 26px;
+}
+
+.total_table table{
+    border-width: 1px 0px 1px 0px;
+    border-color: #111111;
+    border-style: solid;
+}
+
+.total_red_btn{
+    background-color: #960D1A;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 37px;
+}
+
+/* 장보기 주문하기*/
+
+
+
+.order{
+    align-items: center;
+    border-collapse: collapse;
+    border-top: 1px solid #BE0808;
+    box-sizing: border-box;
+}
+
+.order tr{
+    border-bottom: 1px solid #D7D7D7;
+    box-sizing: border-box;
+}
+
+.order td{
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.order tr td:nth-child(1){
+    width: 105.19px;
+    background-color: #F7F7F7;
+}
+
+.order tr td:nth-child(2){
+    width: 342px;
+}
+
+.order tr:nth-child(1){
+    height: 41px;
+}
+
+.order tr:nth-child(2){
+    height: 41px;
+}
+
+.order tr:nth-child(3){
+    height: 59px;
+}
+
+.order tr:nth-child(4){
+    height: 41px;
+}
+
+.order tr:nth-child(5){
+    height: 41px;
+}
+
+.order tr:nth-child(6){
+    height: 85.75px;
+}
+
+.order tr:nth-child(7){
+    height: 44px;
+}
+
+.order tr:nth-child(8){
+    height: 87px;
+}
+
+.order input{
+    border: 1px solid #D7D7D7;
+}
+
+.order textarea{
+    border: 1px solid #D7D7D7;
+    width: 322px;
+    height: 62px;
+}
+
+.input_1{
+    width: 149px;
+    height: 20px;
+}
+
+.input_2{
+    width: 322px;
+    height: 20px;
+}
+
+.btn_use{
+    width: 52px;
+    height: 21px;
+    border: 1px solid #767676;
+}

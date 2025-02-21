@@ -1,5 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="./_header.jsp" %>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+    <link rel="stylesheet" href="/pamStory/css/layout.css"/>
+</head>
+<body>
+<%@ include file="../layout/_header.jsp" %>
 <main id="user">
     <section class="info">
         <form action="#" method="post">
@@ -90,4 +97,4 @@
         </form>
     </section>
 </main>
-<%@ include file="./_footer.jsp" %>
+<%@ include file="../layout/_footer.jsp" %>    
