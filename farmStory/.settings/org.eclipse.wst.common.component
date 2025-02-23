@@ -2,7 +2,7 @@
                 
     
     
-    <wb-module deploy-name="pamStory">
+    <wb-module deploy-name="farmStory">
                                 
         
         
@@ -15,7 +15,7 @@
         
         
         <property name="java-output-path" value="/jboard/build/classes"/>
-        <property name="context-root" value="pamStory"/>
+        <property name="context-root" value="farmStory"/>
                             
     
     

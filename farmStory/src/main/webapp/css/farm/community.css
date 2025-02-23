@@ -1,0 +1,320 @@
+#wrapper{
+  margin: 0 auto;
+}
+
+#notice >.right_section{
+
+}
+
+#notice >.right_section > article > div:nth-child(1){
+  border-bottom: 1px solid #C2C2C2;
+  
+  
+}
+
+#notice >.right_section > article > div:nth-child(2){
+
+}
+
+#notice >.right_section > article > div:nth-child(2)>nav >h1{
+  width: 36px;
+  height: 14px;
+  float: left;
+  margin-top: 40px;
+
+}
+
+
+#notice >.right_section > article > div:nth-child(2)>nav> form{
+
+  position: relative;
+  float: right;
+  margin-top: 25px;
+  display: flex;
+}
+
+#notice >.right_section > article > div:nth-child(2)>nav> form > input:nth-child(1){
+ width: 202px;
+ height: 28px;
+ border: 1px solid #d7d7d7;
+  
+}
+#notice >.right_section > article > div:nth-child(2)>nav> form > input:nth-child(2){
+  width: 38px;
+  height: 31px;
+  border: 1px solid #d7d7d7;
+}
+
+#notice >.right_section >article > table{
+  width: 762px;
+  height: 84px;
+  border-top: 2px solid #111111;
+  border-collapse: collapse;
+  position: relative;
+  float: right;
+}
+
+#notice > .right_section > article > .list_table tr{
+	height: 41.5px;
+}
+
+#notice >.right_section >article > table >tbody > tr > .table_title{
+  width: auto;
+  background-color: #e5ecef;
+  border-bottom: 1px solid #d1dee2;
+  
+}
+
+#notice >.right_section >article > table >tbody > tr > td{
+  width: auto;
+  height: 41px;
+  position: relative;
+  text-align: center;
+
+}
+
+#notice >.right_section >article > table >tbody > tr > td:nth-child(2){
+  text-align: left;
+}
+
+#notice>.right_section> article>.page{
+  text-align: center;
+  margin-top: 10px;
+  
+  
+}
+
+#notice > .right_section > article > .page > .prev {
+  width: 42px;
+  height: 35px;
+  border: 1px solid #d7d7d7;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  background-color: #f2f2f2;
+
+  cursor: pointer;
+  padding: 0; /* padding을 0으로 설정 */
+  box-sizing: border-box; /* 테두리와 패딩 포함 */
+}
+
+.btn.btn_write{
+  display: inline-block;
+  padding: 8px;
+  border: 1px solid #3B3c3f;
+  text-align: center;
+  cursor: pointer;
+  background-color: #4b545e;
+}
+
+
+.current{
+  width: 24px;
+  height: 35px;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #6d6d6d;
+  background-color: #888888 !important;
+  color: white !important;
+
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#notice>.right_section> article>.page >.num{
+  width: 24px;
+  height: 35px;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #d7d7d7;
+  background-color: #f2f2f2;
+
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+#notice>.right_section> article>.page >.next{
+  width: 42px;
+  height: 35px;
+  border: 1px solid #d7d7d7;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  background-color: #f2f2f2;
+
+  cursor: pointer;
+  padding: 0; /* padding을 0으로 설정 */
+  box-sizing: border-box; /* 테두리와 패딩 포함 */
+}
+
+
+
+/*write*/
+.right_section > article > div:nth-child(2){
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.right_section > article> form >.write_table{
+  width: 762px;
+  height: 72px;
+  border-collapse: collapse;
+  position: relative;
+  float: right;
+  border-spacing: 0;
+  border-top: 2px solid #111;
+}
+.right_section > article > form > .write_table th{
+  width: 112px;
+  height: 50px;
+  background: #f5f8f9;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.right_section > article > form > .write_table td{
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.right_section > article > form > .write_table td > input{
+  width: 400px;
+  height: 24px;
+  border: none;
+}
+
+.right_section > article > form > .write_table td > textarea{
+  width: 100%;
+  height: 280px;
+  resize: none;
+  border: none;
+}
+.btn{
+  display: inline-block;
+  padding: 8px;
+  border: 1px solid #bebebe;
+  text-align: center;
+  cursor: pointer;
+}
+
+.right_section > article > form > div> .btn.btn_Cancel{
+
+}
+
+
+/*view*/
+.right_section > article > table th{
+  width: 112px;
+  height: 50px;
+  background: #f5f8f9;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.right_section > article > table td{
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.right_section > article > table td > input  {
+  width: 400px;
+  height: 24px;
+  border: none;
+
+}
+
+.right_section > article > table td > textarea{
+  width: 100%;
+  height: 280px;
+  resize: none;
+  border: none;
+}
+
+.right_section .commentList{
+  border: 1px solid #e3e3e3;
+  width: 762px;
+  height: 197px;
+  clear: both;
+  margin: 0 auto;
+  float: right;
+  margin-top: 10px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  
+  
+  
+}
+
+.right_section .commentList >h3{
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 1px dotted #111;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.right_section .commentList > article{
+  overflow: hidden;
+  
+}
+.right_section .commentList .content{
+  padding: 10px;
+}
+
+.right_section .commentList > article > div{
+  float: right;
+}
+
+.right_section .commentList .empty{
+  margin: 20px;
+  text-align: center;
+}
+
+.right_section .commentForm {
+  border: 1px solid #e3e3e3;
+  width: 762px;
+  height: 178px;
+  background-color: #f9f9f9;
+  clear: both;
+  float: right;
+  box-sizing: border-box;
+  padding-top: 20px;
+
+}
+
+.right_section .commentForm > h3{
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 1px dotted #111;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  position: relative;
+  left: 15px;
+}
+
+.right_section .commentForm textarea{
+  width: 748px;
+  height: 60px;
+  border: 1px solid #e4eaec;
+  padding: 6px;
+  box-sizing: border-box;
+  resize: none;
+  position: relative;
+  float: right;
+}
+
+.right_section .commentForm  div{
+  float: right;
+  margin-top: 10px;
+}
+
+.btnComplete{
+  border: 1px solid #3b3c3f;
+  background: #4b545e;
+  color: #fff;
+}

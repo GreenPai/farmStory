@@ -1,0 +1,150 @@
+/*기본 설정*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.52px;
+    letter-spacing: 0%;
+
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+input {
+    outline: none;
+}
+
+#wrapper{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0px auto;
+}
+
+header{
+    width: 980px;
+    height: 60px;
+    background-image: url(/farmStory/images/admin/admin_bg.jpg);
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative; 
+    color: white;
+}
+
+.head_logo{
+    width: 170px;
+    height: 32px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+header > p{
+    display: inline-block;
+    position: absolute;
+    top : 13px;
+    left: 810.86px;
+}
+header > p > a > span{
+    color: white;
+}
+
+/*aside*/
+.left_section{
+    float: left;
+    width: 176px;
+    height: 400px;
+}
+
+.right_section{
+    float: right;
+    width: 784px;
+    height: auto;
+}
+
+.m-10{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+aside > div:nth-child(1){
+    width: 156px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #E5E5E5;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #CCCCCC;
+}
+
+aside > div:nth-child(1) > p{
+    margin-left: 20px;
+}
+
+aside > div:nth-child(2){
+    width: 156px;
+    height: 234px;
+}
+
+aside > div:nth-child(2) > div{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+aside > div:nth-child(2) > div > p{
+    margin-bottom: 10px;
+}
+
+aside > div:nth-child(2) > div > a{
+    margin-left: 10px;
+}
+
+/* footer */
+footer{
+    width: 980px;
+    height: 41px;
+    background-image: url(/farmStory/images/admin/admin_bg.jpg);
+    box-sizing: border-box;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 11.25px;
+    line-height: 13.62px;
+    letter-spacing: 0%;
+}
+
+footer p{
+    display: inline-block;
+}
+
+footer p:nth-child(1){
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+footer p:nth-child(2){
+    position: absolute;
+    top: 12px;
+    left: 670.03px;
+}
+
+
+
+
+
+  

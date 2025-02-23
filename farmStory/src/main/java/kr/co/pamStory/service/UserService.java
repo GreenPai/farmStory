@@ -55,7 +55,7 @@ public enum UserService {
 		
 		// Gmail 기본정보
 		String sender = "chhak0503@gmail.com";
-		String title = "jboard 인증코드 입니다.";
+		String title = "pamStory 인증코드 입니다.";
 		String content = "<h1>인증코드는 " + code + "입니다.</h1>";
 		String appPassword = "vmkcfabyabfgitod";
 		

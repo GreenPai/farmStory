@@ -1,0 +1,332 @@
+      /* font-family : Inter*/
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        font: 400 12px "Inter";
+        line-height: 14.52px;
+      }
+
+      ul li{
+        list-style: none;
+      }
+
+      input, textarea{
+        outline: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      /*textarea 영역 크기 조절 방지*/
+      textarea{
+        resize: none;
+      }
+
+      #wrapper {
+        /*전체: 1920px 메인:980px*/
+        width: 980px;
+        height: auto;
+        box-sizing: border-box;
+        margin: 0 auto;
+      }
+
+      header {
+        /*header : 980px , Background : 184px 
+          Background css 만들기 애매해서 header에 합쳤습니다.
+        */
+
+        width: 100%;
+        height: 326px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        border-top: 0px solid transparent;
+        background: url("/farmStory/images/head_top_line.png") repeat-x top;   
+
+    }
+
+      header #link{
+        width: 100%;
+        height: 92px; 
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      header > #link > div:nth-child(1){
+        position: absolute;
+        top: 17px;
+        left: 610px;      
+      }
+
+      header > #link > div > article > .logo {
+        position: absolute;
+        left: 395px;
+        top: 20px;
+      }
+
+      header > #link > div > article > .head_txt_img {
+        position: absolute;
+        left: 751px;
+        top: 59px;
+        width: 229px;
+        height: 15px;
+      }
+
+      /* header list */
+      header #list{
+        width: 980px;
+        height: 50px;
+        border-style: 0px solid transparent;
+      }
+
+      header nav > ul{
+        width: 100%;
+        height: 100%;
+      }
+
+      header nav > ul > li{
+        float: left;
+        width: 19.7%;
+        height: 100%;
+        border-top: 5px solid transparent; 
+        border-image: url("/farmStory/images/head_menu_line.png") 30 stretch; 
+        margin-right: 0.3%;
+        box-sizing: border-box;
+      }
+
+      header nav > ul > li > a{
+        display: block;
+        width: 196px;
+        height: 50px;
+        text-align: center;
+        line-height: 32px;
+      }
+
+      /*Background*/
+      header > .background{
+        width: 980px;
+        height: 184px;
+        background-image: url('/farmStory/images/sub_top_bg.jpg');
+        position: relative;
+      }
+
+      header > .background > .introduction{
+        width: 326px;
+        height: 37px;
+        position: absolute;
+        left: 10px;
+        top: 137px;
+      }
+
+
+      /* Main */
+          /* 왼쪽 섹션*/
+     main {
+        margin: 0 auto;
+        width: 980px;
+        /* height: 650px; */
+        height: auto;
+        overflow: hidden;
+        
+        /**/
+     }
+
+     main > .left_section{
+        width: 176px;
+        height: 650px;
+        box-sizing: border-box;
+        float: left;
+        border-right: 0px solid transparent;
+        background: url("/farmStory/images/sub_aside_bg_line.png") no-repeat right; 
+        
+     }
+
+     main > .left_section > aside >  article:nth-of-type(1){
+        width: 175px;
+        height: 81px;
+        position: relative;
+     }
+
+     main > .left_section > aside >  article:nth-of-type(2){
+        width: 175px;
+        height: 240px;
+        background: url("/farmStory/images/sub_aside_bg_lnb.png");
+        position: relative;
+     }
+     
+     main > .left_section > aside >  article:nth-child(1) > ul > li > img{
+         position: absolute;
+         left: 16px;
+         top : 16px;
+    }
+        
+    main > .left_section > aside > article:nth-child(2) > ul > li:nth-child(1) img{
+        width: 175px;
+        height: 29px;
+        position: absolute;
+        top: 26px;
+    }
+        
+    main > .left_section > aside >  article:nth-child(2) > ul > li:nth-child(2) img{
+        width: 175px;
+        height: 29px;
+        position: absolute;
+        top: 61px;
+    }
+    
+    main > .left_section > aside >  article:nth-child(2) > ul > li:nth-child(3) img{
+        width: 175px;
+        height: 29px;
+        position: absolute;
+        top: 96px;
+    }
+
+    main > .left_section > aside >  article:nth-child(2) > ul > li:nth-child(4) img{
+      width: 175px;
+      height: 29px;
+      position: absolute;
+      top: 131px;
+    }
+
+    main > .left_section > aside >  article:nth-child(2) > ul > li:nth-child(5) img{
+      width: 175px;
+      height: 29px;
+      position: absolute;
+      top: 166px;
+    }
+    
+    /*오른쪽 섹션*/
+    main > .right_section{
+        width: 802px;
+        height: auto;
+        float: right;
+  
+        box-sizing: border-box;
+    }
+
+    main > .right_section .content > div{
+      width: 762px;
+      height: auto;
+    }
+
+    .m-40{
+      margin-top: 40px;
+    }
+
+    /* 글씨 형식*/
+    main > .right_section p{
+      color: #666666;
+      font-size: 12px;
+    }
+
+    
+    main > .right_section .content > div p{
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 20px;
+      letter-spacing: 0%;
+
+    }
+
+    /* 세션 강조 글씨*/
+    main > .right_section >  article .eco_txt{
+      color: #91BA15;
+      line-height: 14.52px;
+      font-weight: 700;
+    }
+
+
+    /* 오른쪽 section 전체 공간 배치*/
+    main > .right_section > article > div{
+      width: 762px;
+      height: auto;
+      float: right;
+      box-sizing: border-box;
+    }
+
+    /*right_section 첫번째 공간*/
+    main > .right_section > article > div:nth-child(1){
+      width: 762px;
+      height: 72px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #C2C2C2;
+    }
+
+    /*장보기, 인사말 등 이미지 위치*/
+     main > .right_section > article > div > .sub_nav_tit > img{
+      margin-top: 41px;
+      float: left;
+     }
+
+     /*Home>장보기>장보기*/
+     main > .right_section > article > div > div:nth-child(2){
+      float: right;
+      box-sizing: border-box;
+     }
+
+     .intro{
+      margin-top: 50px;
+     }
+
+
+     /*
+        footer
+     */
+
+     
+    footer{
+        width: 980px;
+        height: 120px;
+        margin: 0 auto;
+        position: relative;
+        border-top: 1px solid #D1CAB2    
+    }
+
+    footer .footer_logo{
+        float: left;
+        top: 1;
+        width: 174px;
+        height: 64px;
+        margin-top: 1px;
+    }
+
+    footer div{
+        width: 709.48px;
+        height: 71px;
+        position: absolute;
+        left: 254.52px;
+        top: 27px
+    }
+
+    footer p{
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: 10.31px;
+        line-height: 18px;
+        letter-spacing: 0%;
+        color: #585858;
+    }
+
+
+    footer > div > p > .span_left{
+        float: left;
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: 11.06px;
+        line-height: 13.39px;
+        letter-spacing: 0%;
+        color: #888888;
+    }
+
+    footer > div > p > .span_right{
+        float: right;
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: 10.69px;
+        line-height: 12.93px;
+        letter-spacing: 0%;
+        color: #888888;
+    }

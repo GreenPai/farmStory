@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 		
 		// 아이디 중복 체크
-		fetch('/jboard/user/check.do?type=uid&value='+value)
+		fetch('/farmStory/user/check.do?type=uid&value='+value)
 			.then(response => response.json())
 			.then((data)=>{
 				console.log(data);
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 		
 		try {
-			const response = await fetch('/jboard/user/check.do?type=nick&value='+value);
+			const response = await fetch('/farmStory/user/check.do?type=nick&value='+value);
 			const data = await response.json();
 			console.log(data);
 			
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 		
 		preventDoubleClick = true;
-		const response = await fetch('/jboard/user/check.do?type=email&value='+value);
+		const response = await fetch('/farmStory/user/check.do?type=email&value='+value);
 		const data = await response.json();
 		
 		if(data.count > 0){
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		formData.append("authCode", value);
 		
 		// 서버 전송
-		const response = await fetch('/jboard/user/check.do', {
+		const response = await fetch('/farmStory/user/check.do', {
 										method: 'POST',
 										headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 										body: formData
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 		
 		// 휴대폰 중복체크
-		const response = await fetch('/jboard/user/check.do?type=hp&value='+value);
+		const response = await fetch('/farmStory/user/check.do?type=hp&value='+value);
 		const data = await response.json();
 		
 		if(data.count > 0){
