@@ -24,18 +24,18 @@ public class LoginCheckFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
 		
-		logger.debug("LoginCheckFilter...1");
+		//logger.debug("LoginCheckFilter...1");
 		HttpServletRequest request = (HttpServletRequest) req;
 		
 		// 요청 URL 확인
-		String uri = request.getRequestURI(); // /jboard/article/list.do		
-		logger.debug("LoginCheckFilter...2 : " + uri);
+		String uri = request.getRequestURI(); // /farmStory/article/list.do		
+		//logger.debug("LoginCheckFilter...2 : " + uri);
 		
-		String ctxPath = request.getContextPath(); // /jboard
-		logger.debug("LoginCheckFilter...3 : " + ctxPath);
+		String ctxPath = request.getContextPath(); // /farmStory
+		//logger.debug("LoginCheckFilter...3 : " + ctxPath);
 		
 		String path = uri.substring(ctxPath.length()); // /article/*, /user/*
-		logger.debug("LoginCheckFilter...4 : " + path);
+		//logger.debug("LoginCheckFilter...4 : " + path);
 		
 		// 로그인 여부 검사		
 		HttpSession session = request.getSession();		
@@ -46,7 +46,7 @@ public class LoginCheckFilter implements Filter {
 			if(userDTO != null) {
 				// 로그인을 안했을 경우 로그인 페이지로 이동
 				HttpServletResponse response = (HttpServletResponse) resp;
-				response.sendRedirect("/jboard/article/list.do");
+				response.sendRedirect("/farmStory/article/list.do");
 				return;
 			}
 		}else if(path.startsWith("/article")){
@@ -54,7 +54,7 @@ public class LoginCheckFilter implements Filter {
 			if(userDTO == null) {
 				// 로그인을 안했을 경우 로그인 페이지로 이동
 				HttpServletResponse response = (HttpServletResponse) resp;
-				response.sendRedirect("/jboard/user/login.do?result=102");
+				response.sendRedirect("/farmStory/user/login.do?result=102");
 				return;
 			}
 		}

@@ -17,7 +17,7 @@ public class PasswordController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/find/password.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/find/password.jsp");
 		dispatcher.forward(req, resp);
 	}
 

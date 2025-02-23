@@ -27,7 +27,7 @@ public class LoginController extends HttpServlet {
 		req.setAttribute("result", result);		
 		
 		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/user/login.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/user/login.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -51,10 +51,10 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("sessUser", userDTO);
 			
 			// 게시판 목록 이동
-			resp.sendRedirect("/pamStory/article/list.do");
+			resp.sendRedirect("/farmStory/article/list.do");
 		}else {
 			// 회원이 아닐 경우 다시 로그인 페이지 이동
-			resp.sendRedirect("/pamStory/user/login.do?result=100");			
+			resp.sendRedirect("/farmStory/user/login.do?result=100");			
 		}
 	}
 }

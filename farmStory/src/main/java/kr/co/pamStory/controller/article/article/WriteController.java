@@ -29,7 +29,7 @@ public class WriteController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/article/write.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write.jsp");
 		dispatcher.forward(req, resp);
 	}
 
@@ -63,6 +63,6 @@ public class WriteController extends HttpServlet {
 		}
 		
 		// 글목록 이동
-		resp.sendRedirect("/pamStory/article/list.do");
+		resp.sendRedirect("/farmStory/article/list.do");
 	}
 }

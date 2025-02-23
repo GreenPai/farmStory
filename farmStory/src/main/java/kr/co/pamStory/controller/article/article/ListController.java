@@ -17,7 +17,7 @@ public class ListController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/article/list.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list.jsp");
 		dispatcher.forward(req, resp);
 	}
 

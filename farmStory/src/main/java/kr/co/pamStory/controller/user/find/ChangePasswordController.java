@@ -17,7 +17,7 @@ public class ChangePasswordController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/find/changePassword.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/find/changePassword.jsp");
 		dispatcher.forward(req, resp);
 	}
 

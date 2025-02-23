@@ -24,7 +24,7 @@ public class LogoutController extends HttpServlet {
 		session.invalidate();
 		
 		// 로그인 이동
-		resp.sendRedirect("/pamStory/user/login.do?result=101");
+		resp.sendRedirect("/farmStory/user/login.do?result=101");
 	
 	}
 	

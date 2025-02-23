@@ -17,7 +17,7 @@ public class InfoController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/user/info.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/user/info.jsp");
 		dispatcher.forward(req, resp);
 	}
 
