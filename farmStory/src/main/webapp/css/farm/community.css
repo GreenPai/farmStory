@@ -249,7 +249,7 @@
   
 }
 
-.right_section .commentList >h3{
+.right_section .title{
   font-size: 13px;
   font-weight: bold;
   border-bottom: 1px dotted #111;
@@ -282,7 +282,7 @@
   clear: both;
   float: right;
   box-sizing: border-box;
-  padding-top: 20px;
+  margin-top: 20px;
 
 }
 
@@ -298,7 +298,7 @@
 }
 
 .right_section .commentForm textarea{
-  width: 748px;
+  width: 728px;
   height: 60px;
   border: 1px solid #e4eaec;
   padding: 6px;
@@ -308,9 +308,9 @@
   float: right;
 }
 
-.right_section .commentForm  div{
-  float: right;
-  margin-top: 10px;
+.right_section .commentForm  .btn_div{
+  float: right; 
+  margin-top: 20px;
 }
 
 .btnComplete{

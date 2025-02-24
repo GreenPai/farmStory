@@ -25,7 +25,7 @@
                   <ul>
                       <li>
                         <a href="#">
-                            <img src="/farmStory/images/sub_cate5_lnb1_ov.png" alt="공지사항">
+                            <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
                         </a>
                       </li>
                       <li>
@@ -44,8 +44,8 @@
                         </a>
                       </li>
                       <li>
-                        <a href="/farmStory/article/qna.do">
-                          <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
+                        <a href="#">
+                          <img src="/farmStory/images/sub_cate5_lnb5_ov.png" alt="자주묻는 질문">
                         </a>
                       </li>
                   </ul>
@@ -57,12 +57,12 @@
             <article>
                 <div>
                   <div class="sub_nav_tit">
-                    <img src="/farmStory/images/sub_nav_tit_cate5_tit1.png" alt="공지사항">
+                    <img src="/farmStory/images/sub_nav_tit_cate5_tit5.png" alt="자주묻는질문">
                   </div>
                   <div>
                     <p class="intro">
-                       <img src="/farmStory/images/sub_page_nav_ico.gif" alt="공지사항">
-                         HOME > 커뮤니티 > <span class="eco_txt">공지사항&nbsp </span>
+                       <img src="/farmStory/images/sub_page_nav_ico.gif" alt="자주묻는질문문">
+                         HOME > 커뮤니티 > <span class="eco_txt">자주묻는질문&nbsp </span>
                     </p>
                   </div>  
                 </div>
@@ -75,9 +75,8 @@
                         <input type="submit" value="검색">
                     </form>
                   </nav>
-                </div>   
-                             
-                <table border="0" class="list_table">                    
+                </div>                
+                <table border="0" class="table_notion">                    
                     <tr>
                         <th class="table_title table_name1">번호</th>
                         <th class="table_title table_name2">제목</th>
@@ -87,8 +86,8 @@
                     </tr>                    
                     <tr>
                         <td>1</td>
-                        <td><a href="/farmStory/article/view.do">공지사항 게시물입니다.[3]</a></td>
-                        <td>길동이</td>
+                        <td><a href="#">반품은 어떻게 해야하나요?</a></td>
+                        <td>관리자</td>
                         <td>20-05-12</td>
                         <td>12</td>
                     </tr>
@@ -100,9 +99,9 @@
                     <a href="#" class="num">2</a>
                     <a href="#" class="num">3</a>
                     <a href="#" class="next">다음</a>
-					<a href="/farmStory/article/write.do" class="btn btn_Write" style="background-color: #4b545e; border: 1px solid #3B3c3f; float: right; color: #f2f2f2;">글쓰기</a>
-                </div>
 
+                    <a href="./write.html" class="btn btn_Write" style="background-color: #4b545e; border: 1px solid #3B3c3f; float: right; color: #f2f2f2;">글쓰기</a>
+                </div>
             </article>
         </section>
     </main>

@@ -11,7 +11,7 @@ GRANT ALL PRIVILEGES ON `farmStory`.* TO 'farmStory'@'%';
 FLUSH PRIVILEGES;
 
 -- User 테이블
-CREATE TABLE `User` (farmstory
+CREATE TABLE `User` (
 	`uid`			VARCHAR(20) PRIMARY KEY,
 	`pass`		VARCHAR(100),
 	`name`		VARCHAR(20),

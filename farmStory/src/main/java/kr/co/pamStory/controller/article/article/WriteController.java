@@ -61,7 +61,7 @@ public class WriteController extends HttpServlet {
 			fileDTO.setAno(no);
 			fileService.registeFile(fileDTO);
 		}
-		
+			
 		// 글목록 이동
 		resp.sendRedirect("/farmStory/article/list.do");
 	}
