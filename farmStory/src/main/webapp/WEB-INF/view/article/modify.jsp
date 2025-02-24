@@ -4,44 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <title>글수정</title>
-    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="/farmStory/css/layout_bg.css"/>
+    <link rel="stylesheet" href="/farmStory/css/farm/community.css"/>
 </head>
 
 <%@ include file="../layout/_header_bg.jsp" %>
 
-        <main id="article">
-            <section class="modify">
-                <nav>
-                    <h1>글수정</h1>
-                </nav>
-                <form action="#">
-                    <table border="0">                        
-                        <tr>
-                            <th>제목</th>
-                            <td><input type="text" name="title" placeholder="제목을 입력하세요."/></td>
-                        </tr>
-                        <tr>
-                            <th>내용</th>
-                            <td>
-                                <textarea name="content"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>파일</th>
-                            <td>
-                                <input type="file" name="file"/>
-                            </td>
-                        </tr>
-                    </table>
-                    
-                    <div>
-                        <a href="./view.html" class="btn btnCancel">취소</a>
-                        <input type="submit" value="작성완료" class="btn btnComplete"/>
+<main id="notice">
+          <section class="left_section">
+              <aside>
+                <article>
+                    <ul>
+                        <li>
+                            <img src="/farmStory/images/sub_aside_cate5_tit.png" alt="커뮤니티">
+                        </li>
+                    </ul>
+                </article>
+    
+                <article>   
+                    <ul>
+                        <li>
+                          <a href="#">
+                              <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/farmStory/article/modify.do">
+                            <img src="/farmStory/images/sub_cate5_lnb4_ov.png" alt="1:1고객문의">
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
+                          </a>
+                        </li>
+                    </ul>
+                </article>
+              </aside>
+          </section>
+  
+          <section class="right_section">
+              <article>
+                  <div>
+                    <div class="sub_nav_tit">
+                      <img src="/farmStory/images/sub_nav_tit_cate5_tit4.png" alt="1:1고객문의">
                     </div>
-                </form>
+                    <div>
+                      <p class="intro">
+                         <img src="/farmStory/images/sub_page_nav_ico.gif" alt="1:1고객문의">
+                           HOME > 커뮤니티 > <span class="eco_txt">1:1고객문의&nbsp </span>
+                      </p>
+                    </div>  
+                  </div>
 
-            </section>
-        </main>
+                  <div>
+                      <nav>
+                          <h1>
+                              글쓰기
+                          </h1>
+                      </nav>
+                  </div>
+                  <form action="#">
+                      <table border="0" class="write_table">
+                          <tbody>
+                              <tr>
+                                  <th>제목</th>
+                                  <td>
+                                      <input type="text" name="title" placeholder="제목을 입력하세요.">
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th>내용</th>
+                                  <td>
+                                      <textarea name="content"></textarea>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th>파일</th>
+                                  <td>
+                                      <p style="margin-bottom: 6px;">
+                                          최대 2개 파일 첨부 가능, 각 파일당 최대 10MB까지 가능
+                                      </p>
+                                      <input type="file" name="file1">
+                                      <input type="file" name="file2">
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <div>
+                          <input type="submit" value="수정완료" class="btn btnComplete" style="position: relative; float: right; border: 1px solid #3b3c3f; background-color:#4b545e ; top: 10px; color: #ffffff;">
+                          <a href="/farmStory/article/list.do" class="btn btnCancel" style="position: relative; float: right; top: 10px;">취소</a>
+                        </div>
+                  </form>
+                           
+              </article>
+          </section>
+      </main>
+
 <%@ include file="../layout/_footer.jsp" %>   
 
 </html>

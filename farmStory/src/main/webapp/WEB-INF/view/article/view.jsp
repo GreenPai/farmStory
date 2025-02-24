@@ -109,7 +109,7 @@
                     </div>
                     <!--댓글목록-->
                     <section class="commentList">
-                        <h3>댓글목록</h3>
+                        <h3 class="title">댓글목록</h3>
                         <article>
                             <span class="nick">길동이</span>
                             <span class="date">2024-05-20</span>
@@ -124,14 +124,16 @@
 
                     <!--댓글쓰기-->
                     <section class="commentForm">
-                        <h3>댓글쓰기</h3>
-                        <form action="#">
-                            <textarea name="content"></textarea>
-                            <div>
-                                <a href="#" class="btn btnCancel">취소</a>
-                                <input type="submit" value="작성완료" class="btn btnComplete">
-                            </div>
-                        </form>
+                    	<div style="width:728px; border-bottom: 1px dotted #111; margin-top:15px; margin-left:17px;">
+	                        <h3 class="title">댓글쓰기</h3>
+	                        <form action="#">
+	                            <textarea name="content"></textarea>
+	                            <div class="btn_div">
+	                                <a href="#" class="btn btnCancel">취소</a>
+	                                <input type="submit" value="작성완료" class="btn btnComplete">
+	                            </div>
+	                        </form>
+                    	</div>
                     </section>
     
                     
