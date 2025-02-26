@@ -36,8 +36,8 @@ public enum ArticleService {
 	}
 	
 	//페이지 시작번호 구하기(LIMIT용)
-	public int getStartNum(int currentPage) {
-		return(currentPage -1) *10;
+	public int getStartNum(int currentPage){
+		return (currentPage -1) *10;
 	}
 	
 	//현재 페이지 번호 구하기
@@ -66,7 +66,7 @@ public enum ArticleService {
 	public int getPageStartNum(int total, int currentPage) {
 		int start=(currentPage -1) * 10;
 		return total - start;
-	}
+	} 
 	
 	//마지막 페이지 번호 계산
 	public int getLastPageNum(int total) {
