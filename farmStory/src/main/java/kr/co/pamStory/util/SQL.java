@@ -28,6 +28,22 @@ public class SQL {
 	
 	// article
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `article`";
+	public static final String SELECT_COUNT_ARTICLE= "SELECT COUNT(*) FROM `article`";
+	public static final String SELECT_ALL_ARTICLE="SELECT "
+													+"a.*,"
+													+"u.`nick` "
+													+"FROM `article` AS a "
+													+"JOIN `user` AS u "
+													+"ON a.writer=u.uid "
+													+"ORDER BY `no` desc "
+													+"LIMIT ?, 10";
+													
+			
+			
+			
+			
+			
+			
 	public static final String INSERT_ARTICLE = "insert into `article` set "
 													+ "`title`=?,"
 													+ "`content`=?,"
