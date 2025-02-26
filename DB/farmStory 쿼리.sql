@@ -1,5 +1,6 @@
 #내용 : FarmStory 프로젝트 테이블 설계 
 -- 데이터베이스 생성
+
 DROP DATABASE IF EXISTS `farmStory`;
 CREATE DATABASE `farmStory`;
 USE `farmStory`;
