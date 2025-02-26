@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,22 +85,28 @@
                         <th class="table_title table_name3">글쓴이</th>
                         <th class="table_title table_name4">날짜</th>
                         <th class="table_title table_name5">조회</th>
-                    </tr>                    
-                    <tr>
-                        <td>1</td>
-                        <td><a href="/farmStory/article/view.do">공지사항 게시물입니다.[3]</a></td>
-                        <td>길동이</td>
-                        <td>20-05-12</td>
-                        <td>12</td>
                     </tr>
+                     <c:forEach var="article" items="${requestScope.articles}">                   
+                    <tr>
+                        <td>${pageStartNum}</td>
+                        <td><a href="/farmStory/article/view.do?no=${article.no}">${article.title}[${article.comment}]</a></td>
+                        <td>${article.nick}</td>
+                        <td>${article.wdate}</td>
+                        <td>${article.hit}</td>
+                    </tr>
+                    <c:set var="pageStartNum" value="${pageStartNum-1}"/>
+                    </c:forEach>
                 </table>
-
                 <div class="page">
-                    <a href="#" class="prev">이전</a>
-                    <a href="#" class="num current">1</a>
-                    <a href="#" class="num">2</a>
-                    <a href="#" class="num">3</a>
-                    <a href="#" class="next">다음</a>
+                	<c:if test="${pageGroupDTO.start>1}">
+                    <a href="farmStory/article/list.do?pg=${pageGroupDTO.start -1}" class="prev">이전</a>
+                    </c:if>
+                    <c:forEach var="num" begin="${pageGroupDTO.start}" end="${pageGroupDTO.end }">
+                    <a href="/farmStory/article/list.do?pg=${num}" class="num ${currentPage==num ? 'current' : '' }">${num}</a>
+                    </c:forEach>
+                    <c:if test="${pageGroupDTO.end<lastPageNum}">
+                    <a href="/farmStory/article/list.do?pg=${pageGroupDTO.end + 1}" class="next">다음</a>
+                    </c:if>
 					<a href="/farmStory/article/write.do" class="btn btn_Write" style="background-color: #4b545e; border: 1px solid #3B3c3f; float: right; color: #f2f2f2;">글쓰기</a>
                 </div>
 
