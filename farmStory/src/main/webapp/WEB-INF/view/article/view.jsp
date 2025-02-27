@@ -122,7 +122,7 @@
                             <span class="date">2024-05-20</span>
                             <p class="content">댓글 샘플 입니다.</p>
                             <div>
-                                <a href="/farmStory/article/delete.do?no=17" class="remove">삭제</a>
+                                <a href="/farmStory/article/delete.do?no=${articledto.no}" class="remove">삭제</a>
                                 <a href="#" class="modify">수정</a>
                             </div>
                         </article>
