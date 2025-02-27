@@ -85,13 +85,15 @@ public class ArticleDTO {
 	public void setWdate(String wdate) {
 		this.wdate = wdate;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "ArticleDTO [no=" + no + ", cate=" + cate + ", title=" + title + ", content=" + content + ", file="
-				+ file + ", hit=" + hit + ", writer=" + writer + ", regip=" + regip + ", wdate=" + wdate + "]";
+		return "ArticleDTO [no=" + no + ", cate=" + cate + ", title=" + title + ", content=" + content + ", comment="
+				+ comment + ", file=" + file + ", hit=" + hit + ", writer=" + writer + ", regip=" + regip + ", wdate="
+				+ wdate + ", nick=" + nick + "]";
 	}
 	
+
 	
 	
 	

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +79,13 @@
                             <tr>
                                 <th>제목</th>
                                 <td>
-                                    <input type="text" name="title" value="제목입니다." readonly>
+                                    <input type="text" name="title" value="${articleDTO.title}" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>작성자</th>
+                                <td>
+                                     <input type="text" name="writer" value="${articleDTO.writer}(${articleDTO.nick})" readonly/>
                                 </td>
                             </tr>
                             <tr>
@@ -97,7 +104,7 @@
                             <tr>
                                 <th>내용</th>
                                 <td>
-                                    <textarea name="content" readonly></textarea>
+                                    <textarea name="content" readonly >${articledto.content}</textarea>
                                 </td>
                             </tr>
                         </tbody>
@@ -115,7 +122,7 @@
                             <span class="date">2024-05-20</span>
                             <p class="content">댓글 샘플 입니다.</p>
                             <div>
-                                <a href="#" class="remove">삭제</a>
+                                <a href="/farmStory/article/delete.do?no=17" class="remove">삭제</a>
                                 <a href="#" class="modify">수정</a>
                             </div>
                         </article>

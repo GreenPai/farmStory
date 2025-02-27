@@ -1,5 +1,6 @@
 package kr.co.pamStory.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -35,6 +36,33 @@ public class FileDAO extends DBHelper {
 		return null;
 	}
 	
+	public List<FileDTO> selectFile(String no) {
+		List<FileDTO> dtos = new ArrayList<>();
+		try {
+			conn=getConnection();
+			psmt=conn.prepareStatement(SQL.SELECT_FILE_BY_ANO);
+			psmt.setString(1, no);
+			rs=psmt.executeQuery();
+			
+			while(rs.next()) {
+				FileDTO dto = new FileDTO();
+				dto.setFno(rs.getInt(1));
+				dto.setAno(rs.getInt(2));
+				dto.setoName(rs.getString(3));
+				dto.setsName(rs.getString(4));
+				dto.setDownload(rs.getInt(5));
+				dto.setRdate(rs.getString(6));
+				dtos.add(dto);
+				
+			}
+			closeAll();
+		}catch(Exception e){
+			logger.error(e.getMessage());
+		}
+		
+		return dtos;
+	}
+	
 	public List<FileDTO> selectAllFile() {
 		return null;
 	}
@@ -44,6 +72,19 @@ public class FileDAO extends DBHelper {
 	}
 	
 	public void deleteFile(int fno) {
+		
+	}
+	public void deleteFile(String ano) {
+		try {
+			conn=getConnection();
+			psmt=conn.prepareStatement(SQL.DELETE_FILE_BY_ANO);
+			psmt.setString(1, ano);
+			psmt.executeUpdate();
+			closeAll();
+			
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
 		
 	}
 }

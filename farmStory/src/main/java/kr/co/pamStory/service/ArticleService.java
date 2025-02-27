@@ -31,9 +31,7 @@ public enum ArticleService {
 		dao.updateArticle(dto);
 	}
 	
-	public void deleteArticle(int no) {
-		dao.deleteArticle(no);
-	}
+
 	
 	//페이지 시작번호 구하기(LIMIT용)
 	public int getStartNum(int currentPage){
@@ -78,6 +76,11 @@ public enum ArticleService {
 			lastPageNum=total/10+1;
 		}
 		return lastPageNum;
+	}
+	
+	//게시글 삭제 서비스 메서드
+	public void deleteArticle(String no) {	
+			dao.deleteArticle(no);
 	}
 	
 }
