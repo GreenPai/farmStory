@@ -117,7 +117,7 @@ footer{
     height: 41px;
     background-image: url(/farmStory/images/admin/admin_bg.jpg);
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 30px auto 0px auto;
     color: white;
     position: relative;
     font-family: Inter;
