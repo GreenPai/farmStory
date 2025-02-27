@@ -3,6 +3,7 @@ package kr.co.pamStory.controller.article.article;
 import java.io.IOException;
 import java.util.List;
 
+import jakarta.security.auth.message.callback.PrivateKeyCallback.Request;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,34 +11,35 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.pamStory.dto.ArticleDTO;
-import kr.co.pamStory.dto.FileDTO;
 import kr.co.pamStory.service.ArticleService;
 import kr.co.pamStory.service.FileService;
 
-@WebServlet("/article/view.do")
-public class ViewController extends HttpServlet {
-	private static final long serialVersionUID = 1271261225653325736L;
+@WebServlet("/article/delete.do")
+public class DeleteController extends HttpServlet{
+
+	private static final long serialVersionUID = 5168543431470215588L;
 	private ArticleService service= ArticleService.INSTANCE;
 	private FileService fileservice= FileService.INSTANCE;
 	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		String no = req.getParameter("no");
 		
-		ArticleDTO articledto = service.findArticle(Integer.parseInt(no)); 
-		List<FileDTO> filedtos= fileservice.findFile(no);
-		
-		
-		req.setAttribute("fileDTOS", filedtos);
-		req.setAttribute("articleDTO", articledto);
-		
-		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view.jsp");
+		//게시글 id 받기
+		String no= req.getParameter("no");
+		System.out.println(no);
+				
+		//파일 삭제 서비스 호출
+		fileservice.deleteFile(no);
+	
+		//게시글 삭제 서비스 호출
+		service.deleteArticle(no);
+				
+		//삭제 후 목록 페이지로 이동
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/article/list.do");
 		dispatcher.forward(req, resp);
+	
 	}
+	
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	}
 }
