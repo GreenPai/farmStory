@@ -37,12 +37,17 @@ public class SQL {
 													+"ON a.writer=u.uid "
 													+"ORDER BY `no` desc "
 													+"LIMIT ?, 10";
+	
+	public static final String SELECT_ARTICLE_BY_NO = "SELECT "
+																	+ " a.*, u.`nick` "
+																	+ "FROM `article` As a "
+																	+ "JOIN `User` AS u "
+																	+"ON a.writer = u.uid "
+																	+ "WHERE `no` = ? ";
+	
+	public static final String DELETE_ARTICLE="DELETE FROM `article` WHERE no=?";
+	
 													
-			
-			
-			
-			
-			
 			
 	public static final String INSERT_ARTICLE = "insert into `article` set "
 													+ "`title`=?,"
@@ -58,6 +63,10 @@ public class SQL {
 												+ "`oName`=?,"
 												+ "`sName`=?,"
 												+ "`rdate`=NOW()";
+
+	public static final String DELETE_FILE_BY_ANO = "delete from `file` where `ano`=?";
+
+	public static final String SELECT_FILE_BY_ANO = "select * from `file` where `ano`= ?";
 	
 	
 	
