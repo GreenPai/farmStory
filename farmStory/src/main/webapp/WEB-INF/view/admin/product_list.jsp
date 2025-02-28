@@ -57,7 +57,7 @@
                         <span>선택삭제</span>
                     </div>
                     <div class="register-button-container">
-                        <a href="/farmStory/admin/product_register.do">
+                        <a href="/farmStory/admin/product/register.do">
                         <span>상품등록</span>
                     	</a>
                     </div>
