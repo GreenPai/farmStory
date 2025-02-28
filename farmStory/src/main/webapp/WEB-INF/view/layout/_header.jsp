@@ -35,7 +35,7 @@
             <li><a href="/farmStory/basket/list.do"><img src="/farmStory/images/head_menu2.png" alt="장보기"></a></li>
             <li><a href="#"><img src="/farmStory/images/head_menu3.png" alt="농작물이야기"></a></li>
             <li><a href="/farmStory/event.do"><img src="/farmStory/images/head_menu4.png" alt="이벤트"></a></li>
-            <li><a href="#"><img src="/farmStory/images/head_menu5.png" alt="커뮤니티"></a></li>
+            <li><a href="/farmStory/article/list.do"><img src="/farmStory/images/head_menu5.png" alt="커뮤니티"></a></li>
           </ul>
         </nav>
       </div>

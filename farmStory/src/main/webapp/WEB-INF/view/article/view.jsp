@@ -23,27 +23,27 @@
                   <article>   
                       <ul>
                           <li>
-                            <a href="#">
+                            <a href="/farmStory/article/list.do">
                                 <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="/farmStory/article/write.do">
                               <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="/farmStory/article/view.do">
                               <img src="/farmStory/images/sub_cate5_lnb3_ov.png" alt="나도요리사">
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="/farmStory/article/modify.do">
                               <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
                             </a>
                           </li>
                           <li>
-                            <a href="#">
+                            <a href="/farmStory/article/qna.do">
                               <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
                             </a>
                           </li>
@@ -112,7 +112,7 @@
                     </table>
                     <div style="text-align: right; margin-top: 10px; margin-bottom: 10px;">
                     <a href="/farmStory/article/delete.do?no=${articleDTO.no}" class="btn btnRemove" >삭제</a>
-                     <a href="#" class="btn btnModify">수정</a>
+                     <a href="/farmStory/article/modify.do?no=${articleDTO.no}" class="btn btnModify">수정</a>
                      <a href="/farmStory/article/list.do" class="btn btnList">목록</a>
                     </div>
                     <!--댓글목록-->

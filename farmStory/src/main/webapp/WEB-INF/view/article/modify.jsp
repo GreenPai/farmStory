@@ -24,17 +24,17 @@
                 <article>   
                     <ul>
                         <li>
-                          <a href="#">
+                          <a href="/farmStory/article/list.do">
                               <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="/farmStory/article/write.do">
                             <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="/farmStory/article/view.do">
                             <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
                           </a>
                         </li>
@@ -44,7 +44,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a href="/farmStory/article/qna.do">
                             <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
                           </a>
                         </li>
@@ -75,6 +75,8 @@
                       </nav>
                   </div>
                   <form action="/farmStory/article/modify.do" method="post" enctype="multipart/form-data">
+                  	<input type="hidden" name="no" value="${article.no}">
+                  	<input type="hidden" name="writer" value="${article.writer}">
                       <table border="0" class="write_table">
                           <tbody>
                               <tr>
