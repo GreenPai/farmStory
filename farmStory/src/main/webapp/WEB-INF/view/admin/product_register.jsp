@@ -22,7 +22,7 @@
   <section class="right_section">
                 <p class="title">상품등록</p>
                 <article>
-                    <form action="/farmStory/admin/product/register.do" method="post" >
+                    <form action="/farmStory/admin/product/register.do" method="post" enctype="multipart/form-data">
                         <table class="register">
                             <tbody>
                                 <tr>
@@ -36,9 +36,9 @@
                                     <td>
                                         <select name="cateName">
                                              <option value="종류" disabled selected>종류</option>
-                                             <option value="option">과일</option>
-                                             <option value="option">곡류</option>
-                                             <option value="option">야채</option>
+                                             <option value="과일">과일</option>
+                                             <option value="곡류">곡류</option>
+                                             <option value="야채">야채</option>
                                         </select>
                                     </td>
                                 </tr>
