@@ -130,3 +130,11 @@ select {
   tbody td {
     padding-left: 15px
   }
+  
+  td input[type="radio"] {
+    margin-right: 5px; /* 라디오 버튼과 텍스트 사이 간격 */
+  }
+  
+  td label {
+    margin-right: 15px; /* 각 옵션 사이의 간격 */
+  }
