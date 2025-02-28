@@ -22,7 +22,7 @@
   <section class="right_section">
                 <p class="title">상품등록</p>
                 <article>
-                    <form action="#">
+                    <form action="/farmStory/admin/product/register.do" method="post" >
                         <table class="register">
                             <tbody>
                                 <tr>
@@ -34,8 +34,8 @@
                                 <tr>
                                     <td>종류</td>
                                     <td>
-                                        <select>
-                                             <option value="option">종류</option>
+                                        <select name="cateName">
+                                             <option value="종류" disabled selected>종류</option>
                                              <option value="option">과일</option>
                                              <option value="option">곡류</option>
                                              <option value="option">야채</option>
@@ -45,56 +45,45 @@
                                 <tr>
                                     <td>가격</td>
                                     <td>
-                                        <input type="text" name="name">
+                                        <input type="text" name="price">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>포인트</td>
                                     <td>
-                                        <input type="text" name="name">
+                                        <input type="text" name="point">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>할인</td>
                                     <td>
-                                        <select>
-                                            <option value="discount">5%</option>
-                                            <option value="discount">10%</option>
-                                            <option value="discount">15%</option>
-                                            <option value="discount">20%</option>
+                                        <select name="discount">
+                                            <option value="5">5%</option>
+                                            <option value="10">10%</option>
+                                            <option value="15">15%</option>
+                                            <option value="20">20%</option>
                                        </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>배송비</td>
-                                    <style>
-                                        td input[type="radio"] {
-                                          margin-right: 5px; /* 라디오 버튼과 텍스트 사이 간격 */
-                                        }
-                                        
-                                        td label {
-                                          margin-right: 15px; /* 각 옵션 사이의 간격 */
-                                        }
-                                      </style>
-                                      
-                                      <td>
-                                        <input type="radio" id="price1" name="price"><label for="price1">2000원</label>
-                                        <input type="radio" id="price2" name="price"><label for="price2">3000원</label>
-                                        <input type="radio" id="price3" name="price"><label for="price3">5000원</label>
-                                        <input type="radio" id="price4" name="price"><label for="price4">무료</label>
-                                      </td> 
+                                    <td>배송비</td>  
+                                    <td>
+                                        <input type="radio" id="price1" name="delivery" value="2000"><label for="price1">2000원</label>
+                                        <input type="radio" id="price2" name="delivery" value="3000"><label for="price2">3000원</label>
+                                        <input type="radio" id="price3" name="delivery" value="5000"><label for="price3">5000원</label>
+                                        <input type="radio" id="price4" name="delivery" value="무료"><label for="price4">무료</label>
+                                    </td> 
                                 </tr>
                                 <tr>
                                     <td>재고</td>
                                     <td>
-                                        <input type="text" name="name">
+                                        <input type="text" name="stock">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>상품이미지</td>
                                     <td>
                                         <div class="file-input-container">
-                                       
                                             <p>상품목록 이미지 (약 120 x 120)</p>
                                             <input type="file" name="file1" >
                                         	 
@@ -109,18 +98,18 @@
                                 <tr>
                                     <td>기타</td>
                                         <td>
-                                            <input type="text" name="name" style="width: 157px; height: 32px;">
+                                            <input type="text" name="other" style="width: 157px; height: 32px;">
                                         </td>
                                 </tr>
                                
                             </tbody>
 
                         </table>
-                    </form>
                         <div class="button-container">
-                        <a href="#" class="button">취소</a>
-                        <a href="#" class="button">상품등록</a>
-                      </div>
+	                        <a href="/farmStory/admin/product/list.do" class="button">취소</a>
+	                        <input type="submit" value="상품등록" class="button">
+	                    </div>
+                    </form>
                 </article>
                 
             </section>

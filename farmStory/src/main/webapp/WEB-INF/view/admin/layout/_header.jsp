@@ -4,7 +4,7 @@
     <div id="wrapper">
 
         <header>
-            <a href="#">
+            <a href="/farmStory/admin/main.do">
                 <img class="head_logo" src="/farmStory/images/admin/admin_logo.jpg" alt="ADMINISTRATOR">
             </a>
             <p>
