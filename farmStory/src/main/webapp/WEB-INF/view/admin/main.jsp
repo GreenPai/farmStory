@@ -23,7 +23,7 @@
                 
                 <article>
                     
-                    <p class="m-10">상품현황 <span><a href="#">+더보기</a></span></p>
+                    <p class="m-10">상품현황 <span><a href="/farmStory/admin/product/list.do">+더보기</a></span></p>
         
                     <table class="product">
                         <thead>
@@ -66,7 +66,7 @@
                 </article>
                 <article>
                     <p class="m-10">
-                        주문현황<span><a href="#">+더보기</a></span>
+                        주문현황<span><a href="/farmStory/admin/order/list.do">+더보기</a></span>
                     </p>
                     <table class="order">
                         <thead>
@@ -117,7 +117,7 @@
                     </table>
                 </article>
                 <article>                  
-                    <p class="m-10">회원현황<span><a href="#">+더보기</a></span></p>
+                    <p class="m-10">회원현황<span><a href="/farmStory/admin/user/list.do">+더보기</a></span></p>
                     <table class="client">
                         <thead>
                             <tr>

@@ -52,8 +52,15 @@
                         </tbody>
                     </table>
                 </article>
-                <div class="delete-button-container">
-                    <span>선택삭제</span>
+                <div class="button-container">
+                    <div class="delete-button-container">
+                        <span>선택삭제</span>
+                    </div>
+                    <div class="register-button-container">
+                        <a href="/farmStory/admin/product/register.do">
+                        <span>상품등록</span>
+                    	</a>
+                    </div>
                 </div>
                
                 <div class="page"  >
