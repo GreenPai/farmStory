@@ -70,23 +70,23 @@
                   <div>
                       <nav>
                           <h1>
-                              글쓰기
+                              글수정
                           </h1>
                       </nav>
                   </div>
-                  <form action="#">
+                  <form action="/farmStory/article/modify.do" method="post" enctype="multipart/form-data">
                       <table border="0" class="write_table">
                           <tbody>
                               <tr>
                                   <th>제목</th>
                                   <td>
-                                      <input type="text" name="title" placeholder="제목을 입력하세요.">
+                                      <input type="text" name="title" value="${article.title}" placeholder="제목을 입력하세요.">
                                   </td>
                               </tr>
                               <tr>
                                   <th>내용</th>
                                   <td>
-                                      <textarea name="content"></textarea>
+                                      <textarea name="content">${article.content}</textarea>
                                   </td>
                               </tr>
                               <tr>

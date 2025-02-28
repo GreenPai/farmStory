@@ -24,7 +24,7 @@ public class ListController extends HttpServlet {
 
 		// pg 데이터 수신
 		String pg = req.getParameter("pg");
-		System.out.println(pg);
+		
 		// 전체 게시물 갯수 구하기
 		int total = service.getCountArticle();
 		
@@ -33,8 +33,7 @@ public class ListController extends HttpServlet {
 		
 		// 현재 페이지 번호 구하기
 		int currentPage = service.getCurrentPage(pg);
-		System.out.println(currentPage);
-
+		
 		// LIMIT용 start
 		int start = service.getStartNum(currentPage);
 		
@@ -47,7 +46,6 @@ public class ListController extends HttpServlet {
 		// 글목록 데이터 조회
 		List<ArticleDTO> articles = service.findAllArticle(start);
 
-		System.out.println(articles.toString());
 		// 데이터 참조 공유
 		req.setAttribute("articles", articles);
 		req.setAttribute("currentPage", currentPage);

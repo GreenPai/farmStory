@@ -25,9 +25,9 @@ public enum FileService {
 		dao.insertFile(dto);
 	}
 	
-	public FileDTO findFile(int fno) {
-		return dao.selectFile(fno);
-	}
+	//public FileDTO findFile(int fno) {
+		//return dao.selectFile(fno);
+	// }
 
 	public List<FileDTO> findFile(String no) {
 		return dao.selectFile(no);
