@@ -4,55 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <title>아이디 찾기 결과</title>
-    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/find/resultUserId.css"/>
 </head>
 <body>
     <div id="wrapper">
         <header>
-            <h3>
-                <a href="/index.html" class="title">Board Project</a>
-            </h3>
-        </header>
-        <main id="find">
-            <section class="resultUserId">
-                <form action="#">
-                    <h2 class="tit">아이디 찾기 결과</h2>
-                    <table border="0">                        
-                        <tr>
-                            <td>이름</td>
-                            <td>홍길동</td>
-                        </tr>
-                        <tr>
-                            <td>아이디</td>
-                            <td>honggildong</td>
-                        </tr>
-                        <tr>
-                            <td>이메일</td>
-                            <td>honggildong@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>가입일</td>
-                            <td>2022-11-16 10:20</td>
-                        </tr>
-                    </table>                                        
-                </form>
-                
-                <p>
-                    고객님의 정보와 일치하는 아이디 입니다.
-                </p>
+            <div>
+                <div class="top">
+                    <p>
+                        <a href="#">HOME |</a>
+                        <a href="#">로그인 |</a>
+                        <a href="#">회원가입 |</a>
+                        <a href="#">나의정보 |</a>
+                        <a href="#">로그아웃 |</a>
+                        <a href="#">관리자 |</a>
+                        <a href="#">고객센터</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div>
+                <article>
+                    <a href="#" class="logo">
+                        <img src="/farmStory/images/logo.png" alt="팜스토리 로고">
+                    </a>
+                    <a href="#" class="freeShipping">
+                        <img src="/farmStory/images/head_txt_img.png" alt="팜스토리 로고">
+                    </a>
+                </article>
+            </div>
 
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu1.png" alt="팜스토리소개">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/farmStory/images/head_menu_badge.png" alt="30%" class="head_badge">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu2.png" alt="장보기">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu3.png" alt="농작물이야기">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu4.png" alt="이벤트">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/farmStory/images/head_menu_line.png" alt="라인">
+                            <img src="/farmStory/images/head_menu5.png" alt="커뮤니티">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <section>
+                <form action="#">
+                    <h2>아이디 찾기 결과</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>이름</td>
+                                <td>홍길동</td>
+                            </tr>
+                            <tr>
+                                <td>아이디</td>
+                                <td>honggildong</td>
+                            </tr>
+                            <tr>
+                                <td>이메일</td>
+                                <td>honggildong@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>가입일</td>
+                                <td>2022-11-16 10:20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <p>고객님의 정보와 일치하는 아이디 입니다.</p>
                 <div>
-                    <a href="../user/login.html" class="btn btnCancel">로그인</a>
-                    <a href="./password.html" class="btn btnNext">비밀번호 찾기</a>
+                    <a href="#">로그인</a>
+                    <a href="#">비밀번호 찾기</a>
                 </div>
             </section>
         </main>
+        
         <footer>
-            <p>
-                <span class="copyright">Copyrightⓒ 김철학(개발에반하다.)</span>
-                <span class="version">v1.0.1</span>
-            </p>
+            <div class="footer_container">
+                <div class="footer_img">
+                    <img src="/farmStory/images/footer_logo.png" alt="팜스토리 로고">
+                </div>
+                <div class="footer_p">
+                    <p>
+                        (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호<br>
+                        등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
+                        대표 : 홍길동 / 이메일 : honggildong@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
+                    </p>
+                    <p>
+                        copyrightⓒ 홍길동 All rights reserved.
+                    </p>
+                    <p>
+                        farmstory ver1.0.1
+                    </p>
+                </div>
+            </div>
         </footer>
-    </div>    
 </body>
 </html>

@@ -77,6 +77,37 @@ public class UserDAO extends DBHelper {
 		return null;
 	}
 	
+	public UserDTO findUserId(String name, String email) {
+		
+		UserDTO userDTO = new UserDTO();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.FIND_USER_ID);
+			
+			psmt.setString(1, name);
+			psmt.setString(2, email);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				// 결과가 있으면 DTO 반환
+				userDTO.setUid(rs.getString(1));
+				userDTO.setName(rs.getString(2));
+				userDTO.setEmail(rs.getString(3));
+				
+			}
+			
+			closeAll();
+			
+			
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		return userDTO;
+	}
+	
 	public UserDTO selectUser(UserDTO dto) {
 		
 		UserDTO userDTO = null;
