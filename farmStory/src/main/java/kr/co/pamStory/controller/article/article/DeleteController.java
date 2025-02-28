@@ -27,7 +27,7 @@ public class DeleteController extends HttpServlet{
 		
 		//게시글 id 받기
 		String no= req.getParameter("no");
-		System.out.println(no);
+
 				
 		//파일 삭제 서비스 호출
 		fileservice.deleteFile(no);

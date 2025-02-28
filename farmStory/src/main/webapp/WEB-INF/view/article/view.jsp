@@ -91,7 +91,8 @@
                             <tr>
                                 <th>파일</th>
                                 <td>
-                                    <a href="#">2020년 상반기 매출자료.xls</a>
+                                	
+                                    <a href="#" >1</a>
                                     &nbsp;
                                     <span>7</span>
                                     회 다운로드 <br>
@@ -104,13 +105,13 @@
                             <tr>
                                 <th>내용</th>
                                 <td>
-                                    <textarea name="content" readonly >${articledto.content}</textarea>
+                                    <textarea name="content" readonly >${articleDTO.content}</textarea>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div style="text-align: right; margin-top: 10px; margin-bottom: 10px;">
-                    <a href="#" class="btn btnRemove">삭제</a>
+                    <a href="/farmStory/article/delete.do?no=${articleDTO.no}" class="btn btnRemove" >삭제</a>
                      <a href="#" class="btn btnModify">수정</a>
                      <a href="/farmStory/article/list.do" class="btn btnList">목록</a>
                     </div>
@@ -122,7 +123,7 @@
                             <span class="date">2024-05-20</span>
                             <p class="content">댓글 샘플 입니다.</p>
                             <div>
-                                <a href="/farmStory/article/delete.do?no=${articledto.no}" class="remove">삭제</a>
+                                <a href="#" class="remove">삭제</a>
                                 <a href="#" class="modify">수정</a>
                             </div>
                         </article>

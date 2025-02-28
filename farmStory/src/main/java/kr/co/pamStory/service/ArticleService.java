@@ -27,10 +27,15 @@ public enum ArticleService {
 		return dao.selectAllArticle(start);
 	}
 	
+	//게시글 수정
 	public void modifyArticle(ArticleDTO dto) {
 		dao.updateArticle(dto);
 	}
 	
+	//글 정보 조회
+	public ArticleDTO getArticle(int no) {
+		return dao.selectArticle(no);
+	}
 
 	
 	//페이지 시작번호 구하기(LIMIT용)

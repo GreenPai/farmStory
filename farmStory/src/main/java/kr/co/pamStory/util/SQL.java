@@ -47,6 +47,14 @@ public class SQL {
 	
 	public static final String DELETE_ARTICLE="DELETE FROM `article` WHERE no=?";
 	
+	public static final String UPDATE_BY_NO = "UPDATE `article` SET"
+															+"`title`=?, "
+															+"`content`=?, "
+															+"`writer`=?, "
+															+"`regip`=? "
+															+"WHERE `no` =?" ;
+	
+	
 													
 			
 	public static final String INSERT_ARTICLE = "insert into `article` set "
@@ -67,6 +75,7 @@ public class SQL {
 	public static final String DELETE_FILE_BY_ANO = "delete from `file` where `ano`=?";
 
 	public static final String SELECT_FILE_BY_ANO = "select * from `file` where `ano`= ?";
+
 	
 	
 	
