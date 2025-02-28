@@ -26,6 +26,9 @@ public class SQL {
 											+ "`regip`=?,"
 											+ "`regDate`=NOW()";
 	
+	public static final String FIND_USER_ID = "SELECT `uid` FROM `user` "
+													+ "WHERE NAME=? AND email=?;";
+	
 	// article
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `article`";
 	public static final String SELECT_COUNT_ARTICLE= "SELECT COUNT(*) FROM `article`";
