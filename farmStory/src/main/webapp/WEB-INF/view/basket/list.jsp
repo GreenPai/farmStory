@@ -48,7 +48,12 @@
                 
                 <div class="content">
                     
-                    <p><span class="black_txt">전체(10)</span> | 과일 | 야채 | 곡류</p>
+                    <p class="product_tap">
+                    	<span class="black_txt"><a href="/farmStory/basket/list.do">전체(10)</a></span> 
+                    	<a href="/farmStory/basket/list.do?cateNo=1">| 과일 |</a> 
+                    	<a href="/farmStory/basket/list.do?cateNo=2">야채 |</a> 
+                    	<a href="/farmStory/basket/list.do?cateNo=3">곡류</a>  
+                    </p>
                     
                     <table>
                         <thead>

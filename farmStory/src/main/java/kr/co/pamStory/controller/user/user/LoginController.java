@@ -33,10 +33,12 @@ public class LoginController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		System.out.println("로그인 문제 확인");
 		// 데이터 수신
 		String uid = req.getParameter("uid");
 		String pass = req.getParameter("pass");
-		
+
 		// DTO 생성
 		UserDTO dto = new UserDTO();
 		dto.setUid(uid);

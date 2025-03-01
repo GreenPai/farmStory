@@ -45,10 +45,12 @@ public class RegisterController extends HttpServlet {
 		String other = req.getParameter("other");
 		
 		// 이미지 업로드 서비스 호출
-		List<ImageDTO> images = imageservice.uploadImage(req);
+		List<ImageDTO> imageDTOS = imageservice.uploadImage(req);
+		System.out.println("imageDTO : "+imageDTOS.toString());
 		
 		// 카테고리 번호 구하기
 		CategoryDTO cateDTO = categoryservice.findCateNo(cateName);
+		System.out.println("cateDTO : " + cateDTO.toString());
 		
 		// Product DTO 저장
 		ProductDTO productDTO = new ProductDTO();
@@ -63,16 +65,14 @@ public class RegisterController extends HttpServlet {
 		productDTO.setCateNo(cateDTO.getCateNo());
 		
 		int prodNo = productservice.registerProduct(productDTO);
-		
-		System.out.println(images.toString());
-		
-		
+
 		// 이미지 dto 저장 
-		for(ImageDTO imageDTO : images) {
+		for(ImageDTO imageDTO : imageDTOS) {
 			imageDTO.setProdNo(prodNo);
 			imageservice.registerImage(imageDTO);
 		}
-
+		
+		resp.sendRedirect("/farmStory/admin/product/list.do");
 	}
 
 
