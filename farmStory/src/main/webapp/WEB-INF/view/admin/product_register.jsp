@@ -71,7 +71,7 @@
                                         <input type="radio" id="price1" name="delivery" value="2000"><label for="price1">2000원</label>
                                         <input type="radio" id="price2" name="delivery" value="3000"><label for="price2">3000원</label>
                                         <input type="radio" id="price3" name="delivery" value="5000"><label for="price3">5000원</label>
-                                        <input type="radio" id="price4" name="delivery" value="무료"><label for="price4">무료</label>
+                                        <input type="radio" id="price4" name="delivery" value="0"><label for="price4">무료</label>
                                     </td> 
                                 </tr>
                                 <tr>
