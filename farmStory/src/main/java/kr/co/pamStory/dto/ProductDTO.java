@@ -1,5 +1,7 @@
 package kr.co.pamStory.dto;
 
+import java.util.List;
+
 public class ProductDTO {
 	
 	private int prodNo;
@@ -11,11 +13,19 @@ public class ProductDTO {
 	private int prodDiscount;
 	private int prodPoint;
 	private int prodDeliveryFee;
-	private String prodcontent;
+	private String prodContent;
 	
 	// 추가 필드
 	private String cateName;
+	private String image;
 	
+	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	public String getCateName() {
 		return cateName;
 	}
@@ -76,20 +86,21 @@ public class ProductDTO {
 	public void setProdDeliveryFee(int prodDeliveryFee) {
 		this.prodDeliveryFee = prodDeliveryFee;
 	}
-	public String getProdcontent() {
-		return prodcontent;
+	public String getProdContent() {
+		return prodContent;
 	}
-	public void setProdcontent(String prodcontent) {
-		this.prodcontent = prodcontent;
+	public void setProdContent(String prodContent) {
+		this.prodContent = prodContent;
 	}
-	
 	@Override
 	public String toString() {
 		return "ProductDTO [prodNo=" + prodNo + ", cateNo=" + cateNo + ", prodName=" + prodName + ", prodPrice="
 				+ prodPrice + ", prodStock=" + prodStock + ", prodSold=" + prodSold + ", prodDiscount=" + prodDiscount
-				+ ", prodPoint=" + prodPoint + ", prodDeliveryFee=" + prodDeliveryFee + ", prodcontent=" + prodcontent
-				+ "]";
+				+ ", prodPoint=" + prodPoint + ", prodDeliveryFee=" + prodDeliveryFee + ", prodContent=" + prodContent
+				+ ", cateName=" + cateName + ", image=" + image + "]";
 	}
+	
+	
 	
 	
 }

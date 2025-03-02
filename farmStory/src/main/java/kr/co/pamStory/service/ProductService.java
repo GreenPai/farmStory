@@ -15,4 +15,9 @@ public enum ProductService {
 		
 	}
 
+	public ProductDTO findProductByProdNo(String prodNo) {
+		
+		return dao.selectProductByProdNo(prodNo);
+	}
+
 }
