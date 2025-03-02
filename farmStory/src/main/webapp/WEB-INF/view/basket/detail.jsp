@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,30 +50,31 @@
                 <div class="content">
                     <p class="black_bold_txt">기본정보</p>
                     <div class="info">
-                      <div class="info_img"> 
+                      <div class="info_img">
+                      	<img src="file:///C:/Users/samsung/Desktop/lotte6/jsp/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/farmStory/product_images/market_item1.jpg" alt="상품 이미지">
                       </div>
                       <div class="info_form">
                         <form action="#">
                           <table>
                             <tr>
                               <td>상품명</td>
-                              <td>딸기 500g</td>
+                              <td>${product.prodName}</td>
                             </tr>
                             <tr>
                               <td>상품코드</td>
-                              <td>01</td>
+                              <td><input type="hidden" name="prodNo" value="${product.prodNo}">${product.prodNo}</td>
                             </tr>
                             <tr>
                               <td>배송비</td>
-                              <td>5,000원<span class="gray_tt"> 3만원 이상 무료배송</span></td>
+                              <td>${product.prodDeliveryFee}원<span class="gray_tt"> 3만원 이상 무료배송</span></td>
                             </tr>
                             <tr>
                               <td>판매가격</td>
-                              <td>4000원</td>
+                              <td>${product.prodPrice}</td>
                             </tr>
                             <tr>
                               <td>구매수량</td>
-                              <td><input type="text" style="width: 60px;" value="1"></td>
+                              <td><input type="number" style="width: 60px;" value="1"></td>
                             </tr>
                             <tr>
                               <td>합계</td>

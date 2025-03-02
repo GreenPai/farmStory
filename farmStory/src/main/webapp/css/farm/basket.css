@@ -156,8 +156,10 @@ main > .right_section > article > .content .info_img{
     width : 240px;
     height: 240px;
     float: left;
+    /*
     background-image: url(/farmStory/images/market_item_thumb.jpg);
     background-size: cover;
+    */
 }
 
 /* 테이블:

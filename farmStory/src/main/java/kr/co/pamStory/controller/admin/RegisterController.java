@@ -61,7 +61,7 @@ public class RegisterController extends HttpServlet {
 		productDTO.setProdDiscount(Integer.parseInt(discount));
 		productDTO.setProdDeliveryFee(Integer.parseInt(delivery));
 		productDTO.setProdStock(Integer.parseInt(stock));
-		productDTO.setProdcontent(other);
+		productDTO.setProdContent(other);
 		productDTO.setCateNo(cateDTO.getCateNo());
 		
 		int prodNo = productservice.registerProduct(productDTO);
