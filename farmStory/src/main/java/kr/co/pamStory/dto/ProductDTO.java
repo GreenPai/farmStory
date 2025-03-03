@@ -17,14 +17,21 @@ public class ProductDTO {
 	
 	// 추가 필드
 	private String cateName;
-	private String image;
+	private String imagesName;
+	private int prodDiscountPrice;
 	
 	
-	public String getImage() {
-		return image;
+	public int getProdDiscountPrice() {
+		return prodDiscountPrice;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setProdDiscountPrice(int prodDiscountPrice) {
+		this.prodDiscountPrice = prodDiscountPrice;
+	}
+	public String getImagesName() {
+		return imagesName;
+	}
+	public void setImagesName(String imagesName) {
+		this.imagesName = imagesName;
 	}
 	public String getCateName() {
 		return cateName;
@@ -97,8 +104,11 @@ public class ProductDTO {
 		return "ProductDTO [prodNo=" + prodNo + ", cateNo=" + cateNo + ", prodName=" + prodName + ", prodPrice="
 				+ prodPrice + ", prodStock=" + prodStock + ", prodSold=" + prodSold + ", prodDiscount=" + prodDiscount
 				+ ", prodPoint=" + prodPoint + ", prodDeliveryFee=" + prodDeliveryFee + ", prodContent=" + prodContent
-				+ ", cateName=" + cateName + ", image=" + image + "]";
+				+ ", cateName=" + cateName + ", imagesName=" + imagesName + "]";
 	}
+
+	
+	
 	
 	
 	

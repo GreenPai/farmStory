@@ -78,5 +78,9 @@ public enum ImageService {
 		dao.insertImage(dto);
 		
 	}
+
+	public String findImageSnameByProdNo(String prodNo) {
+		return dao.selectSnameByProdNo(prodNo);
+	}
 	
 }
