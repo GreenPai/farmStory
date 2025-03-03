@@ -52,10 +52,10 @@ public class ListController extends HttpServlet {
 		
 		// LIMIT용 start
 		int start = service.getStartNum(currentPage);
-		System.out.println(start);
+		
 		// 페이지 그룹 구하기
 		PageGroupDTO pageGroupDTO = service.getCurrentPageGroup(currentPage, lastPageNum);
-		System.out.println(pageGroupDTO.toString());
+		
 		// 페이지 시작번호 구하기
 		int pageStartNum = service.getPageStartNum(total, currentPage);
 		
@@ -68,7 +68,6 @@ public class ListController extends HttpServlet {
 		req.setAttribute("currentPage", currentPage);
 		req.setAttribute("lastPageNum", lastPageNum);
 		req.setAttribute("pageStartNum", pageStartNum);
-		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/basket/list.jsp");
 		dispatcher.forward(req, resp);

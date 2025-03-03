@@ -71,8 +71,10 @@ public class ProductDAO extends DBHelper {
 				dto.setProdStock(rs.getInt(6));
 				dto.setProdSold(rs.getInt(7));
 				dto.setProdDiscount(rs.getInt(8));
-				dto.setProdDeliveryFee(rs.getInt(8));
-				dto.setProdContent(rs.getString(9));
+				dto.setProdDeliveryFee(rs.getInt(9));
+				dto.setProdContent(rs.getString(10));
+				dto.setProdDiscountPrice(rs.getInt(4) * (100 - rs.getInt(8)) / 100);
+			
 			}
 			closeAll();
 		}catch (Exception e){

@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import kr.co.pamStory.dto.ImageDTO;
 import kr.co.pamStory.util.DBHelper;
+import kr.co.pamStory.util.PRODUCT_SQL;
 import kr.co.pamStory.util.SQL2;
 
 public class ImageDAO extends DBHelper {
@@ -30,6 +31,29 @@ public class ImageDAO extends DBHelper {
 			
 		}
 		
+	}
+
+	public String selectSnameByProdNo(String prodNo) {
+		
+		String sname = null;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(PRODUCT_SQL.SELECT_SNAME_BY_PRODNO);
+			psmt.setString(1, prodNo);
+		
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				sname = rs.getString(1);
+			}
+			closeAll();
+			
+		}catch(Exception e){
+			logger.error(e.getMessage());
+			
+		}
+		
+		return sname;
 	}
 	
 	

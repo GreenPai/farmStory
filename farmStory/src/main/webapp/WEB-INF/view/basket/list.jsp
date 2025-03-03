@@ -73,13 +73,16 @@
 							</c:if>
                         	<c:forEach var="product" items="${products}">
 	                        	<tr>
-	                        		<td><img src="/farmStory/images/market_item1.jpg" alt="사과"></td>
+	                        		<td>
+	                        			<img src="${pageContext.request.contextPath}/product_images/${product.imagesName}" alt="상품 이미지">
+	                        		</td>
 	                        		<td>${product.cateName}</td>
 	                        		<td><a href="/farmStory/basket/detail.do?prodNo=${product.prodNo}">${product.prodName}</a></td>
-	                        		<td>${product.prodDiscount}</td>
+	                        		<td>${product.prodDiscount}%</td>
 	                        		<td>${product.prodPoint}</td>
-	                        		<td>${product.prodPrice}</td>
+	                        		<td> <span style="font-weight: bold;" id="price">${product.prodDiscountPrice}원</span>  <span class="gray_txt_underline">${product.prodPrice}원</span> </td>
 	                        	</tr>
+
                         	</c:forEach>
                         	
                         
@@ -93,7 +96,7 @@
                     <a href="/farmStory/basket/list.do?pg=${pageGroupDTO.start -1}" class="prev">이전</a>
                     </c:if>
                     <c:forEach var="num" begin="${pageGroupDTO.start}" end="${pageGroupDTO.end }">
-                    <a href="/farmStory/basket/list.do?pg=${num}" class="num ${currentPage==num ? 'current' : '' }">${num}</a>
+                    <a href="/farmStory/basket/list.do?pg=${num}" class="num ${currentPage==num ? 'current' : '' }">[${num}]</a>
                     </c:forEach>
                     <c:if test="${pageGroupDTO.end<lastPageNum}">
                     <a href="/farmStory/basket/list.do?pg=${pageGroupDTO.end + 1}" class="next">다음</a>

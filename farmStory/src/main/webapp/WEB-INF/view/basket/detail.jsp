@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="/farmStory/css/layout_bg.css"/>
     <link rel="stylesheet" href="/farmStory/css/farm/basket.css"/>
 </head>
-
+<script>
+	document.addEventListener('DOMContentLoaded', function(){
+		
+		total.innerText = Number(total.innerText).toLocaleString()+"원";
+		price.innerText = Number(price.innerText).toLocaleString()+"원";
+		fee.innerText = Number(fee.innerText).toLocaleString()+"원";
+		
+		let prodprice = `${product.prodDiscountPrice}`;
+		
+		let itemCountInput = document.querySelector('#itemCount');
+		itemCountInput.addEventListener("input", function(){
+			let itemCount = itemCountInput.value;
+			console.log("현재 수량: " + itemCount);
+			total.innerText = (prodprice*itemCount).toLocaleString()+"원";
+			
+		})
+			
+	});
+</script>
 <%@ include file="../layout/_header_bg.jsp" %>
 <main>
         <section class="left_section">
@@ -51,7 +69,7 @@
                     <p class="black_bold_txt">기본정보</p>
                     <div class="info">
                       <div class="info_img">
-                      	<img src="file:///C:/Users/samsung/Desktop/lotte6/jsp/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/farmStory/product_images/market_item1.jpg" alt="상품 이미지">
+                      	<img src="${pageContext.request.contextPath}/product_images/${imageName}" alt="상품 이미지">
                       </div>
                       <div class="info_form">
                         <form action="#">
@@ -66,19 +84,19 @@
                             </tr>
                             <tr>
                               <td>배송비</td>
-                              <td>${product.prodDeliveryFee}원<span class="gray_tt"> 3만원 이상 무료배송</span></td>
+                              <td><span id="fee">${product.prodDeliveryFee}</span><span class="gray_tt"> 3만원 이상 무료배송</span></td>
                             </tr>
                             <tr>
                               <td>판매가격</td>
-                              <td>${product.prodPrice}</td>
+                              <td id="price">${product.prodDiscountPrice}</td>
                             </tr>
                             <tr>
                               <td>구매수량</td>
-                              <td><input type="number" style="width: 60px;" value="1"></td>
+                              <td><input type="number" name="itemCount" id="itemCount" style="width: 60px;" value="1"></td>
                             </tr>
                             <tr>
                               <td>합계</td>
-                              <td class="red_tt">4,000원</td>
+                              <td class="red_tt" id="total">${product.prodDiscountPrice}</td>
                             </tr>
                             
                           </table>
@@ -124,4 +142,5 @@
             </article>
         </section>
     </main>
+    
 <%@ include file="../layout/_footer.jsp" %>       
