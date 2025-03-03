@@ -20,9 +20,29 @@
 		itemCountInput.addEventListener("input", function(){
 			let itemCount = itemCountInput.value;
 			console.log("현재 수량: " + itemCount);
-			total.innerText = (prodprice*itemCount).toLocaleString()+"원";
-			
+			total.innerText = (prodprice*itemCount).toLocaleString()+"원";	
 		})
+		
+		// 장바구니 버튼 클릭 시
+		// uid, prodNo, cartProdCount
+		document.getElementById("addBtn").addEventListener("click", function() {
+            
+			alert("장바구니에 추가되었습니다.");
+
+            const prodNo = formProduct.prodNo.value;
+            const cartProdCount = formProduct.itemCount.value;
+            
+  
+  
+            // 장바구니에 추가하는 코드 작성 가능
+        });
+		
+		// 바로구매 버튼 클릭 시
+		document.getElementById("buyBtn").addEventListener("click", function() {
+            alert("구매 페이지로 이동합니다.");
+            // 바로 구매하는 코드 작성 가능
+        });
+		
 			
 	});
 </script>
@@ -72,7 +92,8 @@
                       	<img src="${pageContext.request.contextPath}/product_images/${imageName}" alt="상품 이미지">
                       </div>
                       <div class="info_form">
-                        <form action="#">
+                        <form action="#" name="formProduct">
+                          <input type="hidden" name="uid" >
                           <table>
                             <tr>
                               <td>상품명</td>
@@ -97,14 +118,13 @@
                             <tr>
                               <td>합계</td>
                               <td class="red_tt" id="total">${product.prodDiscountPrice}</td>
-                            </tr>
-                            
+                            </tr> 
                           </table>
                         </form>
                       </div>
                       <div class="buttons">
-                        <button class="green_btn" type="button">장바구니</button>
-                        <button class="red_btn" type="button">바로구매</button>
+                        <button class="green_btn" type="button" id="addBtn">장바구니</button>
+                        <button class="red_btn"   type="button" id="buyBtn">바로구매</button>
                       </div>
                     </div>
                 </div>
