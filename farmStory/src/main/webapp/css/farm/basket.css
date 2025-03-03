@@ -204,6 +204,8 @@ main > .right_section > article > .content .info_form{
     background-color: #769B0A;
     color: white;
     border: none;
+    cursor: pointer; 
+    
 }
 
 .red_btn{
@@ -212,6 +214,7 @@ main > .right_section > article > .content .info_form{
     background-color: #960D1A;
     color: white;
     border: none;
+    cursor: pointer; 
 }
 
 
