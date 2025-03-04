@@ -160,4 +160,41 @@ public class UserDAO extends DBHelper {
 		
 		return dto;
 	}
+	public UserDTO selectResultFindId(String name, String uid, String email, String regDate) {
+		UserDTO dto = null;
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_RESULT_FIND_ID);
+			psmt.setString(1, name);
+			psmt.setString(2, uid);
+			psmt.setString(3, email);
+			psmt.setString(4, regDate);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new UserDTO();
+				dto.setName(rs.getString(1));
+				dto.setUid(rs.getString(2));
+				dto.setEmail(rs.getString(3));
+				dto.setRegDate(rs.getString(4));
+			}
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		
+		return dto;
+	}
 }
+
+
+
+
+
+
+

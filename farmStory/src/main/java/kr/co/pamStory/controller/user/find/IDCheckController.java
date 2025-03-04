@@ -29,6 +29,7 @@ public class IDCheckController extends HttpServlet{
 	
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
+		String code = "";
 
 		UserDTO dto = userservice.findUserByNameAndEmail(name,email);
 		
@@ -36,16 +37,17 @@ public class IDCheckController extends HttpServlet{
 			System.out.println("검증 오류");
 		}else {
 			// 인증번호 전송
-			// String code = userservice.sendEmailCode(email);
+			code = userservice.sendEmailCode(email);
 			
 			// 세션 저장
 			HttpSession session = req.getSession();
-			session.setAttribute("sessAuthCode", "123456");
+			session.setAttribute("sessAuthCode", code);
 		}
 		
 		// JSON 생성
 		JsonObject json = new JsonObject();
 		json.addProperty("uid", dto.getUid());
+		json.addProperty("code", code);
 		logger.debug("json : " + json);
 				
 		// JSON 출력
