@@ -40,6 +40,14 @@ public class SQL {
 	// article
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `article`";
 	public static final String SELECT_COUNT_ARTICLE= "SELECT COUNT(*) FROM `article`";
+	
+	public final static String SELECT_ALL_ARTICLE_BY_SEARCH="SELECT" 
+																		+ "a.*, "
+																		+ "u.`nick` "
+																		+ "FROM `article` AS a "
+																		+ "JOIN `user` AS u ON a.writer=u.uid ";
+	
+	
 	public static final String SELECT_ALL_ARTICLE="SELECT "
 													+"a.*,"
 													+"u.`nick` "
@@ -66,6 +74,13 @@ public class SQL {
 															+"WHERE `no` =?" ;
 	
 	
+	public final static String SELECT_COUNT_ARTICLE_FOR_SEARCH = "select count(*) from `article` as a ";
+	public final static String JOIN_FOR_SEARCH_NICK  = "JOIN `user` as u ON a.writer = u.uid ";
+	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE `title` LIKE ? ";
+	public final static String WHERE_FOR_SEARCH_CONTENT = "WHERE `content` LIKE ? ";
+	public final static String WHERE_FOR_SEARCH_WRITER  = "WHERE `nick` LIKE ? ";	
+	public final static String ORDER_FOR_SEARCH  = "ORDER BY `no` DESC ";
+	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
 													
 			
 	public static final String INSERT_ARTICLE = "insert into `article` set "
@@ -95,6 +110,31 @@ public class SQL {
 																+"`regip`=?, "
 																+"`wdate`=NOW()";
 
-	
+
+	public static final String SELECT_COMMENT_BY_CNO = "SELECT " 
+																+ "c.*, "
+																+ "u.`nick` "
+																+ "FROM `comment` AS c "
+																+ "JOIN `user` AS u ON c.writer=u.uid "
+																+ "WHERE `cno`=?";
+
+	public static final String SELECT_ALL_COMMENT_BY_PARENT = "SELECT "
+																+ "c.*, "
+																+ "u.`nick` "
+																+ "FROM `comment` AS c "
+																+ "JOIN `user` AS u ON c.writer=u.uid "
+																+ "WHERE `parent`=? "
+																+ "ORDER BY `cno` ASC";
+
+	public static final String DELETE_COMMENT = "DELETE FROM `comment` WHERE cno=?";
+
+	public static final String UPDATE_BY_CNO = "UPDATE `comment` SET"
+														+"`cno`=?, "
+														+"`content`=?, "
+														+"`writer`=?, "
+														+"`regip`=? "
+														+"WHERE `cno` =?" ;
+
+
 
 }

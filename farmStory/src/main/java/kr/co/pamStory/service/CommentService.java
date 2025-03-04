@@ -13,7 +13,7 @@ public enum CommentService {
 
 	public CommentDTO registeComment(CommentDTO dto) {
 
-		int generatedKey=dao.insertComment(dto);
+		int generatedKey = dao.insertComment(dto);
 		return dao.selectComment(generatedKey);
 	}
 
@@ -21,15 +21,15 @@ public enum CommentService {
 		return dao.selectComment(cno);
 	}
 
-	public List<CommentDTO> findAllComment() {
-		return dao.selectAllComment();
+	public List<CommentDTO> findAllComment(String parent) {
+		return dao.selectAllComment(parent);
 	}
 
 	public void modifyComment(CommentDTO dto) {
 		dao.updateComment(dto);
 	}
 
-	public void deleteComment(int cno) {
+	public void deleteComment(String cno) {
 		dao.deleteComment(cno);
 	}
 }

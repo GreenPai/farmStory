@@ -25,13 +25,15 @@
 		
 		// 장바구니 버튼 클릭 시
 		// uid, prodNo, cartProdCount
-		document.getElementById("addBtn").addEventListener("click", function() {
+		document.getElementById("addBtn").addEventListener("click", async function() {
             
 			alert("장바구니에 추가되었습니다.");
 
             const prodNo = formProduct.prodNo.value;
             const cartProdCount = formProduct.itemCount.value;
             
+            const response = await fetch('/farmStory/basket/register.do?prodNo=' + prodNo + '&cartProdCount=' + cartProdCount);
+
   
   
             // 장바구니에 추가하는 코드 작성 가능
