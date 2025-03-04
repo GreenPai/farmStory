@@ -1,13 +1,16 @@
 package kr.co.pamStory.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import kr.co.pamStory.dto.UserDTO;
+import kr.co.pamStory.util.BASKET_SQL;
 import kr.co.pamStory.util.DBHelper;
 import kr.co.pamStory.util.SQL;
+import kr.co.pamStory.util.SQL2;
 
 public class UserDAO extends DBHelper {
 	private static final UserDAO INSTANCE = new UserDAO();
@@ -189,6 +192,52 @@ public class UserDAO extends DBHelper {
 		
 		
 		return dto;
+	}
+	public List<UserDTO> selectLatest3Users() {
+		List<UserDTO> dtos = new ArrayList<>();
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs =  stmt.executeQuery(SQL2.SELECT_USER_LIMIT_3);
+			while(rs.next()) {
+				UserDTO dto = new UserDTO();
+				dto.setUid(rs.getString(1));
+				dto.setPass(rs.getString(2));
+				dto.setName(rs.getString(3));
+				dto.setNick(rs.getString(4));
+				dto.setEmail(rs.getString(5));
+				dto.setHp(rs.getString(6));
+				dto.setRole(rs.getString(7));
+				dto.setZip(rs.getString(8));
+				dto.setAddr1(rs.getString(9));
+				dto.setAddr2(rs.getString(10));
+				dto.setRegip(rs.getString(11));
+				dto.setRegDate(rs.getString(12));
+				dto.setLeaveDate(rs.getString(13));
+				dto.setUserPoint(rs.getInt(14));
+				dto.setUserLevel(rs.getInt(15));
+				dtos.add(dto);
+			}
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtos;
+	}
+	public int selectUserPoint(String uid) {
+		int point = 0;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(BASKET_SQL.SELECT_POINT_BY_UID);
+			psmt.setString(1, uid);
+			rs =  psmt.executeQuery();
+			while(rs.next()) {
+				point = rs.getInt(1);
+			}
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		return point;
 	}
 
 }

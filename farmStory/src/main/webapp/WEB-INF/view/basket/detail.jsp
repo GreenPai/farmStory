@@ -33,9 +33,7 @@
             const cartProdCount = formProduct.itemCount.value;
             
             const response = await fetch('/farmStory/basket/register.do?prodNo=' + prodNo + '&cartProdCount=' + cartProdCount);
-
-  
-  
+		
             // 장바구니에 추가하는 코드 작성 가능
         });
 		
@@ -43,6 +41,8 @@
 		document.getElementById("buyBtn").addEventListener("click", function() {
             alert("구매 페이지로 이동합니다.");
             // 바로 구매하는 코드 작성 가능
+            let url = "http://localhost:8080/farmStory/basket/basket.do";
+			window.location.href = url;
         });
 		
 			

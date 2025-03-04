@@ -7,8 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import kr.co.pamStory.dto.ProductDTO;
+import kr.co.pamStory.util.BASKET_SQL;
 import kr.co.pamStory.util.DBHelper;
-import kr.co.pamStory.util.PRODUCT_SQL;
+
 import kr.co.pamStory.util.SQL2;
 
 public class ProductDAO extends DBHelper {
@@ -59,7 +60,7 @@ public class ProductDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(PRODUCT_SQL.SELECT_PRODUCT_BY_PRODNO);
+			psmt = conn.prepareStatement(BASKET_SQL.SELECT_PRODUCT_BY_PRODNO);
 			psmt.setString(1, prodNo);
 			
 			rs = psmt.executeQuery();
