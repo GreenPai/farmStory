@@ -33,10 +33,12 @@ public class LoginController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		System.out.println("로그인 문제 확인");
 		// 데이터 수신
 		String uid = req.getParameter("uid");
 		String pass = req.getParameter("pass");
-		
+
 		// DTO 생성
 		UserDTO dto = new UserDTO();
 		dto.setUid(uid);
@@ -51,7 +53,7 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("sessUser", userDTO);
 			
 			// 게시판 목록 이동
-			resp.sendRedirect("/farmStory/article/list.do");
+			resp.sendRedirect("/farmStory");
 		}else {
 			// 회원이 아닐 경우 다시 로그인 페이지 이동
 			resp.sendRedirect("/farmStory/user/login.do?result=100");			

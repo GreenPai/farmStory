@@ -80,10 +80,12 @@ public class SQL {
 
 	public static final String SELECT_FILE_BY_ANO = "select * from `file` where `ano`= ?";
 
+	//comment
+	public static final String INSERT_COMMENT = "insert into `comment` set "
+																+"`parent`=?, "
+																+"`content`=?, "
+																+"`writer`=?, "
+																+"`regip`=?, "
+																+"`wdate`=NOW()";
 
-	
-	
-	
-	
-	
 }

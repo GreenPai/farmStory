@@ -1,5 +1,8 @@
 package kr.co.pamStory.dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,38 +138,31 @@ public class ArticleDAO extends DBHelper {
 	
 
 	public void updateArticle(ArticleDTO dto) {
-		try {
-			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.UPDATE_BY_NO);
-			psmt.setInt(1, dto.getNo());
-			rs = psmt.executeQuery();
+		
+	    try {
+	        conn = getConnection();
+	        psmt = conn.prepareStatement(SQL.UPDATE_BY_NO);
+	        psmt.setString(1, dto.getTitle());
+	        psmt.setString(2, dto.getContent());
+	        psmt.setString(3, dto.getWriter());
+	        psmt.setString(4, dto.getRegip());
+	        psmt.setInt(5, dto.getNo());
 
-			if (rs.next()) {
-				psmt = conn.prepareStatement(SQL.UPDATE_BY_NO);
-				psmt.setString(1, dto.getTitle());
-				psmt.setString(2, dto.getContent());
-				psmt.setString(3, dto.getWriter());
-				psmt.setString(4, dto.getRegip());
-				psmt.setInt(5, dto.getNo());
+	        int result = psmt.executeUpdate(); 
 
-				int result = psmt.executeUpdate(); // UPDATE 실행
+	        if (result > 0) {
+	            logger.info("게시글 수정 완료, no=" + dto.getNo());
+	        } else {
+	            logger.warn("게시글 수정 실패, no=" + dto.getNo());
+	        }
 
-				if (result > 0) {
-					logger.info("게시글 수정 완료, no=" + dto.getNo());
-				} else {
-					logger.warn("게시글 수정 실패, no=" + dto.getNo());
-				}
-			} else {
-				logger.warn("해당 번호의 게시글이 존재하지 않습니다, no=" + dto.getNo());
-			}
+	        closeAll(); 
 
-			
-			closeAll(); 
-
-		} catch (Exception e) {
-			logger.error(e.getMessage());
-		}
+	    } catch (Exception e) {
+	        logger.error(e.getMessage());
+	    }
 	}
+
 
 	public void deleteArticle(String no) {
 

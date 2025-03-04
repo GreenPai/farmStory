@@ -19,19 +19,36 @@ public class ModifyController extends HttpServlet {
 	private static final long serialVersionUID = 1271261235653325736L;
 	private ArticleService service = ArticleService.INSTANCE;
 
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	    // 게시글 번호 받아오기
+	    String noParam = req.getParameter("no");
+	    System.out.println("modify.do 요청됨, noParam:");
+	    if (noParam == null || noParam.isEmpty()) {
+	        resp.sendRedirect("/farmStory/article/list.do");
+	        return;
+	    }
 
-		//글 번호 가져오기
-		int no=Integer.parseInt(req.getParameter("no"));
-		ArticleDTO article= service.getArticle(no);
-		
-		req.setAttribute("article", article);
-		
-		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/modify.jsp");
-		dispatcher.forward(req, resp);
+	    int no = Integer.parseInt(noParam);
+
+	    // 글 정보 조회 서비스 호출
+	    ArticleDTO article = service.getArticle(no);
+
+	    if (article == null) {
+	        resp.sendRedirect("/farmStory/article/list.do");
+	        return;
+	    }
+
+	    // 게시글 정보 req에 담기
+	    req.setAttribute("article", article);
+
+	    // View forward
+	    RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/modify.jsp");
+	    dispatcher.forward(req, resp);
 	}
+
+
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,6 +67,8 @@ public class ModifyController extends HttpServlet {
 		dto.setContent(content);
 		dto.setWriter(writer);
 		dto.setRegip(regip);
+		
+		System.out.println(dto.toString());
 
 		// 글 수정 서비스 호출
 		service.modifyArticle(dto);

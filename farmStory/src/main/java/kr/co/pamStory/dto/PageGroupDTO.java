@@ -24,4 +24,11 @@ public class PageGroupDTO {
 	public void setEnd(int end) {
 		this.end = end;
 	}
+
+	@Override
+	public String toString() {
+		return "PageGroupDTO [start=" + start + ", end=" + end + "]";
+	}
+	
+	
 }

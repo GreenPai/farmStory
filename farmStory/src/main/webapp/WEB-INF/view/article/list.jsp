@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/farmStory/css/farm/community.css"/>
 </head>
 
-
 <%@ include file="../layout/_header_bg.jsp" %>
         <main id="notice">
         <section class="left_section">
@@ -25,22 +24,22 @@
               <article>   
                   <ul>
                       <li>
-                        <a href="#">
+                        <a href="/farmStory/article/list.do">
                             <img src="/farmStory/images/sub_cate5_lnb1_ov.png" alt="공지사항">
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="/farmStory/article/write.do">
                           <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="/farmStory/article/view.do">
                           <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="/farmStory/article/modify.do">
                           <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
                         </a>
                       </li>

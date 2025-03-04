@@ -23,7 +23,7 @@ public class LoginCheckFilter implements Filter {
 	
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
-		
+		/*
 		//logger.debug("LoginCheckFilter...1");
 		HttpServletRequest request = (HttpServletRequest) req;
 		
@@ -58,7 +58,7 @@ public class LoginCheckFilter implements Filter {
 				return;
 			}
 		}
-		
+		*/
 		// 다음 필터(Controller) 이동
 		chain.doFilter(req, resp);		
 	}

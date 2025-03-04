@@ -6,26 +6,29 @@ import kr.co.pamStory.dao.CommentDAO;
 import kr.co.pamStory.dto.CommentDTO;
 
 public enum CommentService {
-	
+
 	INSTANCE;
+
 	private CommentDAO dao = CommentDAO.getInstance();
-	
-	public void registeComment(CommentDTO dto) {
-		dao.insertComment(dto);
+
+	public CommentDTO registeComment(CommentDTO dto) {
+
+		int generatedKey=dao.insertComment(dto);
+		return dao.selectComment(generatedKey);
 	}
-	
+
 	public CommentDTO findComment(int cno) {
 		return dao.selectComment(cno);
 	}
-	
+
 	public List<CommentDTO> findAllComment() {
 		return dao.selectAllComment();
 	}
-	
+
 	public void modifyComment(CommentDTO dto) {
 		dao.updateComment(dto);
 	}
-	
+
 	public void deleteComment(int cno) {
 		dao.deleteComment(cno);
 	}
