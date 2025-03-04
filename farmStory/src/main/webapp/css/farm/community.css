@@ -40,9 +40,10 @@
   
 }
 #notice >.right_section > article > div:nth-child(2)>nav> form > input:nth-child(2){
-  width: 38px;
-  height: 31px;
+  
+  height: 28px;
   border: 1px solid #d7d7d7;
+  text-indent: 6px;
 }
 
 #notice >.right_section >article > table{

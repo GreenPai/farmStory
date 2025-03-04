@@ -20,8 +20,8 @@ import kr.co.pamStory.service.CommentService;
 public class WriteController extends HttpServlet {
 
 	private static final long serialVersionUID = -7283340913724598871L;
-	private CommentService service=CommentService.INSTANCE;
-	private Logger logger=LoggerFactory.getLogger(this.getClass());
+	private CommentService service = CommentService.INSTANCE;
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,30 +31,30 @@ public class WriteController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		//데이터수신
-		String parent= req.getParameter("parent");
-		String content= req.getParameter("content");
-		String writer= req.getParameter("writer");
-		String regip= req.getRemoteAddr();
-		
-		//DTO 생성
-		CommentDTO dto= new CommentDTO();
-		dto.setParent(parent);;
+		// 데이터수신
+		String parent = req.getParameter("parent");
+		String content = req.getParameter("content");
+		String writer = req.getParameter("writer");
+		String regip = req.getRemoteAddr();
+
+		// DTO 생성
+		CommentDTO dto = new CommentDTO();
+		dto.setParent(parent);
 		dto.setContent(content);
 		dto.setWriter(writer);
 		dto.setRegip(regip);
 		logger.debug(dto.toString());
-		
-		//서비스 호출
-		CommentDTO savedCommentDTO=service.registeComment(dto);
-		
-		//JSON 출력
-		PrintWriter printWriter=resp.getWriter();
-		
-		Gson gson= new Gson();
-		String json= gson.toJson(savedCommentDTO);
+
+		// 서비스 호출
+		CommentDTO savedCommentDTO = service.registeComment(dto);
+		System.out.println("커맨드 DTO "  + savedCommentDTO.toString());
+		// JSON 출력
+		PrintWriter printWriter = resp.getWriter();
+
+		Gson gson = new Gson();
+		String json = gson.toJson(savedCommentDTO);
 		printWriter.println(json);
-		
+
 	}
 
 }
