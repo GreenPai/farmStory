@@ -13,6 +13,9 @@ import kr.co.pamStory.dto.ProductDTO;
 import kr.co.pamStory.service.ImageService;
 import kr.co.pamStory.service.ProductService;
 
+/*
+ * 상세페이지 뷰 컨트롤러
+ * */
 @WebServlet("/basket/detail.do")
 public class DetailController extends HttpServlet {
 
@@ -30,7 +33,7 @@ public class DetailController extends HttpServlet {
 		
 		// 이미지 탐색
 		String imageName = imageservice.findImageSnameByProdNo(prodNo);
-		System.out.println(product.getProdDeliveryFee());
+		
 		req.setAttribute("product", product);
 		req.setAttribute("imageName", imageName);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/basket/detail.jsp");

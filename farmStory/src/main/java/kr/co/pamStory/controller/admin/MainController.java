@@ -33,7 +33,7 @@ public class MainController extends HttpServlet{
 		
 		// 유저 리스트 3개
 		List<UserDTO> userDTOS = userservice.findLatest3Users();
-		//System.out.println(userDTOS.toString());
+		System.out.println(userDTOS.toString());
 		
 		// 주문 리스트 3개
 		List<OrderDTO> orderDTOS = OrderService.findLatest3Orders();

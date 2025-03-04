@@ -104,6 +104,14 @@ public enum UserService {
 		return dao.selectResultFindId(name, uid, email, regDate);
 	}
 
+	public List<UserDTO> findLatest3Users() {
+		return dao.selectLatest3Users();
+	}
+
+	public int findUserPoint(String uid) {
+		return dao.selectUserPoint(uid);
+	}
+
 
 
 
