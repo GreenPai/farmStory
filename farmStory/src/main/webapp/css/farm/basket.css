@@ -100,7 +100,7 @@ main .right_section article .content table tbody tr td span.tr_g {
 
 
 main > .right_section > article > .content .black_txt{
-    font-size: 11px;
+    font-size: 12px;
     color: black;
 }
 
@@ -156,10 +156,16 @@ main > .right_section > article > .content .info_img{
     width : 240px;
     height: 240px;
     float: left;
+    /*
     background-image: url(/farmStory/images/market_item_thumb.jpg);
     background-size: cover;
+    */
 }
 
+main > .right_section > article > .content .info_img img{
+	width: 240px;
+	height: 240px;
+}	
 /* 테이블:
     상품명, 상품코드, 배송비, 판매가격, 고객수량, 합계*/
 main > .right_section > article > .content .info_form{
@@ -198,6 +204,8 @@ main > .right_section > article > .content .info_form{
     background-color: #769B0A;
     color: white;
     border: none;
+    cursor: pointer; 
+    
 }
 
 .red_btn{
@@ -206,6 +214,7 @@ main > .right_section > article > .content .info_form{
     background-color: #960D1A;
     color: white;
     border: none;
+    cursor: pointer; 
 }
 
 
@@ -423,4 +432,13 @@ main > section > article > .detail > table tr td:nth-child(2){
     width: 52px;
     height: 21px;
     border: 1px solid #767676;
+}
+
+.product_tap > a{
+	color : gray;
+}
+
+.right_section > article > .content table tr td .gray_txt_underline{
+	color : gray;
+	text-decoration: line-through;
 }

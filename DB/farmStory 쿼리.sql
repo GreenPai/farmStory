@@ -33,21 +33,77 @@ VALUES
 
 # 상품 장보기 임시 데이터
 
-# 카테고리
+#카테고리
 INSERT INTO `category` VALUES (1, '과일');
 INSERT INTO `category` VALUES (2, '곡류');
 INSERT INTO `category` VALUES (3, '야채');
 
-# 판매자
-INSERT INTO `Seller` (`sellerBizName`,`sellerPhone`, `sellerManager`, `sellerAddr`)VALUES ('(주)다팔아','02-201-1976','정우성','서울'); 
-INSERT INTO `Seller` (`sellerBizName`,`sellerPhone`, `sellerManager`, `sellerAddr`)VALUES ('판매의민족','02-201-1975','이정재','서울'); 
-INSERT INTO `Seller` (`sellerBizName`,`sellerPhone`, `sellerManager`, `sellerAddr`)VALUES ('농장천국','02-201-1974','원빈','경기'); 
-INSERT INTO `Seller` (`sellerBizName`,`sellerPhone`, `sellerManager`, `sellerAddr`)VALUES ('야채왕','02-201-1973','이나영','울산'); 
-INSERT INTO `Seller` (`sellerBizName`,`sellerPhone`, `sellerManager`, `sellerAddr`)VALUES ('야채천국','02-201-1972','장동건','대구'); 
-INSERT INTO `Seller` (`sellerBizName`,`sellerPhone`, `sellerManager`, `sellerAddr`)VALUES ('야채의민족','02-201-1971','고서영','부산'); 
 
-# 제품
-INSERT INTO `product` ()
+INSERT INTO `product` (`cateNo`,`prodName`,`prodPrice`,`prodStock`,`prodDiscount`,`prodDeliveryFee`, `prodContent`,`prodPoint`)
+VALUES 
+-- 과일 (30개)
+(1, "복숭아", 5000, 200, 10, 1000, "유기농 복숭아", 500),
+(1, "사과", 4000, 150, 5, 800, "달콤한 사과", 400),
+(1, "배", 6000, 180, 8, 900, "아삭한 배", 600),
+(1, "방울토마토", 3500, 250, 7, 700, "새콤달콤 방울토마토", 350),
+(1, "딸기", 7000, 220, 12, 1200, "신선한 딸기", 700),
+(1, "오렌지", 5000, 170, 6, 1000, "비타민 가득 오렌지", 500),
+(1, "바나나", 3000, 200, 5, 800, "달콤한 바나나", 300),
+(1, "포도", 8000, 190, 10, 1000, "새콤한 포도", 800),
+(1, "자두", 5500, 160, 7, 900, "신선한 자두", 550),
+(1, "체리", 10000, 140, 15, 1500, "달콤한 체리", 1000),
+(1, "레몬", 4000, 180, 5, 700, "상큼한 레몬", 400),
+(1, "자몽", 6000, 175, 8, 1000, "비타민 가득 자몽", 600),
+(1, "멜론", 12000, 130, 10, 1500, "달콤한 멜론", 1200),
+(1, "수박", 15000, 110, 12, 2000, "시원한 수박", 1500),
+(1, "파인애플", 9000, 125, 9, 1200, "새콤달콤 파인애플", 900),
+(1, "망고", 11000, 135, 11, 1300, "부드러운 망고", 1100),
+(1, "키위", 4500, 160, 5, 800, "비타민C 가득 키위", 450),
+(1, "블루베리", 8500, 155, 10, 1000, "항산화 블루베리", 850),
+(1, "라임", 3500, 170, 4, 700, "상큼한 라임", 350),
+(1, "무화과", 7000, 145, 8, 1100, "달콤한 무화과", 700),
+(1, "석류", 7500, 150, 9, 1200, "영양 가득 석류", 750),
+(1, "코코넛", 13000, 100, 15, 1800, "신선한 코코넛", 1300),
+(1, "홍시", 5000, 130, 7, 1000, "달콤한 홍시", 500),
+(1, "유자", 5500, 140, 6, 900, "향긋한 유자", 550),
+(1, "패션후르츠", 8500, 120, 10, 1100, "열대과일 패션후르츠", 850),
+(1, "참외", 6000, 125, 8, 1000, "아삭한 참외", 600),
+(1, "구아바", 9000, 115, 12, 1300, "이국적인 구아바", 900),
+(1, "파파야", 11000, 105, 11, 1400, "부드러운 파파야", 1100),
+(1, "스타프루트", 7500, 110, 9, 1200, "독특한 스타프루트", 750);
 
-INSERT INTO `image` (`pro`)
-INSERT INTO 
+INSERT INTO `image` (`prodNo`, `sName`)
+VALUES 
+(1, "peach.png"),
+(2, "apple.png"),
+(3, "pear.png"),
+(4, "cherry_tomato.png"),
+(5, "strawberry.png"),
+(6, "orange.png"),
+(7, "banana.png"),
+(8, "grape.png"),
+(9, "plum.png"),
+(10, "cherry.png"),
+(11, "lemon.png"),
+(12, "grapefruit.png"),
+(13, "melon.png"),
+(14, "watermelon.png"),
+(15, "pineapple.png"),
+(16, "mango.png"),
+(17, "kiwi.png"),
+(18, "blueberry.png"),
+(19, "lime.png"),
+(20, "fig.png"),
+(21, "pomegranate.png"),
+(22, "coconut.png"),
+(23, "persimmon.png"),
+(24, "yuzu.png"),
+(25, "passionfruit.png"),
+(26, "oriental_melon.png"),
+(27, "guava.png"),
+(28, "papaya.png"),
+(29, "starfruit.png"),
+(30, "dragonfruit.png");
+
+
+

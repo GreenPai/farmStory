@@ -45,7 +45,7 @@ public class ListController extends HttpServlet {
 
 		// 글목록 데이터 조회
 		List<ArticleDTO> articles = service.findAllArticle(start);
-
+		
 		// 데이터 참조 공유
 		req.setAttribute("articles", articles);
 		req.setAttribute("currentPage", currentPage);

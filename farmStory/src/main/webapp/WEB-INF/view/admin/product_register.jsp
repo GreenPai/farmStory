@@ -22,7 +22,7 @@
   <section class="right_section">
                 <p class="title">상품등록</p>
                 <article>
-                    <form action="/farmStory/admin/product/register.do" method="post" >
+                    <form action="/farmStory/admin/product/register.do" method="post" enctype="multipart/form-data">
                         <table class="register">
                             <tbody>
                                 <tr>
@@ -36,9 +36,9 @@
                                     <td>
                                         <select name="cateName">
                                              <option value="종류" disabled selected>종류</option>
-                                             <option value="option">과일</option>
-                                             <option value="option">곡류</option>
-                                             <option value="option">야채</option>
+                                             <option value="과일">과일</option>
+                                             <option value="곡류">곡류</option>
+                                             <option value="야채">야채</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -71,7 +71,7 @@
                                         <input type="radio" id="price1" name="delivery" value="2000"><label for="price1">2000원</label>
                                         <input type="radio" id="price2" name="delivery" value="3000"><label for="price2">3000원</label>
                                         <input type="radio" id="price3" name="delivery" value="5000"><label for="price3">5000원</label>
-                                        <input type="radio" id="price4" name="delivery" value="무료"><label for="price4">무료</label>
+                                        <input type="radio" id="price4" name="delivery" value="0"><label for="price4">무료</label>
                                     </td> 
                                 </tr>
                                 <tr>

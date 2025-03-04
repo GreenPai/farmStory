@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +7,47 @@
     <link rel="stylesheet" href="/farmStory/css/layout_bg.css"/>
     <link rel="stylesheet" href="/farmStory/css/farm/basket.css"/>
 </head>
+<script>
+	document.addEventListener('DOMContentLoaded', function(){
+		
+		total.innerText = Number(total.innerText).toLocaleString()+"원";
+		price.innerText = Number(price.innerText).toLocaleString()+"원";
+		fee.innerText = Number(fee.innerText).toLocaleString()+"원";
+		
+		let prodprice = `${product.prodDiscountPrice}`;
+		
+		let itemCountInput = document.querySelector('#itemCount');
+		itemCountInput.addEventListener("input", function(){
+			let itemCount = itemCountInput.value;
+			console.log("현재 수량: " + itemCount);
+			total.innerText = (prodprice*itemCount).toLocaleString()+"원";	
+		})
+		
+		// 장바구니 버튼 클릭 시
+		// uid, prodNo, cartProdCount
+		document.getElementById("addBtn").addEventListener("click", async function() {
+            
+			alert("장바구니에 추가되었습니다.");
 
+            const prodNo = formProduct.prodNo.value;
+            const cartProdCount = formProduct.itemCount.value;
+            
+            const response = await fetch('/farmStory/basket/register.do?prodNo=' + prodNo + '&cartProdCount=' + cartProdCount);
+
+  
+  
+            // 장바구니에 추가하는 코드 작성 가능
+        });
+		
+		// 바로구매 버튼 클릭 시
+		document.getElementById("buyBtn").addEventListener("click", function() {
+            alert("구매 페이지로 이동합니다.");
+            // 바로 구매하는 코드 작성 가능
+        });
+		
+			
+	});
+</script>
 <%@ include file="../layout/_header_bg.jsp" %>
 <main>
         <section class="left_section">
@@ -49,42 +90,43 @@
                 <div class="content">
                     <p class="black_bold_txt">기본정보</p>
                     <div class="info">
-                      <div class="info_img"> 
+                      <div class="info_img">
+                      	<img src="${pageContext.request.contextPath}/product_images/${imageName}" alt="상품 이미지">
                       </div>
                       <div class="info_form">
-                        <form action="#">
+                        <form action="#" name="formProduct">
+                          <input type="hidden" name="uid" >
                           <table>
                             <tr>
                               <td>상품명</td>
-                              <td>딸기 500g</td>
+                              <td>${product.prodName}</td>
                             </tr>
                             <tr>
                               <td>상품코드</td>
-                              <td>01</td>
+                              <td><input type="hidden" name="prodNo" value="${product.prodNo}">${product.prodNo}</td>
                             </tr>
                             <tr>
                               <td>배송비</td>
-                              <td>5,000원<span class="gray_tt"> 3만원 이상 무료배송</span></td>
+                              <td><span id="fee">${product.prodDeliveryFee}</span><span class="gray_tt"> 3만원 이상 무료배송</span></td>
                             </tr>
                             <tr>
                               <td>판매가격</td>
-                              <td>4000원</td>
+                              <td id="price">${product.prodDiscountPrice}</td>
                             </tr>
                             <tr>
                               <td>구매수량</td>
-                              <td><input type="text" style="width: 60px;" value="1"></td>
+                              <td><input type="number" name="itemCount" id="itemCount" style="width: 60px;" value="1"></td>
                             </tr>
                             <tr>
                               <td>합계</td>
-                              <td class="red_tt">4,000원</td>
-                            </tr>
-                            
+                              <td class="red_tt" id="total">${product.prodDiscountPrice}</td>
+                            </tr> 
                           </table>
                         </form>
                       </div>
                       <div class="buttons">
-                        <button class="green_btn" type="button">장바구니</button>
-                        <button class="red_btn" type="button">바로구매</button>
+                        <button class="green_btn" type="button" id="addBtn">장바구니</button>
+                        <button class="red_btn"   type="button" id="buyBtn">바로구매</button>
                       </div>
                     </div>
                 </div>
@@ -122,4 +164,5 @@
             </article>
         </section>
     </main>
+    
 <%@ include file="../layout/_footer.jsp" %>       

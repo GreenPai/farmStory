@@ -7,6 +7,10 @@ public class SQL {
 	
 	// user
 	public static final String SELECT_COUNT_USER = "select COUNT(*) from `user` ";
+	public static final String SELECT_USER_BY_NAME_AND_EMAIL = "SELECT "
+																+ "	`uid` "
+																+ "FROM `user` WHERE `name`= ? AND `email` = ? ";
+
 	public static final String WHERE_UID = "where `uid`=?";
 	public static final String WHERE_NICK = "where `nick`=?";
 	public static final String WHERE_EMAIL = "where `email`=?";
@@ -25,9 +29,6 @@ public class SQL {
 											+ "`addr2`=?,"
 											+ "`regip`=?,"
 											+ "`regDate`=NOW()";
-	
-	public static final String FIND_USER_ID = "SELECT `uid` FROM `user` "
-													+ "WHERE NAME=? AND email=?;";
 	
 	// article
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `article`";
@@ -94,8 +95,6 @@ public class SQL {
 
 	public static final String SELECT_FILE_BY_ANO = "select * from `file` where `ano`= ?";
 
-
-	
 	//comment
 	public static final String INSERT_COMMENT = "insert into `comment` set "
 																+"`parent`=?, "
@@ -103,6 +102,7 @@ public class SQL {
 																+"`writer`=?, "
 																+"`regip`=?, "
 																+"`wdate`=NOW()";
+
 
 	public static final String SELECT_COMMENT_BY_CNO = "SELECT " 
 																+ "c.*, "
@@ -129,9 +129,4 @@ public class SQL {
 														+"WHERE `cno` =?" ;
 
 
-												
-												
-												
-	
-	
 }

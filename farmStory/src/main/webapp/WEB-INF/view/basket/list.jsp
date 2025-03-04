@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,7 +49,12 @@
                 
                 <div class="content">
                     
-                    <p><span class="black_txt">전체(10)</span> | 과일 | 야채 | 곡류</p>
+                    <p class="product_tap">
+                    	<span class="black_txt"><a href="/farmStory/basket/list.do">전체(${total})</a></span> 
+                    	<a href="/farmStory/basket/list.do?cateNo=1">| 과일 |</a> 
+                    	<a href="/farmStory/basket/list.do?cateNo=2">야채 |</a> 
+                    	<a href="/farmStory/basket/list.do?cateNo=3">곡류</a>  
+                    </p>
                     
                     <table>
                         <thead>
@@ -60,77 +66,43 @@
                             <th>판매가격</th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><img src="/farmStory/images/market_item1.jpg" alt="사과"></td>
-                                <td>과일</td>
-                                <td><a href="/farmStory/basket/detail.do">사과 500g</a></td>
-                                <td>10%</td>
-                                <td>400P</td>
-                                <td>
-                                  <p>
-                                    <span class="tr_b">3,600원</span>
-                                    <span class="tr_g">4,000원</span>
-                                  </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="/farmStory/images/market_item2.jpg" alt="전남 완주 배 5kg"></td>
-                                <td>과일</td>
-                                <td>전남 완주 배 5kg</td>
-                                <td>10%</td>
-                                <td>400P</td>
-                                <td>
-                                  <p>
-                                    <span class="tr_b">3,600원</span>
-                                    <span class="tr_g">4,000원</span>
-                                  </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="/farmStory/images/market_item3.jpg" alt="방울 토마토"></td>
-                                <td>과일</td>
-                                <td>방울토마토</td>
-                                <td>10%</td>
-                                <td>400P</td>
-                                <td>
-                                  <p>
-                                    <span class="tr_b">3,600원</span>
-                                    <span class="tr_g">4,000원</span>
-                                  </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="/farmStory/images/market_item4.jpg" alt="무농약 현미"></td>
-                                <td>곡류</td>
-                                <td>우농약 현미</td>
-                                <td>10%</td>
-                                <td>400P</td>
-                                <td>
-                                  <p>
-                                    <span class="tr_b">3,600원</span>
-                                    <span class="tr_g">4,000원</span>
-                                  </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="/farmStory/images/market_item5.jpg" alt="팜스토리 하루 샐러드"></td>
-                                <td>야채</td>
-                                <td>팜스토리 하루야채 샐러드</td>
-                                <td>10%</td>
-                                <td>400P</td>
-                                <td>
-                                  <p>
-                                    <span class="tr_b">3,600원</span>
-                                    <span class="tr_g">4,000원</span>
-                                  </p>
-                                </td>
-                            </tr>
+                        	<c:if test="${empty products}">
+							    <tr>
+							        <td colspan="6">등록된 상품이 없습니다.</td>
+							    </tr>
+							</c:if>
+                        	<c:forEach var="product" items="${products}">
+	                        	<tr>
+	                        		<td>
+	                        			<img src="${pageContext.request.contextPath}/product_images/${product.imagesName}" alt="상품 이미지">
+	                        		</td>
+	                        		<td>${product.cateName}</td>
+	                        		<td><a href="/farmStory/basket/detail.do?prodNo=${product.prodNo}">${product.prodName}</a></td>
+	                        		<td>${product.prodDiscount}%</td>
+	                        		<td>${product.prodPoint}</td>
+	                        		<td> <span style="font-weight: bold;" id="price">${product.prodDiscountPrice}원</span>  <span class="gray_txt_underline">${product.prodPrice}원</span> </td>
+	                        	</tr>
+
+                        	</c:forEach>
+                        	
+                        
                         </tbody>
                         
                     </table>
                 </div>
                 <div class="page">
-                  <p>< [1] [2] [3] [4] [5] ></p>
+                  <p>
+                  	<c:if test="${pageGroupDTO.start>1}">
+                    <a href="/farmStory/basket/list.do?pg=${pageGroupDTO.start -1}" class="prev">이전</a>
+                    </c:if>
+                    <c:forEach var="num" begin="${pageGroupDTO.start}" end="${pageGroupDTO.end }">
+                    <a href="/farmStory/basket/list.do?pg=${num}" class="num ${currentPage==num ? 'current' : '' }">[${num}]</a>
+                    </c:forEach>
+                    <c:if test="${pageGroupDTO.end<lastPageNum}">
+                    <a href="/farmStory/basket/list.do?pg=${pageGroupDTO.end + 1}" class="next">다음</a>
+                    </c:if>
+                  	
+                  </p>
                 </div>
             </article>
         </section>
