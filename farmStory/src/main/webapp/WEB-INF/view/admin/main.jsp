@@ -37,30 +37,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1011</td>
-                                <td>사과500g</td>
-                                <td>과일</td>
-                                <td>4000원</td>
-                                <td>100</td>
-                                <td>2023-01-01</td>
-                            </tr>
-                            <tr>
-                                <td>1011</td>
-                                <td>사과500g</td>
-                                <td>과일</td>
-                                <td>4000원</td>
-                                <td>100</td>
-                                <td>2023-01-01</td>
-                            </tr>
-                            <tr>
-                                <td>1011</td>
-                                <td>사과500g</td>
-                                <td>과일</td>
-                                <td>4000원</td>
-                                <td>100</td>
-                                <td>2023-01-01</td>
-                            </tr>
+                        	<c:forEach var="product" items="${products}">
+	                            <tr>
+	                                <td>${product.id}</td>
+	                                <td>${product.name}</td>
+	                                <td>${product.category}</td>
+	                                <td>${product.price}원</td>
+	                                <td>${product.stock}</td>
+	                                <td>${product.regDate}</td>
+	                            </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </article>
@@ -82,36 +68,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1011</td>
-                                <td>사과500g</td>
-                                <td>4000원</td>
-                                <td>3개</td>
-                                <td>3000원</td>
-                                <td>8000원</td>
-                                <td>홍길동</td>
-                                <td>2023-01-01</td>
-                            </tr>
-                            <tr>
-                                <td>1011</td>
-                                <td>사과500g</td>
-                                <td>4000원</td>
-                                <td>3개</td>
-                                <td>3000원</td>
-                                <td>8000원</td>
-                                <td>홍길동</td>
-                                <td>2023-01-01</td>
-                            </tr>
-                            <tr>
-                                <td>1011</td>
-                                <td>사과500g</td>
-                                <td>4000원</td>
-                                <td>3개</td>
-                                <td>3000원</td>
-                                <td>8000원</td>
-                                <td>홍길동</td>
-                                <td>2023-01-01</td>
-                            </tr>
+                       		<c:forEach var="order" items="${orders}">
+                                <tr>
+                                    <td>${order.id}</td>
+                                    <td>${order.productName}</td>
+                                    <td>${order.price}원</td>
+                                    <td>${order.quantity}개</td>
+                                    <td>${order.deliveryFee}원</td>
+                                    <td>${order.totalPrice}원</td>
+                                    <td>${order.userName}</td>
+                                    <td>${order.orderDate}</td>
+                                </tr>
+                              </c:forEach>
                         </tbody>
                             
                     </table>
@@ -131,33 +99,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                        	<c:forEach var="user" items="${users}">
                             <tr>
-                                <td>a101</td>
-                                <td>김유신</td>
-                                <td>유신123</td>
-                                <td>010-1234-1001</td>
-                                <td>yusin123@naver.com</td>
-                                <td>2</td>
-                                <td>2023-01-01</td>
+                                <td>${user.id}</td>
+                                <td>${user.name}</td>
+                                <td>${user.nickname}</td>
+                                <td>${user.phone}</td>
+                                <td>${user.email}</td>
+                                <td>${user.level}</td>
+                                <td>${user.regDate}</td>
                             </tr>
-                            <tr>
-                                <td>a101</td>
-                                <td>김유신</td>
-                                <td>유신123</td>
-                                <td>010-1234-1001</td>
-                                <td>yusin123@naver.com</td>
-                                <td>2</td>
-                                <td>2023-01-01</td>
-                            </tr>
-                            <tr>
-                                <td>a101</td>
-                                <td>김유신</td>
-                                <td>유신123</td>
-                                <td>010-1234-1001</td>
-                                <td>yusin123@naver.com</td>
-                                <td>2</td>
-                                <td>2023-01-01</td>
-                            </tr>
+                           </c:forEach>
                             
                         </tbody>
                     </table>
