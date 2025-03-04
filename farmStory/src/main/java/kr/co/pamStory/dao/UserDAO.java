@@ -56,6 +56,16 @@ public class UserDAO extends DBHelper {
 			sql.append(SQL.WHERE_HP);
 		}
 		
+		// String - 불면 
+		/* String name = "한결";
+		 * name = "한결1";
+		 * name = "한결2";
+		 * 한결 -> 한결1 -> 한결2 -> 한결3 
+		 * 
+		 * StringBuilder 
+		 * select COUNT(*) from `user` where `uid`=?   
+		 * */
+		
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
@@ -75,37 +85,6 @@ public class UserDAO extends DBHelper {
 	
 	public UserDTO selectUser(String uid) {
 		return null;
-	}
-	
-	public UserDTO findUserId(String name, String email) {
-		
-		UserDTO userDTO = new UserDTO();
-		
-		try {
-			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.FIND_USER_ID);
-			
-			psmt.setString(1, name);
-			psmt.setString(2, email);
-			
-			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
-				// 결과가 있으면 DTO 반환
-				userDTO.setUid(rs.getString(1));
-				userDTO.setName(rs.getString(2));
-				userDTO.setEmail(rs.getString(3));
-				
-			}
-			
-			closeAll();
-			
-			
-		}catch (Exception e) {
-			logger.error(e.getMessage());
-		}
-		
-		return userDTO;
 	}
 	
 	public UserDTO selectUser(UserDTO dto) {
@@ -145,6 +124,7 @@ public class UserDAO extends DBHelper {
 	public List<UserDTO> selectAllUser() {
 		return null;
 	}
+
 	
 	public void updateUser(UserDTO dto) {
 		
@@ -152,5 +132,32 @@ public class UserDAO extends DBHelper {
 	
 	public void deleteUser(String uid) {
 		
+	}
+	public UserDTO selectUserByNameAndEmail(String name, String email) {
+		
+		UserDTO dto = null;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_USER_BY_NAME_AND_EMAIL);
+			psmt.setString(1, name);
+			psmt.setString(2, email);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new UserDTO();
+				dto.setUid(rs.getString(1));
+			}else {
+				dto = new UserDTO();
+				dto.setUid("인증실패");
+			}
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		return dto;
 	}
 }

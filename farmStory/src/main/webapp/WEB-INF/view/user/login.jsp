@@ -21,7 +21,9 @@
 
 <main id="user">
             <section class="login">
+
                 <form action="/farmStory/user/login.do" method="post"	>
+
                     <table>
                         <tbody>
                             <tr>
