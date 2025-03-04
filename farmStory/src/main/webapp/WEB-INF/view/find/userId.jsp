@@ -10,42 +10,61 @@
 	
 	document.addEventListener('DOMContentLoaded', function() {
 
-		
 		// 5. 이메일 유효성 검사 (중복/인증처리 포함)
 		const btnSendEmail = document.getElementById('btnSendEmail');
 		const emailResult = document.querySelector('.emailResult'); 
+		const codeResult = document.querySelector('.codeResult'); 
 		// const emailResult = document.querySelector('.emailResult');
 		// const auth = document.querySelector('.auth');
 		// let preventDoubleClick = false;
 		const btnAuthCode = document.getElementById('btnAuthCode');
 		
-		btnSendEmail.onclick = async function(){
-			
+		let preventDoubleClick = false;
+		let nextBtnClick = false;
+		let code = "";
+		
+		btnSendEmail.onclick = async function(event){
 			const email = formRegister.email.value;
 			const name = formRegister.name.value;
 			
+			if(preventDoubleClick){
+				return;
+			}
+			
+			preventDoubleClick = true;
 			// fetch 요청
 			// response 서버의 응답, 실제 데이터가 아니라 응답 객체
 			const response = await fetch('/farmStory/find/check/userid.do?name='+name+'&email='+email);
 			const data = await response.json();
+			code = data.code;
 			
 			if(data.uid != "인증실패") {
-		        emailResult.innerText = '이메일로 인증번호를 발송했습니다.';
+		        emailResult.innerText = ' 이메일로 인증번호를 발송했습니다.';
 		        emailResult.style.color = 'green';
 		        auth.style.display = 'block'; // 인증번호 입력란 보이기
+		        preventDoubleClick = false;
 			} else {		        
-		        emailResult.innerText = '이메일이 일치하지 않습니다.';
+		        emailResult.innerText = ' 이메일이 일치하지 않습니다.';
 		        emailResult.style.color = 'red';
 		    }
 			
 		}
 		
-		
+		// 인증 성공 
 		btnAuthCode.onclick = async function(){
-			alert(session.sessAuthCode);
-			let sessAuthCode = document.getElementById("sessAuthCode").value;
-	        alert(sessAuthCode);
+
+			event.preventDefault();
+			const authCode = formRegister.authCode.value;
+			if(code === authCode) {
+				codeResult.innerText = ' 인증에 성공하셨습니다.';
+				codeResult.style.color = 'green';
+				nextBtnClick = true;
+			}else{
+				codeResult.innerText = ' 인증에 실패하셨습니다.';
+				codeResult.style.color = 'red';
+			} 			
 		}
+		
 		
 		/*
 		const btnAuthEmail = document.getElementById('btnAuthEmail');
@@ -92,19 +111,28 @@
 		//const email = document.getElementsByName('email')[0];
 		//const button = document.getElementsByTagName('button')[0];
 		
-		//next.onclick = function() {
-		//	if(name.value == "") {
-		//		alert('이름을 입력해 주세요.');
-		//		return false;			
-		//	}else if(email.value == "") {
-		//		alert('이메일을 입력해 주세요');
-		//		return false;
-		//	}else if(button.value == "") {
-		//		alert('인증번호를 입력해 주세요.');
-		//		return false;
-		//	}
-		//	return true;
-		//}
+		
+		next.onclick = function(event) {
+			event.preventDefault();
+			if(nextBtnClick) {
+				
+				// 작성 이메일 
+				const email = formRegister.email.value;
+			    
+			    const formData = new URLSearchParams();
+			    formData.append("email", email);
+
+			    const response = fetch('/farmStory/find/resultUserId.do', {
+			        method: 'POST',
+			        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			        body: formData
+			    });
+					
+			}else{
+				alert("인증하세요");
+				return;
+			}
+		}
 		
 		
 	});
@@ -193,8 +221,7 @@
                                     </div>
                                     <div>
                                         <input type="text" name="authCode" id="authCode" placeholder="인증번호 입력" required>
-                                        <input type="hidden" id="sessAuthCode" value="<%= session.getAttribute("sessAuthCode") %>">
-                                        <button id="btnAuthCode">확인</button>
+                                        <button id="btnAuthCode">확인</button><span class="codeResult"></span>
                                     </div>
                                 </td>
                             </tr>

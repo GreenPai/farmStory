@@ -100,6 +100,10 @@ public enum UserService {
 		return dao.selectUserByNameAndEmail(name, email);
 	}
 
+	public UserDTO resultFindId(String name, String uid, String email, String regDate) {
+		return dao.selectResultFindId(name, uid, email, regDate);
+	}
+
 
 
 
