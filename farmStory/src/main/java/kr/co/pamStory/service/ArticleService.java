@@ -83,9 +83,17 @@ public enum ArticleService {
 		return lastPageNum;
 	}
 	
+	public int getCountArticleBySearch(ArticleDTO dto) {
+		return dao.selectCountArticleBySearch(dto);
+	}
+	
+	public List<ArticleDTO> searchAllArticle(ArticleDTO dto, int start) {
+		return dao.selectAllArticleBySearch(dto,start);
+	}
+	
 	//게시글 삭제 서비스 메서드
 	public void deleteArticle(String no) {	
 			dao.deleteArticle(no);
 	}
-	
+
 }
