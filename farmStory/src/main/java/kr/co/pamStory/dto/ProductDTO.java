@@ -14,6 +14,7 @@ public class ProductDTO {
 	private int prodPoint;
 	private int prodDeliveryFee;
 	private String prodContent;
+	private String regDate;
 	
 	// 추가 필드
 	private String cateName;
@@ -21,6 +22,12 @@ public class ProductDTO {
 	private int prodDiscountPrice;
 	
 	
+	public String getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
 	public int getProdDiscountPrice() {
 		return prodDiscountPrice;
 	}
@@ -104,9 +111,11 @@ public class ProductDTO {
 		return "ProductDTO [prodNo=" + prodNo + ", cateNo=" + cateNo + ", prodName=" + prodName + ", prodPrice="
 				+ prodPrice + ", prodStock=" + prodStock + ", prodSold=" + prodSold + ", prodDiscount=" + prodDiscount
 				+ ", prodPoint=" + prodPoint + ", prodDeliveryFee=" + prodDeliveryFee + ", prodContent=" + prodContent
-				+ ", cateName=" + cateName + ", imagesName=" + imagesName + "]";
+				+ ", regDate=" + regDate + ", cateName=" + cateName + ", imagesName=" + imagesName
+				+ ", prodDiscountPrice=" + prodDiscountPrice + "]";
 	}
-
+	
+	
 	
 	
 	

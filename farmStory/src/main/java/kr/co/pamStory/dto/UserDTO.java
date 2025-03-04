@@ -14,7 +14,22 @@ public class UserDTO {
 	private String regip;
 	private String regDate;
 	private String leaveDate;
+	private int userPoint;
+	private int userLevel;
 	
+	
+	public int getUserPoint() {
+		return userPoint;
+	}
+	public void setUserPoint(int userPoint) {
+		this.userPoint = userPoint;
+	}
+	public int getUserLevel() {
+		return userLevel;
+	}
+	public void setUserLevel(int userLevel) {
+		this.userLevel = userLevel;
+	}
 	public String getUid() {
 		return uid;
 	}
@@ -93,13 +108,14 @@ public class UserDTO {
 	public void setLeaveDate(String leaveDate) {
 		this.leaveDate = leaveDate;
 	}
-	
 	@Override
 	public String toString() {
 		return "UserDTO [uid=" + uid + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email
 				+ ", hp=" + hp + ", role=" + role + ", zip=" + zip + ", addr1=" + addr1 + ", addr2=" + addr2
-				+ ", regip=" + regip + ", regDate=" + regDate + ", leaveDate=" + leaveDate + "]";
+				+ ", regip=" + regip + ", regDate=" + regDate + ", leaveDate=" + leaveDate + ", userPoint=" + userPoint
+				+ ", userLevel=" + userLevel + "]";
 	}
+	
 	
 	
 }
