@@ -18,6 +18,7 @@ import kr.co.pamStory.service.FileService;
 public class ModifyController extends HttpServlet {
 	private static final long serialVersionUID = 1271261235653325736L;
 	private ArticleService service = ArticleService.INSTANCE;
+	private FileService fileservice= FileService.INSTANCE;
 
 
 	@Override
@@ -39,9 +40,12 @@ public class ModifyController extends HttpServlet {
 	        resp.sendRedirect("/farmStory/article/list.do");
 	        return;
 	    }
+	    
+	    
 
 	    // 게시글 정보 req에 담기
 	    req.setAttribute("article", article);
+	    
 
 	    // View forward
 	    RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/modify.jsp");
@@ -72,6 +76,8 @@ public class ModifyController extends HttpServlet {
 
 		// 글 수정 서비스 호출
 		service.modifyArticle(dto);
+		
+		List<FileDTO> files= fileservice.uploadFile(req);
 
 		resp.sendRedirect("/farmStory/article/list.do");
 	}

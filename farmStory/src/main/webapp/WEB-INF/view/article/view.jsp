@@ -64,13 +64,12 @@ document.addEventListener('DOMContentLoaded', function(){
 		.catch(err => {
 			console.log(err);
 		});
-	}
+	};
 	
-	
-});
-		
-	
+	});
+
 </script>
+
 
 
 </head>
@@ -140,11 +139,14 @@ document.addEventListener('DOMContentLoaded', function(){
 						<td><input type="text" name="writer"
 							value="${articleDTO.writer}(${articleDTO.nick})" readonly /></td>
 					</tr>
-					<tr>
-						<th>파일</th>
-						<td><a href="#">1</a> &nbsp; <span>7</span> 회 다운로드 <br>
-							<a href="#">교육 운영 관리자료.hwp</a> &nbsp; <span>7</span> 회 다운로드</td>
-					</tr>
+					<c:if test="${articleDTO.file > 0 }">
+						<tr>
+							<th>파일</th>
+							<td><c:forEach var="file" items="${articleDTO.files}">
+									<a href="/farmStory/file/download.do?fno=${file.fno}">${file.oName}</a> &nbsp; <span>${file.download}</span> 회 다운로드 <br>
+								</c:forEach></td>
+						</tr>
+					</c:if>
 					<tr>
 						<th>내용</th>
 						<td><textarea name="content" readonly>${articleDTO.content}</textarea>
@@ -168,7 +170,9 @@ document.addEventListener('DOMContentLoaded', function(){
 						<span class="date">${comment.wdate}</span> <span class="nick">${comment.nick}</span>
 						<p class="content">${comment.content}</p>
 						<div>
-							<a href="/farmStory/comment/delete.do?cno=${comment.cno}&parent=${articleDTO.no}" class="remove">삭제</a> <a href="#" class="modify">수정</a>
+							<a
+								href="/farmStory/comment/delete.do?cno=${comment.cno}&parent=${articleDTO.no}"
+								class="remove">삭제</a> <a href="#" class="modify">수정</a>
 						</div>
 					</article>
 				</c:forEach>
