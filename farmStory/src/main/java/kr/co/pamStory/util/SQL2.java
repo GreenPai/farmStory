@@ -47,6 +47,19 @@ public class SQL2 {
 	public static final String DELETE_PRODUCT = "DELETE FROM `PRODUCT` WHERE `PRODNO` = ? ";
 
 	public static final String DELETE_IMAGE = "DELETE FROM `IMAGE` WHERE `PRODNO` = ? ";
+
+	public static final String SELECT_COUNT_PRODUCT = "SELECT COUNT(*) FROM `PRODUCT`";
+
+	// 상품 데이터 6개 출력(페이징)
+	public static final String SELECT_PRODUCT_LIMIT_6 =  "SELECT p.*, c.cateName, i.sName FROM `PRODUCT` as p "
+											            + "JOIN `category` as c ON p.cateNo = c.cateNo "
+											            + "JOIN `image` as i ON p.prodNo = i.prodNo "
+											            + "ORDER BY p.regDate DESC "
+											            + "LIMIT ?, 6";
+
+	public static final String SELECT_COUNT_USER = "SELECT COUNT(*) FROM `USER`";
+
+	public static final String SELECT_ALL_USER_LIMIT_6 = "SELECT * FROM `USER` order BY `REGDATE` DESC LIMIT ?,6";;
 					
 	
 	
