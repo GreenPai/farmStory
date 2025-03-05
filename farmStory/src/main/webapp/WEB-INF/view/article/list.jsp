@@ -34,12 +34,12 @@
                         </a>
                       </li>
                       <li>
-                        <a href="/farmStory/article/view.do">
+                        <a href="/farmStory/article/list.do">
                           <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
                         </a>
                       </li>
                       <li>
-                        <a href="/farmStory/article/modify.do">
+                        <a href="/farmStory/article/list.do">
                           <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
                         </a>
                       </li>

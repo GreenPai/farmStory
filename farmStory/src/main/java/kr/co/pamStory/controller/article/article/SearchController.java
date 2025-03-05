@@ -51,6 +51,7 @@ public class SearchController extends HttpServlet{
 		req.setAttribute("pageStartNum", pageStartNum);
 		req.setAttribute("pageGroupDTO", pageGroupDTO);
 		req.setAttribute("searchType", searchType);
+		req.setAttribute("keyword", keyword);
 		
 		//view 포워드
 		RequestDispatcher dispatcher= req.getRequestDispatcher("/WEB-INF/view/article/searchList.jsp");

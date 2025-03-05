@@ -1,5 +1,7 @@
 package kr.co.pamStory.dto;
 
+import java.util.List;
+
 public class ArticleDTO {
 	
 	private int no;
@@ -17,6 +19,15 @@ public class ArticleDTO {
 	private String nick;
 	private String searchType;
 	private String keyword;
+	private List<FileDTO> files;
+	
+	public List<FileDTO> getFiles() {
+		return files;
+	}
+	
+	public void setFiles(List<FileDTO> files) {
+		this.files = files;
+	}
 	
 	public String getSearchType() {
 		return searchType;

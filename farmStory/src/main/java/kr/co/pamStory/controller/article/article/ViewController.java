@@ -28,8 +28,10 @@ public class ViewController extends HttpServlet {
 
 		String no = req.getParameter("no");
 		
+	try {
 		ArticleDTO articledto = service.findArticle(Integer.parseInt(no)); 
 		List<FileDTO> filedtos= fileservice.findFile(no);
+		articledto.setFiles(filedtos);
 		
 		// 댓글 조회 서비스 호출
 		List<CommentDTO> comments = commentservice.findAllComment(no);
@@ -42,6 +44,9 @@ public class ViewController extends HttpServlet {
 		// View forward
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view.jsp");
 		dispatcher.forward(req, resp);
+		}catch(NumberFormatException e) {
+			resp.sendRedirect("/farmStory/article/list.do");
+		}
 	}
 
 	@Override
