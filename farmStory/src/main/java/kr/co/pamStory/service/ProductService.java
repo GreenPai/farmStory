@@ -30,4 +30,11 @@ public enum ProductService {
 		return dao.selectAllProducts();
 	}
 
+	public void deleteProduct(String prodNo) {
+		dao.deleteProduct(prodNo);
+		
+	}
+
+
+
 }

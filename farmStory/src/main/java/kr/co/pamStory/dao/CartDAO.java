@@ -77,7 +77,7 @@ public class CartDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(BASKET_SQL.DELETE_CART_BY_CARTNO);
-			psmt.setString(1, cartNo);
+			psmt.setString(1, cartNo);                              
 			psmt.executeUpdate();
 			
 			closeAll();	

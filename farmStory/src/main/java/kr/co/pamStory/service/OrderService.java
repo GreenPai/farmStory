@@ -9,24 +9,16 @@ public enum OrderService {
 	INSTANCE;
 
 	// 다오 연결
-	private OrderDAO dao = OrderDAO.getInstance();
+	private final OrderDAO dao = OrderDAO.getInstance();
 
-	public static List<OrderDTO> findLatest3Orders() {
-		return null;
+	public List<OrderDTO> findLatest3Orders() {
+		return dao.selectLatest3Orders();
 	
-
-		
-	}
-
-	List<OrderDTO> findAllOrder() {
-		
-		return null;
 	}
 
 	public int registerOrder(OrderDTO dto) {
 		return dao.insertOrder(dto);
 	}
-
 
 
 }

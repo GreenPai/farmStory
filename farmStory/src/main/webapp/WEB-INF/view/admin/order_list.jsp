@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,9 +63,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                        	<c:forEach var="orderlist" items="${orderlists}">
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>1011</td>
+                                <td>${orderlists.orderNo }</td>
                                 <td>사과500g</td>
                                 <td>4,000원</td>
                                 <td>2</td>
@@ -74,6 +76,7 @@
                                 <td>2023-01-01 13:06:14</td>
                                 <td>[상세확인]</td>
                             </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                     <div class="delete-button-container">

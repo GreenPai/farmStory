@@ -108,11 +108,12 @@ public class ProductDAO extends DBHelper {
 				dto.setProdDiscount(rs.getInt(8));
 				dto.setProdDeliveryFee(rs.getInt(9));
 				dto.setProdContent(rs.getString(10));
-				dto.setRegDate(rs.getString(11));
+				dto.setRegDate(rs.getString(11).substring(0, 10));
 				dto.setCateNo(rs.getInt(12));
 				dto.setCateName(rs.getString(13));
 				dtos.add(dto);
 			}
+
 			closeAll();
 		}catch(Exception e) {
 			logger.error(e.getMessage());
@@ -140,16 +141,31 @@ public class ProductDAO extends DBHelper {
 				dto.setProdDiscount(rs.getInt(8));
 				dto.setProdDeliveryFee(rs.getInt(9));
 				dto.setProdContent(rs.getString(10));
-				dto.setRegDate(rs.getString(11));
+				dto.setRegDate(rs.getString(11).substring(0, 10));
 				dto.setCateName(rs.getString(12));
+				dto.setImagesName(rs.getString(13));
 				
 				dtos.add(dto);
-				
-			}
+			} 
+			
 			closeAll();
 		}catch(Exception e) {
 			logger.error(e.getMessage());
 		}return dtos;
+	}
+
+	public void deleteProduct(String prodNo) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL2.DELETE_PRODUCT);
+			psmt.setString(1, prodNo);
+			psmt.executeUpdate();
+			
+			closeAll();
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		
 	}
 
 }

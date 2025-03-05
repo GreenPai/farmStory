@@ -29,20 +29,20 @@ public class MainController extends HttpServlet{
 		
 		// 상품 리스트 3개
 		List<ProductDTO> productDTOS = productservice.findLatest3Products();
-		//System.out.println(productDTOS.toString());
+		System.out.println(productDTOS.toString());
 		
 		// 유저 리스트 3개
 		List<UserDTO> userDTOS = userservice.findLatest3Users();
 		System.out.println(userDTOS.toString());
 		
 		// 주문 리스트 3개
-		List<OrderDTO> orderDTOS = OrderService.findLatest3Orders();
+		// List<OrderDTO> orderDTOS = orderservice.findLatest3Orders();
 		//System.out.println(orderDTOS.toString());
 		
 		// 데이터 뷰로 전달
 		req.setAttribute("products", productDTOS);
 		req.setAttribute("users", userDTOS);
-		req.setAttribute("orders", orderDTOS);
+		// req.setAttribute("orders", orderDTOS);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/admin/main.jsp");
 		dispatcher.forward(req, resp);

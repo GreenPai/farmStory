@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,65 +41,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                        	<c:forEach var="user" items="${users}">
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>a101</td>
-                                <td>김유신</td>
-                                <td>유신101</td>
-                                <td>yusin101@naver.com</td>
-                                <td>010-1234-1001</td>
-                                <td>
-                                    <select>
-                                         <option value="level">1</option>
-                                         <option value="level">2</option>
-                                         <option value="level">3</option>
-                                         <option value="level">4</option>
-                                    </select>
-                                </td>
-                                <td>2023-01-01 13:06:14</td>
-                                <td>[상세확인]</td>
+                                <td>${user.uid}</td>
+                                <td>${user.name}</td>
+                                <td>${user.nick}</td>
+                                <td>${user.email}</td>
+                                <td>${user.hp}</td>
+                                <td>${user.userLevel}</td>
+                                <td>${user.regDate}</td>
+                                <td><a href="#">[상세확인]</a></td>
                             </tr>
+                            </c:forEach>
                         </tbody>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>a101</td>
-                                <td>김유신</td>
-                                <td>유신101</td>
-                                <td>yusin101@naver.com</td>
-                                <td>010-1234-1001</td>
-                                <td>
-                                    <select>
-                                         <option value="level">1</option>
-                                         <option value="level">2</option>
-                                         <option value="level">3</option>
-                                         <option value="level">4</option>
-                                    </select>
-                                </td>
-                                <td>2023-01-01 13:06:14</td>
-                                <td>[상세확인]</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>a101</td>
-                                <td>김유신</td>
-                                <td>유신101</td>
-                                <td>yusin101@naver.com</td>
-                                <td>010-1234-1001</td>
-                                <td>
-                                    <select>
-                                         <option value="level">1</option>
-                                         <option value="level">2</option>
-                                         <option value="level">3</option>
-                                         <option value="level">4</option>
-                                    </select>
-                                </td>
-                                <td>2023-01-01 13:06:14</td>
-                                <td>[상세확인]</td>
-                            </tr>
-                        </tbody>
+                        
                         
                     </table>
                     <div class="page"  >

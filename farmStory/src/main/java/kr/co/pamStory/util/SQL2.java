@@ -37,11 +37,16 @@ public class SQL2 {
 	public static final String SELECT_ORDER_LIMIT_3 = "SELECT * FROM `ORDER` order BY `ORDERDATE` DESC LIMIT 0,3";
 
 	// 상품 전체 데이터 출력
-	public static final String SELECT_PRODUCT_ALL = "SELECT p.*, c.cateName FROM `PRODUCT` as p "
-													+ "join category as c on p.cateNo = c.cateNo "
-													+ "order BY `regDate` DESC";
+	public static final String SELECT_PRODUCT_ALL = "SELECT p.*, c.cateName, i.sName FROM `PRODUCT` as p "
+	                                                + "JOIN `category` as c ON p.cateNo = c.cateNo "
+	                                                + "JOIN `image` as i ON p.prodNo = i.prodNo "
+	                                                + "ORDER BY p.regDate DESC";
 
 	public static final String SELECT_ALL_USER = "SELECT * FROM `USER`";
+
+	public static final String DELETE_PRODUCT = "DELETE FROM `PRODUCT` WHERE `PRODNO` = ? ";
+
+	public static final String DELETE_IMAGE = "DELETE FROM `IMAGE` WHERE `PRODNO` = ? ";
 					
 	
 	
