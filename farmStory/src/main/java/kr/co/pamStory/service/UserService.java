@@ -14,6 +14,7 @@ import javax.mail.internet.MimeMessage;
 
 import kr.co.pamStory.dao.UserDAO;
 import kr.co.pamStory.dto.PageGroupDTO;
+import kr.co.pamStory.dto.PointDTO;
 import kr.co.pamStory.dto.ProductDTO;
 import kr.co.pamStory.dto.UserDTO;
 
@@ -164,6 +165,11 @@ public enum UserService {
 
 	public List<UserDTO> findAllUsers(int start) {
 		return dao.selectAllUsers(start);
+	}
+
+	public void modifyPoint(PointDTO pointDTO) {
+		dao.modifyPoint(pointDTO);
+		
 	} 
 
 

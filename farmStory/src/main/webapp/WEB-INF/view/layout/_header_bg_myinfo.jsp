@@ -8,7 +8,7 @@
             <a href="/farmStory">HOME |</a>
             <a href="/farmStory/user/login.do">로그인 |</a>
             <a href="/farmStory/user/terms.do">회원가입 |</a>
-            <a href="/farmStory/myinfo/basket.do">나의정보 |</a>
+            <a href="#">나의정보 |</a>
             <a href="/farmStory/user/logout.do">로그아웃 |</a>
             <a href="/farmStory/admin/main.do">관리자 |</a>
             <a href="#">고객센터 </a>
@@ -28,16 +28,19 @@
         </div>
       </div>
 
-      <div id="list">	
+      <div id="list">
         <nav>
           <ul>
             <li><a href="/farmStory/intro.do"><img src="/farmStory/images/head_menu1.png" alt="팜스토리소개"></a></li>
             <li><a href="/farmStory/basket/list.do"><img src="/farmStory/images/head_menu2.png" alt="장보기"></a></li>
             <li><a href="#"><img src="/farmStory/images/head_menu3.png" alt="농작물이야기"></a></li>
             <li><a href="/farmStory/event.do"><img src="/farmStory/images/head_menu4.png" alt="이벤트"></a></li>
-            <li><a href="/farmStory/article/list.do"><img src="/farmStory/images/head_menu5.png" alt="커뮤니티"></a></li>
+            <li><a href="#"><img src="/farmStory/images/head_menu5.png" alt="커뮤니티"></a></li>
           </ul>
         </nav>
       </div>
 
+      <div class="background">
+            <img src="/farmStory/images/sub_top_tit4.png" alt="EVENT" class="event">
+      </div>
     </header>

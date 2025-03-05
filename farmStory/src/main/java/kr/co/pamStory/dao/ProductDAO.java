@@ -219,4 +219,18 @@ public class ProductDAO extends DBHelper {
 		return dtos;
 	}
 
+	public void ModifProductStock(int prodNo, int cartProdCount) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(BASKET_SQL.MODIFY_PRODUCT_STOCK);
+			psmt.setInt(1, cartProdCount);
+			psmt.setInt(2, prodNo);
+			psmt.executeUpdate();
+			closeAll();
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+	}
+
 }

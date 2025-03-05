@@ -81,6 +81,10 @@ public enum CartService {
 		dao.deleteCart(cartNo);
 		
 	}
+
+	public void deleteCartByUid(String uid) {
+		dao.deleteCartByUid(uid);
+	}
 	
 	
 }

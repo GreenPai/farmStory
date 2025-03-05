@@ -34,7 +34,12 @@ public class SQL2 {
 	public static final String SELECT_USER_LIMIT_3 = "SELECT * FROM `USER` order BY `REGDATE` DESC LIMIT 0,3";
 		
 	// 주문 최신 데이터 3개 출력
-	public static final String SELECT_ORDER_LIMIT_3 = "SELECT * FROM `ORDER` order BY `ORDERDATE` DESC LIMIT 0,3";
+	public static final String SELECT_ORDER_LIMIT_3 = "SELECT o.orderNo, i.sName, p.prodName, oi.itemPrice, oi.itemCount, o.orderTotalPrice, o.orderDate, p.prodDeliveryFee, o.orderSender, p.prodNo "
+													+ "FROM `order` AS o JOIN `orderitem` AS oi ON o.orderNo = oi.orderNo "
+													+ "JOIN `product` AS p ON oi.prodNo = p.prodNo "
+													+ "JOIN `image` AS i ON i.prodNo = p.prodNo "
+													+ "order BY `ORDERDATE` DESC"
+													+ " LIMIT 0, 3";
 
 	// 상품 전체 데이터 출력
 	public static final String SELECT_PRODUCT_ALL = "SELECT p.*, c.cateName, i.sName FROM `PRODUCT` as p "

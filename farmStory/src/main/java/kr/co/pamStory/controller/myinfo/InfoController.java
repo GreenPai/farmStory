@@ -1,4 +1,4 @@
-package kr.co.pamStory.controller.intro;
+package kr.co.pamStory.controller.myinfo;
 
 import java.io.IOException;
 
@@ -9,18 +9,16 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/intro.do")
-public class IntroController extends HttpServlet {
 
-	
-	private static final long serialVersionUID = 134343434L;
-	
+@WebServlet("/myinfo/info.do")
+public class InfoController extends HttpServlet{
+
+	private static final long serialVersionUID = 112323L;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/intro/intro.jsp");
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/info/info.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
-	
 }

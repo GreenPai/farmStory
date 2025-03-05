@@ -63,19 +63,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                        	<c:forEach var="orderlist" items="${orderlists}">
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>${orderlists.orderNo }</td>
-                                <td>사과500g</td>
-                                <td>4,000원</td>
-                                <td>2</td>
-                                <td>3000원</td>
-                                <td>11,000</td>
-                                <td>김유신</td>
-                                <td>2023-01-01 13:06:14</td>
-                                <td>[상세확인]</td>
-                            </tr>
+                        	<c:forEach var="order" items="${orders}">
+	                            <tr>
+	                                <td><input type="checkbox"></td>
+	                                <td>${order.orderNo}</td>
+	                        		<td>${order.prodName}</td>
+	                        		<td>${order.itemPrice}</td>
+		                            <td>${order.itemCount}</td>
+		                            <td>${order.prodDeliveryFee}</td>
+		                            <td>${order.orderTotalPrice}</td>
+		                            <td>${order.orderSender}</td>
+		                            <td>${order.orderDate}</td>
+		                            <td><a href="#">상세확인</a></td>
+	                            </tr>
                             </c:forEach>
                         </tbody>
                     </table>

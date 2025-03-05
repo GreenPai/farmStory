@@ -458,3 +458,38 @@ main > section > article > .detail > table tr td:nth-child(2){
 	left : 168px;
 	top : 10px;
 }
+
+.right_section> article .page >.num{
+  width: 24px;
+  height: 35px;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #d7d7d7;
+  background-color: #f2f2f2;
+
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.current{
+  width: 24px;
+  height: 35px;
+  display: inline-block;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid #6d6d6d;
+  background-color: #888888 !important;
+  color: white !important;
+
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.right_section> article .page{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}

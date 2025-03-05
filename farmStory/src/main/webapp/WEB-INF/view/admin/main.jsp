@@ -69,18 +69,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                        	<!-- 
+
                        		<c:forEach var="order" items="${orders}">
                                 <tr>
-                                    <td>${order.orderNo}</td>
-                                    <td>${order.uid}</td>
-                                    <td>${order.orderTotalPrice}원</td>
-                                    <td>${order.orderAddr}</td>
-                                    <td>${order.orderStatus}</td>
-                                    <td>${order.orderDate}</td>
+									<td>${order.orderNo}</td>
+	                        		<td>${order.prodName}</td>
+	                        		<td>${order.itemPrice}</td>
+		                            <td>${order.itemCount}</td>
+		                            <td>${order.prodDeliveryFee}</td>
+		                            <td>${order.orderTotalPrice}</td>
+		                            <td>${order.orderSender}</td>
+		                            <td>${order.orderDate}</td>
                                 </tr>
                               </c:forEach>
-                               -->
+     
                         </tbody>
                             
                     </table>

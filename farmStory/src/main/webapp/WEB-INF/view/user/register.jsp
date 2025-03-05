@@ -2,7 +2,7 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="/farmStory/js/daumPostcode.js"></script>
 
-<!--<script src="/farmStory/js/validation.js"></script>-->
+<script src="/farmStory/js/validation.js"></script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
