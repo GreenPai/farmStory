@@ -273,6 +273,55 @@ public class UserDAO extends DBHelper {
 		}
 		return point;
 	}
+	public int selectCountUser() {
+		int total = 0;
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(SQL2.SELECT_COUNT_USER);
+			if (rs.next()) {
+				total = rs.getInt(1);
+			}
+			closeAll();
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return total;
+	}
+	public List<UserDTO> selectAllUsers(int start) {
+		List<UserDTO> dtos = new ArrayList<>();
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL2.SELECT_ALL_USER_LIMIT_6);
+			psmt.setInt(1, start);
+			rs =  psmt.executeQuery();
+			while(rs.next()) {
+				UserDTO dto = new UserDTO();
+				dto.setUid(rs.getString(1));
+				dto.setPass(rs.getString(2));
+				dto.setName(rs.getString(3));
+				dto.setNick(rs.getString(4));
+				dto.setEmail(rs.getString(5));
+				dto.setHp(rs.getString(6));
+				dto.setRole(rs.getString(7));
+				dto.setZip(rs.getString(8));
+				dto.setAddr1(rs.getString(9));
+				dto.setAddr2(rs.getString(10));
+				dto.setRegip(rs.getString(11));
+				dto.setRegDate(rs.getString(12).substring(0, 10));
+				dto.setLeaveDate(rs.getString(13));
+				dto.setUserPoint(rs.getInt(14));
+				dto.setUserLevel(rs.getInt(15));
+				dtos.add(dto);
+			}
+			closeAll();
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtos;
+	}
 
 }
 
