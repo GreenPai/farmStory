@@ -20,7 +20,7 @@ public class OrderDAO  extends DBHelper {
 	
 	public List<OrderDTO> selectLatest3Orders(){
 		
-		List<OrderDTO> dtos = new ArrayList<>();
+		List<OrderDTO> orders = new ArrayList<>();
 		
 		try {
 			conn = getConnection();
@@ -29,7 +29,7 @@ public class OrderDAO  extends DBHelper {
 			
 			while(rs.next()) {
 				/*
-				OrderDTO dto = new OrderDTO();
+				OrderDTO order = new OrderDTO();
 				dto.setOrderNo(rs.getInt(1));
 				dto.setOrderName(rs.getString(2));
 				dto.setOrderPrice(rs.getInt(3));
@@ -40,7 +40,7 @@ public class OrderDAO  extends DBHelper {
 		}catch(Exception e) {
 		
 		}
-		return dtos;
+		return orders;
 	}
 
 	

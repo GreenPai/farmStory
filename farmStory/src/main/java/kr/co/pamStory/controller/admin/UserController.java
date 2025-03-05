@@ -24,6 +24,7 @@ public class UserController extends HttpServlet{
 		List<UserDTO> userDTOS = userservice.findAllUser();
 		System.out.println(userDTOS.toString());
 		
+		req.setAttribute("users", userDTOS);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/admin/user_list.jsp");
 		dispatcher.forward(req, resp);
 	}

@@ -24,6 +24,7 @@ public class ProductController extends HttpServlet{
 		List<ProductDTO> productDTOS = productservice.findAllProduct();
 		System.out.println(productDTOS.toString());
 		
+		req.setAttribute("products", productDTOS);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/admin/product_list.jsp");
 		dispatcher.forward(req, resp);
 	}

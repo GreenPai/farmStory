@@ -82,5 +82,10 @@ public enum ImageService {
 	public String findImageSnameByProdNo(String prodNo) {
 		return dao.selectSnameByProdNo(prodNo);
 	}
+
+	public void deleteImage(String prodNo) {
+		dao.deleteImage(prodNo);
+		
+	}
 	
 }
