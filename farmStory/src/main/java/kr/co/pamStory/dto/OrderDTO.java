@@ -2,15 +2,95 @@ package kr.co.pamStory.dto;
 
 public class OrderDTO {
 
+	// order
 	private int orderNo;
 	private String uid;
 	private int orderTotalPrice;
 	private String orderAddr;
 	private int orderStatus;
 	private String orderDate;
+	private String orderReceiver;
+	private String orderSender;
+	private String orderContent;
+	private String orderHp;
+	private String receiverHp;
+	private String payment;
 	
+	// 추가 필드 
+	private int itemNo;
+	private String prodNo;
+	private int itemPrice;
+	private int itemDiscount;
+	private int itemCount;
+	
+	public int getItemNo() {
+		return itemNo;
+	}
+	public void setItemNo(int itemNo) {
+		this.itemNo = itemNo;
+	}
+	public String getProdNo() {
+		return prodNo;
+	}
+	public void setProdNo(String prodNo) {
+		this.prodNo = prodNo;
+	}
+	public int getItemPrice() {
+		return itemPrice;
+	}
+	public void setItemPrice(int itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+	public int getItemDiscount() {
+		return itemDiscount;
+	}
+	public void setItemDiscount(int itemDiscount) {
+		this.itemDiscount = itemDiscount;
+	}
+	public int getItemCount() {
+		return itemCount;
+	}
+	public void setItemCount(int itemCount) {
+		this.itemCount = itemCount;
+	}
 	public int getOrderNo() {
 		return orderNo;
+	}
+	public String getReceiverHp() {
+		return receiverHp;
+	}
+	public void setReceiverHp(String receiverHp) {
+		this.receiverHp = receiverHp;
+	}
+	public String getOrderReceiver() {
+		return orderReceiver;
+	}
+	public void setOrderReceiver(String orderReceiver) {
+		this.orderReceiver = orderReceiver;
+	}
+	public String getOrderSender() {
+		return orderSender;
+	}
+	public void setOrderSender(String orderSender) {
+		this.orderSender = orderSender;
+	}
+	public String getOrderContent() {
+		return orderContent;
+	}
+	public void setOrderContent(String orderContent) {
+		this.orderContent = orderContent;
+	}
+	public String getOrderHp() {
+		return orderHp;
+	}
+	public void setOrderHp(String orderHp) {
+		this.orderHp = orderHp;
+	}
+	public String getPayment() {
+		return payment;
+	}
+	public void setPayment(String payment) {
+		this.payment = payment;
 	}
 	public void setOrderNo(int orderNo) {
 		this.orderNo = orderNo;
@@ -49,7 +129,9 @@ public class OrderDTO {
 	@Override
 	public String toString() {
 		return "OrderDTO [orderNo=" + orderNo + ", uid=" + uid + ", orderTotalPrice=" + orderTotalPrice + ", orderAddr="
-				+ orderAddr + ", orderStatus=" + orderStatus + ", orderDate=" + orderDate + "]";
+				+ orderAddr + ", orderStatus=" + orderStatus + ", orderDate=" + orderDate + ", orderReceiver="
+				+ orderReceiver + ", orderSender=" + orderSender + ", orderContent=" + orderContent + ", orderHp="
+				+ orderHp + ", payment=" + payment + "]";
 	}
 	
 	

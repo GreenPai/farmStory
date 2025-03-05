@@ -113,9 +113,8 @@ public class ProductDAO extends DBHelper {
 				dto.setCateName(rs.getString(13));
 				dtos.add(dto);
 			}
-			
+
 			closeAll();
-			
 		}catch(Exception e) {
 			logger.error(e.getMessage());
 		}
@@ -147,8 +146,8 @@ public class ProductDAO extends DBHelper {
 				dto.setImagesName(rs.getString(13));
 				
 				dtos.add(dto);
-				
 			} 
+			
 			closeAll();
 		}catch(Exception e) {
 			logger.error(e.getMessage());

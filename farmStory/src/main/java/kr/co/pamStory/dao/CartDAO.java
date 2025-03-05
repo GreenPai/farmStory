@@ -37,6 +37,7 @@ public class CartDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 		
+		
 	}
 
 	public List<CartDTO> SelectCartByUid(String uid) {
@@ -59,6 +60,7 @@ public class CartDAO extends DBHelper {
 				dto.setProdPrice(rs.getInt(7));
 				dto.setProdDeliveryFee(rs.getInt(8));
 				dto.setCartNo(rs.getInt(9));
+				dto.setProdNo(rs.getInt(10));
 				dto.setProdDiscountPrice( (dto.getProdPrice() * (100-dto.getProdDiscount())) / 100);
 				dto.setTotal(dto.getProdPrice() * dto.getCartProdCount());
 				dtos.add(dto);

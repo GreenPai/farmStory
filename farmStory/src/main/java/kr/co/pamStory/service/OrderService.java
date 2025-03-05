@@ -16,5 +16,9 @@ public enum OrderService {
 	
 	}
 
+	public int registerOrder(OrderDTO dto) {
+		return dao.insertOrder(dto);
+	}
+
 
 }
