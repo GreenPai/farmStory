@@ -52,12 +52,6 @@ public class basketController extends HttpServlet {
 		// 총 포인트
 		int point = cartservice.calculatePoint(cartDTOS);
 		
-		System.out.println(totalCnt);
-		System.out.println(prodDeliveryFee);
-		System.out.println(Price);
-		System.out.println(discountPrice);
-		System.out.println(point);
-		
 		req.setAttribute("carts", cartDTOS);
 		req.setAttribute("totalCnt", totalCnt);
 		req.setAttribute("prodDeliveryFee", prodDeliveryFee);
