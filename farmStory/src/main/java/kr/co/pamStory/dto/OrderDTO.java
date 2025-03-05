@@ -18,21 +18,50 @@ public class OrderDTO {
 	
 	// 추가 필드 
 	private int itemNo;
-	private String prodNo;
+	private int prodNo;
 	private int itemPrice;
 	private int itemDiscount;
 	private int itemCount;
+	private String sname;
+	private String prodName;
+	private int prodPrice;
+	private int prodDeliveryFee;
 	
+	
+	public int getProdDeliveryFee() {
+		return prodDeliveryFee;
+	}
+	public void setProdDeliveryFee(int prodDeliveryFee) {
+		this.prodDeliveryFee = prodDeliveryFee;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
+	public String getProdName() {
+		return prodName;
+	}
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
+	}
+	public int getProdPrice() {
+		return prodPrice;
+	}
+	public void setProdPrice(int prodPrice) {
+		this.prodPrice = prodPrice;
+	}
 	public int getItemNo() {
 		return itemNo;
 	}
 	public void setItemNo(int itemNo) {
 		this.itemNo = itemNo;
 	}
-	public String getProdNo() {
+	public int getProdNo() {
 		return prodNo;
 	}
-	public void setProdNo(String prodNo) {
+	public void setProdNo(int prodNo) {
 		this.prodNo = prodNo;
 	}
 	public int getItemPrice() {
@@ -131,7 +160,10 @@ public class OrderDTO {
 		return "OrderDTO [orderNo=" + orderNo + ", uid=" + uid + ", orderTotalPrice=" + orderTotalPrice + ", orderAddr="
 				+ orderAddr + ", orderStatus=" + orderStatus + ", orderDate=" + orderDate + ", orderReceiver="
 				+ orderReceiver + ", orderSender=" + orderSender + ", orderContent=" + orderContent + ", orderHp="
-				+ orderHp + ", payment=" + payment + "]";
+				+ orderHp + ", receiverHp=" + receiverHp + ", payment=" + payment + ", itemNo=" + itemNo + ", prodNo="
+				+ prodNo + ", itemPrice=" + itemPrice + ", itemDiscount=" + itemDiscount + ", itemCount=" + itemCount
+				+ ", sname=" + sname + ", prodName=" + prodName + ", prodPrice=" + prodPrice + ", prodDeliveryFee="
+				+ prodDeliveryFee + "]";
 	}
 	
 	

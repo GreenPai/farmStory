@@ -19,6 +19,7 @@ public class PointDAO extends DBHelper{
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	// 포인트 정보 (적립, 사용)
 	public void insertPoint(PointDTO pointDTO) {
 		try {
 			conn = getConnection();
@@ -33,6 +34,7 @@ public class PointDAO extends DBHelper{
 		}
 		
 	}
-	
+
+
 	
 }

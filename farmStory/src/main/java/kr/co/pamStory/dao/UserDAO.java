@@ -6,6 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import kr.co.pamStory.dto.PointDTO;
 import kr.co.pamStory.dto.UserDTO;
 import kr.co.pamStory.util.BASKET_SQL;
 import kr.co.pamStory.util.DBHelper;
@@ -321,6 +322,20 @@ public class UserDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 		return dtos;
+	}
+	
+	public void modifyPoint(PointDTO pointDTO) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(BASKET_SQL.MODIFY_POINT);
+			psmt.setInt(1, pointDTO.getPoint());
+			psmt.setString(2, pointDTO.getUid());
+			psmt.executeUpdate();
+			closeAll();
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		
 	}
 
 }

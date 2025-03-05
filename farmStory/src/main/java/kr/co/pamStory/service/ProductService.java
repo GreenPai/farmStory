@@ -87,7 +87,12 @@ public enum ProductService {
 
 	public List<ProductDTO> findAllProduct(int start) {
 		return dao.selectAllProducts(start);
-	} 
+	}
 
+	// 제품 구매 시 총량 감소
+	public void minusProduct(int prodNo, int cartProdCount) {
+		dao.ModifProductStock(prodNo, cartProdCount);
+		
+	} 
 
 }

@@ -11,7 +11,7 @@ import kr.co.pamStory.service.ImageService;
 import kr.co.pamStory.service.ProductService;
 
 @WebServlet("/admin/product/delete.do")
-public class deleteController extends HttpServlet{
+public class DeleteController extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
 	private ProductService productservice = ProductService.INSTANCE;

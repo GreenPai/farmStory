@@ -85,4 +85,18 @@ public class CartDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 	}
+
+	public void deleteCartByUid(String uid) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(BASKET_SQL.DELETE_CART_BY_UID);
+			psmt.setString(1, uid);                              
+			psmt.executeUpdate();
+			
+			closeAll();	
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+	}
 }

@@ -102,12 +102,11 @@ public class OrderController extends HttpServlet {
 		UserDTO userdto = (UserDTO) session.getAttribute("sessUser");
 		CreditDTO creditdto = (CreditDTO) session.getAttribute("creditdto");
 
-		
 		String uid = userdto.getUid();
 		List<CartDTO> cartDTOS = cartservice.findCartByUid(uid);;
 		String orderSender = req.getParameter("name");
 		String senderHp = req.getParameter("hp");
-		String usePoint = req.getParameter("usePoint");
+		int usePoint = Integer.parseInt(req.getParameter("usePoint"));
 		String receiver = req.getParameter("receiver");
 		String receiverHp = req.getParameter("receiverHp");
 		String zip = req.getParameter("zip");
@@ -132,14 +131,31 @@ public class OrderController extends HttpServlet {
 		PointDTO pointDTO = new PointDTO();
 		pointDTO.setUid(uid);
 		pointDTO.setPoint(creditdto.getPoint());
-		pointDTO.setPointDesc("상품구매");
+		pointDTO.setPointDesc("상품구매 포인트 적립 : " + creditdto.getPoint() + "P");
 		pointservice.registerPoint(pointDTO);
+		userservice.modifyPoint(pointDTO);
+		
+		// 포인트 사용
+		if(usePoint > 0) {
+			// 포인트 사용 내역 저장
+			PointDTO delPointDTO = new PointDTO();
+			pointDTO.setUid(uid);
+			pointDTO.setPoint(usePoint);
+			pointDTO.setPointDesc("상품구매 포인트 사용 : " + usePoint + "P");
+			pointservice.registerPoint(pointDTO);
+			
+			// User 포인트 총량 수정
+			pointDTO.setPoint(usePoint * -1);
+			userservice.modifyPoint(pointDTO);
+			
+		}
 		
 		// 주문 데이터 입력
 		int orderNo = orderservice.registerOrder(dto);
 		
 		// 주문 상세 데이터 입력 / 제품 재고 줄이기
 		for(CartDTO cartDTO : cartDTOS) {
+			// 상세 데이터 입력
 			OrderItemDTO orderItemDTO = new OrderItemDTO();
 			System.out.println("ProdNO" + cartDTO.getProdNo());
 			ProductDTO productDTO = productsevice.findProductByProdNo(String.valueOf(cartDTO.getProdNo()));
@@ -152,10 +168,13 @@ public class OrderController extends HttpServlet {
 			
 			orderitemservice.register(orderItemDTO);
 			
+			// 제품 재고 줄이기
+			productsevice.minusProduct(cartDTO.getProdNo(), cartDTO.getCartProdCount());
 		}
-		
 
-		// dto.setOrderTotalPrice(0);
+
+		// 카테고리 비우기
+		cartservice.deleteCartByUid(uid);
 		
 		
 		
