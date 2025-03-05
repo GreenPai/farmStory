@@ -23,6 +23,10 @@ public enum OrderService {
 		return null;
 	}
 
+	public int registerOrder(OrderDTO dto) {
+		return dao.insertOrder(dto);
+	}
+
 
 
 }

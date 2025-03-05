@@ -219,6 +219,7 @@ public class UserDAO extends DBHelper {
 				dto.setUserLevel(rs.getInt(15));
 				dtos.add(dto);
 			}
+			closeAll();
 		}catch(Exception e) {
 			logger.error(e.getMessage());
 		}
@@ -234,6 +235,7 @@ public class UserDAO extends DBHelper {
 			while(rs.next()) {
 				point = rs.getInt(1);
 			}
+			closeAll();
 		}catch(Exception e) {
 			logger.error(e.getMessage());
 		}
