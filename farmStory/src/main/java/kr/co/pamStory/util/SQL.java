@@ -161,6 +161,10 @@ public class SQL {
 														+"`regip`=? "
 														+"WHERE `cno` =?" ;
 
+	// Info
+	public static final String IS_CURRENT_PASSWORD_CORRECT = "SELECT pass FROM `user` WHERE `uid` = ?";
+
+
 	
 
 	
