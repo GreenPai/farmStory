@@ -10,7 +10,56 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentYear = today.getFullYear();
 
   const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  
+  //추가-------------------
+  let selectedDate= null;	//선택된 날짜
+  const eventTitleInput= document.getElementById("eventTitle");
+  const saveEventButton= document.getElementById("saveEvent");
+  const eventForm= document.getElementById("eventForm");
+  
+  //날짜 클릭 시 , 날짜 선택 및 폼 활성화
+  calendarDates.addEventListener("click", function(e){
+	if(e.target.classList.contains("date")){
+		selectedDate= `${currentYear}-${currentMonth+1}-${e.target.textContent.padStart(2,'0')}`;
+		alert(`선택된 날짜: ${selectedDate}`);
+		
+		//제목 입력 폼을 보이도록 설정
+		eventForm.style.display= "block";
+		eventTitleInput.disabled= false;
+	}
+  });
+  
+  //등록 버튼 클릭 시 이벤트 저장
+  saveEventButton.addEventListener("click", function(){
+	const title= eventTitleInput.value;
+	if(!title || !selectedDate){
+		alert("이벤트 제목과 날짜를 모두입력해주세요.");
+		return;
+	}
+	//Ajax로 데이터 전송
+	const formData= new FormData();
+	formData.append("title", title);
+	formData.append("regDate", selectedDate);
+	
+	fetch("/event.do",{
+		method: "POST",
+		body: formData,
+	})
+		.then((response)=> response.json())
+		.then((data)=>{
+			alert("이벤트가 등록되었습니다.");
+			renderCalendar();	//달력 갱신
+			eventTitleInput.value="";	//입력 필드 초기화
+			eventTitleInput.disabled= true;	//다시 비활성화
+			saveEventButton.disabled=true;	//등록 버튼 비활성화
+			eventForm.style.display= "none";	//폼 숨기기
+		})
+		.catch((error)=>{
+			console.error("Error:",error);
+		});
+  });
 
+  //기존 달력 랜더링 함수
   function renderCalendar() {
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();

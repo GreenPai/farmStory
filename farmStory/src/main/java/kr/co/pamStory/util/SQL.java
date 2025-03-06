@@ -147,6 +147,11 @@ public class SQL {
 														+"`regip`=? "
 														+"WHERE `cno` =?" ;
 
+	//Event
+	public static final String SELECT_ALL_EVENTS = "SELECT `uid` , `title` , `regDate` FROM event ORDER BY `regDate` ";
+
+	public static final String INSERT_EVENT = "INSERT INTO event(`title`, `regDate`) VALUES (?, ?) ";
+
 
 
 

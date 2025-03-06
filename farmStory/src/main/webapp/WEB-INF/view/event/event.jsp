@@ -60,6 +60,13 @@
                     <script src="/farmStory/js/event.js"></script>
                 </div>                  
                 
+                <!-- 일정 등록 폼 -->
+                <div id="eventForm" style="display: none;">
+                	<input type="text" id="eventTitle" placeholder="이벤트 제목을 입력하세요">
+                	<button id="saveEvent" disabled>등록</button>
+                </div>
+               
+                
             </article>
         </section>
     </main>
