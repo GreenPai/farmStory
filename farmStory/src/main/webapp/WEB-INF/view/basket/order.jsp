@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 
 
-<%@ include file="../layout/_header_bg.jsp" %>
+<%@ include file="./layout/_header_bg_market.jsp" %>
 <main>
         <section class="left_section">
             <aside>

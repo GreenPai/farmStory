@@ -224,7 +224,8 @@ public class ProductDAO extends DBHelper {
 			conn = getConnection();
 			psmt = conn.prepareStatement(BASKET_SQL.MODIFY_PRODUCT_STOCK);
 			psmt.setInt(1, cartProdCount);
-			psmt.setInt(2, prodNo);
+			psmt.setInt(2, cartProdCount);
+			psmt.setInt(3, prodNo);
 			psmt.executeUpdate();
 			closeAll();
 		}catch(Exception e) {
@@ -253,8 +254,9 @@ public class ProductDAO extends DBHelper {
 				dto.setProdDeliveryFee(rs.getInt(9));
 				dto.setProdContent(rs.getString(10));
 				dto.setRegDate(rs.getString(11).substring(0, 10));
-				dto.setCateNo(rs.getInt(12));
-				dto.setCateName(rs.getString(13));
+				dto.setCateName(rs.getString(12));
+				dto.setImagesName(rs.getString(13));
+				dto.setProdDiscountPrice(dto.getProdPrice() * (100-dto.getProdDiscount()) / 100);
 				dtos.add(dto);
 			}
 

@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    // 세션에서 사용자 정보 가져오기
+    Object sessUser = session.getAttribute("sessUser");
+%>
 <body>
 <div id="wrapper">
 <header>
@@ -6,12 +10,17 @@
         <div>
           <div id="home">
             <a href="/farmStory/index.do">HOME |</a>
-            <a href="/farmStory/user/login.do">로그인 |</a>
-            <a href="/farmStory/user/terms.do">회원가입 |</a>
-            <a href="/farmStory/myinfo/basket.do">나의정보 |</a>
-            <a href="/farmStory/user/logout.do">로그아웃 |</a>
+            
+            <% if (sessUser == null) { // 로그인하지 않은 경우 %>
+              <a href="/farmStory/user/login.do">로그인 |</a>
+              <a href="/farmStory/user/terms.do">회원가입 |</a>
+            <% } else { // 로그인한 경우 %>
+              <a href="/farmStory/user/logout.do">로그아웃 |</a>
+              <a href="/farmStory/myinfo/basket.do">나의정보 |</a>
+            <% } %>
+
             <a href="/farmStory/admin/main.do">관리자 |</a>
-            <a href="/farmStory/article/list.do?cate=qna1">고객센터 </a>
+            <a href="/farmStory/article/list.do?cate=qna1">고객센터</a>
           </div>
         </div>
 
@@ -41,7 +50,6 @@
       </div>
 
       <div class="background">
-            <img src="/farmStory/images/sub_top_tit2.png" alt="Market" class="event">
+            <img src="/farmStory/images/sub_top_tit3.png" alt="EVENT" class="event">
       </div>
-     
     </header>

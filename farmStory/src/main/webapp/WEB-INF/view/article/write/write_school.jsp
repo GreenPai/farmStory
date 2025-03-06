@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/farmStory/css/layout_bg.css"/>
     <link rel="stylesheet" href="/farmStory/css/farm/community.css"/>
 </head>
-<%@ include file="../../layout/_header_bg.jsp" %>
+<%@ include file="../layout/_header_bg_crop.jsp" %>
 <main id="notice">
             <section class="left_section">
                 <aside>

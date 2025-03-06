@@ -7,7 +7,56 @@
     <link rel="stylesheet" href="/farmStory/css/event/event.css"/>
 </head>
 
-<%@ include file="../layout/_header_bg.jsp" %>
+<style>
+	.calendar_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    gap: 5px;  /* 요소 간 간격 추가 */
+}
+
+.calendar_header > div:nth-child(1) {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.calendar_header > div {
+    display: flex;
+    align-items: center;  /* 버튼 정렬 맞추기 */
+    gap: 5px;  /* 버튼 사이 여백 추가 */
+}
+
+.calendar_header > div > button {
+    min-width: 50px;
+    height: 30px;
+    border-radius: 10%;
+    background-color: rgb(66, 57, 59);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar_header > div > #btntoday {
+    margin-right: 8px;
+    min-width: 60px;
+    font-size: 15px;
+    background-color: gray;
+    color: white;
+}
+
+/* 왼쪽/오른쪽 버튼 아이콘 스타일 */
+.calendar_header > div > button i {
+    font-size: 18px; /* 아이콘 크기 키우기 */
+    color: white;
+    display: inline-block; /* 혹시 안 보이면 강제 표시 */
+}
+	
+</style>
+<%@ include file="./layout/_header_bg_event.jsp" %>
 <main>
         <section class="left_section">
             <aside>

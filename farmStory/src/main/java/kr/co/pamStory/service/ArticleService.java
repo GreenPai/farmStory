@@ -109,4 +109,8 @@ public enum ArticleService {
 		return dao.selectAllArticleByCate(start, cate);
 	}
 
+	public List<ArticleDTO> findByCateLimit5(String cate) {
+		return dao.selectArticleByCateLimit5(cate);
+	}
+
 }

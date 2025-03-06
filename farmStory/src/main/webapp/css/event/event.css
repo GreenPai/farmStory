@@ -1,11 +1,4 @@
-header > .background > .event {
-    width: 140px;
-    height: 37px;
-    position: absolute;
-    left: 10px;
-    top: 137px;
-  }
-  
+
   main > .right_section > article > div:nth-child(2) {
     display:inline-block;
     height: auto;

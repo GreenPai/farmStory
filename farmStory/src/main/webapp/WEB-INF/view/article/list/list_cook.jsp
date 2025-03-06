@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/farmStory/css/farm/community.css"/>
 </head>
 
-<%@ include file="../../layout/_header_bg.jsp" %>
+<%@ include file="../layout/_header_bg_community.jsp" %>
         <main id="notice">
         <section class="left_section">
             <aside>
@@ -57,12 +57,12 @@
             <article>
                 <div>
                   <div class="sub_nav_tit">
-                    <img src="/farmStory/images/sub_nav_tit_cate5_tit1.png" alt="공지사항">
+                    <img src="/farmStory/images/sub_nav_tit_cate5_tit3.png" alt="나도요리사">
                   </div>
                   <div>
                     <p class="intro">
-                       <img src="/farmStory/images/sub_page_nav_ico.gif" alt="공지사항">
-                         HOME > 커뮤니티 > <span class="eco_txt">공지사항&nbsp </span>
+                       <img src="/farmStory/images/sub_page_nav_ico.gif" alt="나도요리사">
+                         HOME > 커뮤니티 > <span class="eco_txt">나도요리사&nbsp </span>
                     </p>
                   </div>  
                 </div>

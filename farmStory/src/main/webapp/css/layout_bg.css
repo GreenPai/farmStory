@@ -56,9 +56,8 @@
       }
 
       header > #link > div:nth-child(1){
-        position: absolute;
-        top: 17px;
-        left: 610px;      
+        float:right;
+        margin-top: 17px;      
       }
 
       header > #link > div > article > .logo {
@@ -330,3 +329,9 @@
         letter-spacing: 0%;
         color: #888888;
     }
+    
+    header > .background > .event {
+    position: absolute;
+    left: 10px;
+    top: 137px;
+  }

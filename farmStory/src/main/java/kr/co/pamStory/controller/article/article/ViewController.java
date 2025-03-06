@@ -28,10 +28,13 @@ public class ViewController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String no = req.getParameter("no");
+		String cate = req.getParameter("cate");
 		
-		// 카테고리 수신
-		HttpSession session = req.getSession();
-		String cate = (String) session.getAttribute("cate");
+		if(cate==null) {
+			// 카테고리 수신
+			HttpSession session = req.getSession();
+			cate = (String) session.getAttribute("cate");
+		}
 		
 		try {
 			ArticleDTO articledto = service.findArticle(Integer.parseInt(no)); 

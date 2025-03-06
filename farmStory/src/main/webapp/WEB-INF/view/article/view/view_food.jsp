@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 </head>
-<%@ include file="../../layout/_header_bg.jsp" %>
+<%@ include file="../layout/_header_bg_community.jsp" %>
 <main id="notice">
 	<section class="left_section">
 		<aside>

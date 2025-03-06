@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
                
                <div class="page">
                 	<c:if test="${pageGroupDTO.start>1}">
-                    <a href="farmStory/admin/product/list.do?pg=${pageGroupDTO.start -1}" class="prev">이전</a>
+                    <a href="/farmStory/admin/product/list.do?pg=${pageGroupDTO.start -1}" class="prev">이전</a>
                     </c:if>
                     <c:forEach var="num" begin="${pageGroupDTO.start}" end="${pageGroupDTO.end }">
                     <a href="/farmStory/admin/product/list.do?pg=${num}" class="num ${currentPage==num ? 'current' : '' }">[${num}] &nbsp;</a>

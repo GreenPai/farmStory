@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="/farmStory/css/event/event.css"/>
 </head>
 
-<%@ include file="../layout/_header_bg_intro.jsp" %>
+<script>
+	const result = ${result};
+
+	if(result == 102){
+		alert('관리자 권한이 없습니다.');
+	}
+</script>
+
+<%@ include file="./layout/_header_bg_intro.jsp" %>
 <main>
         <section class="left_section">
             <aside>

@@ -66,7 +66,11 @@ public class SQL2 {
 
 	public static final String SELECT_ALL_USER_LIMIT_6 = "SELECT * FROM `USER` order BY `REGDATE` DESC LIMIT ?,6";
 
-	public static final String SELECT_BEST_PRODUCT_6 = "";
+	public static final String SELECT_BEST_PRODUCT_6 = "SELECT p.*, c.cateName, i.sName FROM `PRODUCT` as p "
+											            + "JOIN `category` as c ON p.cateNo = c.cateNo "
+											            + "JOIN `image` as i ON p.prodNo = i.prodNo "
+											            + "ORDER BY p.regDate DESC "
+											            + "LIMIT 6";
 
 	public static final String SELECT_USER = "SELECT * FROM `USER` WHERE `uid` = ?";
 
