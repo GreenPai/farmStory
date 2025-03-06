@@ -54,6 +54,7 @@ public class SQL {
 	// article
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `article`";
 	public static final String SELECT_COUNT_ARTICLE= "SELECT COUNT(*) FROM `article`";
+	public static final String SELECT_COUNT_ARTICLE_BY_CATE = "SELECT COUNT(*) FROM `article` where `cate` = ?";;
 	
 	public final static String SELECT_ALL_ARTICLE_BY_SEARCH="SELECT " 
 																		+ "a.*, "
@@ -93,7 +94,7 @@ public class SQL {
 	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE `title` LIKE ? " ;
 	public final static String WHERE_FOR_SEARCH_CONTENT = "WHERE `content` LIKE ? " ;
 	public final static String WHERE_FOR_SEARCH_WRITER  = "WHERE `nick` LIKE ? " ;	
-	public final static String ORDER_FOR_SEARCH  = "ORDER BY `no` DESC " ;
+	public final static String ORDER_FOR_SEARCH  = "AND `cate` = ? ORDER BY `no` DESC " ;
 	public final static String LIMIT_FOR_SEARCH  = "LIMIT ? , 10 " ;
 													
 			
@@ -103,6 +104,7 @@ public class SQL {
 													+ "`file`=?,"
 													+ "`writer`=?,"
 													+ "`regip`=?,"
+													+ "`cate`=?,"
 													+ "`wdate`=NOW()";
 	
 	// file
@@ -160,6 +162,17 @@ public class SQL {
 														+"`writer`=?, "
 														+"`regip`=? "
 														+"WHERE `cno` =?" ;
+
+	public static final String SELECT_ALL_ARTICLE_BY_CATE = "SELECT "
+																+"a.*, "
+																+"u.`nick` "
+																+"FROM `article` AS a "
+																+"JOIN `user` AS u "
+																+"ON a.writer=u.uid "
+																+"WHERE `cate` = ? "
+																+"ORDER BY `no` desc "
+																+"LIMIT ?, 10";
+
 
 	
 

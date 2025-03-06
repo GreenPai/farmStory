@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kr.co.pamStory.dto.ArticleDTO;
 import kr.co.pamStory.dto.PageGroupDTO;
 import kr.co.pamStory.service.ArticleService;
@@ -27,10 +28,16 @@ public class SearchController extends HttpServlet{
 		String searchType= req.getParameter("searchType");
 		String keyword= req.getParameter("keyword");
 		
+		// 카테고리 수신
+		HttpSession session = req.getSession();
+		String cate = (String) session.getAttribute("cate");
+		
+		// 
 		//DTO 생성
 		ArticleDTO dto= new ArticleDTO();
 		dto.setSearchType(searchType);
 		dto.setKeyword(keyword);
+		dto.setCate(cate);
 		
 		//페이징 처리 관련 서비스 호출
 		int total= service.getCountArticleBySearch(dto);
@@ -53,8 +60,25 @@ public class SearchController extends HttpServlet{
 		req.setAttribute("searchType", searchType);
 		req.setAttribute("keyword", keyword);
 		
-		//view 포워드
-		RequestDispatcher dispatcher= req.getRequestDispatcher("/WEB-INF/view/article/searchList.jsp");
+		RequestDispatcher dispatcher;
+		if(cate.equals("grow") ) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_grow.jsp");			
+		}else if(cate.equals("story")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_story.jsp");
+		}else if(cate.equals("school")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_school.jsp");
+		}else if(cate.equals("food")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_food.jsp");
+		}else if(cate.equals("cook")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_cook.jsp");
+		}else if(cate.equals("qna1")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_qna1.jsp");
+		}else if(cate.equals("qna2")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_qna2.jsp");
+		}else {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_notice.jsp");
+		}
+		
 		dispatcher.forward(req, resp);
 	}
 

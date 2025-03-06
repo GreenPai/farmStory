@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/farmStory/css/farm/community.css"/>
 </head>
 
-<%@ include file="../layout/_header_bg.jsp" %>
+<%@ include file="../../layout/_header_bg.jsp" %>
         <main id="notice">
         <section class="left_section">
             <aside>
@@ -25,7 +25,7 @@
                   <ul>
                       <li>
                         <a href="/farmStory/article/list.do?cate=notice">
-                            <img src="/farmStory/images/sub_cate5_lnb1_ov.png" alt="공지사항">
+                            <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
                         </a>
                       </li>
                       <li>
@@ -45,7 +45,7 @@
                       </li>
                       <li>
                         <a href="/farmStory/article/list.do?cate=qna2">
-                          <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
+                          <img src="/farmStory/images/sub_cate5_lnb5_ov.png" alt="자주묻는 질문">
                         </a>
                       </li>
                   </ul>
@@ -57,12 +57,12 @@
             <article>
                 <div>
                   <div class="sub_nav_tit">
-                    <img src="/farmStory/images/sub_nav_tit_cate5_tit1.png" alt="공지사항">
+                    <img src="/farmStory/images/sub_nav_tit_cate5_tit5.png" alt="자주믇는질문">
                   </div>
                   <div>
                     <p class="intro">
-                       <img src="/farmStory/images/sub_page_nav_ico.gif" alt="공지사항">
-                         HOME > 커뮤니티 > <span class="eco_txt">공지사항&nbsp </span>
+                       <img src="/farmStory/images/sub_page_nav_ico.gif" alt="자주믇는질문">
+                         HOME > 커뮤니티 > <span class="eco_txt">자주믇는질문&nbsp </span>
                     </p>
                   </div>  
                 </div>
@@ -117,4 +117,4 @@
             </article>
         </section>
     </main>
-<%@ include file="../layout/_footer.jsp" %>   
+<%@ include file="../../layout/_footer.jsp" %>   
