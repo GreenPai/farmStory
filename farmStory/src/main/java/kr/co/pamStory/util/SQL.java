@@ -157,7 +157,6 @@ public class SQL {
 	public static final String DELETE_COMMENT = "DELETE FROM `comment` WHERE cno=?";
 
 	public static final String UPDATE_BY_CNO = "UPDATE `comment` SET"
-														+"`cno`=?, "
 														+"`content`=?, "
 														+"`writer`=?, "
 														+"`regip`=? "
@@ -175,6 +174,10 @@ public class SQL {
 																+"WHERE `cate` = ? "
 																+"ORDER BY `no` desc "
 																+"LIMIT ?, 10";
+
+	public static final String UPDATE_BY_CNO_BY_CNO_AND_CONTENT = "UPDATE `comment` SET"
+														+"`content`=? "
+														+"WHERE `cno` =?" ;
 
 
 	

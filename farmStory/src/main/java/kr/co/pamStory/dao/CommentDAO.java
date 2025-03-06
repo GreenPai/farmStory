@@ -146,4 +146,21 @@ public class CommentDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 	}
+	
+	
+	public void updateCommnet(String cnoStr, String content) {
+		try {
+			conn=getConnection();
+			psmt=conn.prepareStatement(SQL.UPDATE_BY_CNO_BY_CNO_AND_CONTENT);
+			psmt.setString(1, content);		
+			psmt.setString(2, cnoStr);
+			psmt.executeUpdate();
+			
+			closeAll();
+			
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+	}
 }
