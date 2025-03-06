@@ -233,4 +233,35 @@ public class ProductDAO extends DBHelper {
 		
 	}
 
+	public List<ProductDTO> selectBest6Products() {
+		List<ProductDTO> dtos = new ArrayList<>();
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(SQL2.SELECT_BEST_PRODUCT_6);
+			
+			while(rs.next()) {
+				ProductDTO dto = new ProductDTO();
+				dto.setProdNo(rs.getInt(1));
+				dto.setCateNo(rs.getInt(2));
+				dto.setProdName(rs.getString(3));
+				dto.setProdPrice(rs.getInt(4));
+				dto.setProdPoint(rs.getInt(5));
+				dto.setProdStock(rs.getInt(6));
+				dto.setProdSold(rs.getInt(7));
+				dto.setProdDiscount(rs.getInt(8));
+				dto.setProdDeliveryFee(rs.getInt(9));
+				dto.setProdContent(rs.getString(10));
+				dto.setRegDate(rs.getString(11).substring(0, 10));
+				dto.setCateNo(rs.getInt(12));
+				dto.setCateName(rs.getString(13));
+				dtos.add(dto);
+			}
+
+			closeAll();
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtos;
+	}
 }

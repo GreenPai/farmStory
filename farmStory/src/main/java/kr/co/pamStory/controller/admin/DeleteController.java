@@ -15,8 +15,7 @@ public class DeleteController extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
 	private ProductService productservice = ProductService.INSTANCE;
-	private ImageService imageservice = ImageService.INSTANCE
-			;
+	private ImageService imageservice = ImageService.INSTANCE;
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String cate = req.getParameter("cate");

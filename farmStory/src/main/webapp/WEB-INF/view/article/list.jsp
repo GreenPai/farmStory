@@ -24,27 +24,27 @@
               <article>   
                   <ul>
                       <li>
-                        <a href="/farmStory/article/list.do">
+                        <a href="/farmStory/article/list.do?cate=notice">
                             <img src="/farmStory/images/sub_cate5_lnb1_ov.png" alt="공지사항">
                         </a>
                       </li>
                       <li>
-                        <a href="/farmStory/article/write.do">
+                        <a href="/farmStory/article/list.do?cate=food">
                           <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
                         </a>
                       </li>
                       <li>
-                        <a href="/farmStory/article/list.do">
+                        <a href="/farmStory/article/list.do?cate=cook">
                           <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
                         </a>
                       </li>
                       <li>
-                        <a href="/farmStory/article/list.do">
+                        <a href="/farmStory/article/list.do?cate=qna1">
                           <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
                         </a>
                       </li>
                       <li>
-                        <a href="/farmStory/article/qna.do">
+                        <a href="/farmStory/article/list.do?cate=qna2">
                           <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
                         </a>
                       </li>

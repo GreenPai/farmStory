@@ -93,6 +93,12 @@ public enum ProductService {
 	public void minusProduct(int prodNo, int cartProdCount) {
 		dao.ModifProductStock(prodNo, cartProdCount);
 		
-	} 
+	}
+
+	public List<ProductDTO> findBest6Products() {
+		
+		return dao.selectBest6Products();
+	}
+
 
 }

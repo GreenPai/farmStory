@@ -46,7 +46,7 @@ public class LoginCheckFilter implements Filter {
 			if(userDTO != null) {
 				// 로그인을 안했을 경우 로그인 페이지로 이동
 				HttpServletResponse response = (HttpServletResponse) resp;
-				response.sendRedirect("/farmStory/article/list.do");
+				response.sendRedirect("/farmStory/index.do");
 				return;
 			}
 		}else if(path.startsWith("/article")){

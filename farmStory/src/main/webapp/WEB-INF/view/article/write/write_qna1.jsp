@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/farmStory/css/layout_bg.css"/>
     <link rel="stylesheet" href="/farmStory/css/farm/community.css"/>
 </head>
-<%@ include file="../layout/_header_bg.jsp" %>
+<%@ include file="../../layout/_header_bg.jsp" %>
 <main id="notice">
             <section class="left_section">
                 <aside>
@@ -21,32 +21,32 @@
       
                   <article>   
                       <ul>
-                          <li>
-                            <a href="/farmStory/article/list.do">
-                                <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/farmStory/article/write.do">
-                              <img src="/farmStory/images/sub_cate5_lnb2_ov.png" alt="오늘의식단">
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/farmStory/article/view.do">
-                              <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/farmStory/article/modify.do">
-                              <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
-                            </a>
-                          </li>
-                          <li>
-                            <a href="farmStory/article/qna.do">
-                              <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
-                            </a>
-                          </li>
-                      </ul>
+                      <li>
+                        <a href="/farmStory/article/list.do?cate=notice">
+                            <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/farmStory/article/list.do?cate=food">
+                          <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/farmStory/article/list.do?cate=cook">
+                          <img src="/farmStory/images/sub_cate5_lnb3.png" alt="나도요리사">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/farmStory/article/list.do?cate=qna1">
+                          <img src="/farmStory/images/sub_cate5_lnb4_ov.png" alt="1:1고객문의">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/farmStory/article/list.do?cate=qna2">
+                          <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
+                        </a>
+                      </li>
+                  </ul>
                   </article>
                 </aside>
             </section>
@@ -55,12 +55,12 @@
                 <article>
                     <div>
                       <div class="sub_nav_tit">
-                        <img src="/farmStory/images/sub_nav_tit_cate5_tit2.png" alt="오늘의 식단">
+                        <img src="/farmStory/images/sub_nav_tit_cate5_tit4.png" alt="고객문의">
                       </div>
                       <div>
                         <p class="intro">
-                           <img src="/farmStory/images/sub_page_nav_ico.gif" alt="공지사항">
-                             HOME > 커뮤니티 > <span class="eco_txt">오늘의식단&nbsp </span>
+                           <img src="/farmStory/images/sub_page_nav_ico.gif" alt="고객문의">
+                             HOME > 커뮤니티 > <span class="eco_txt">고객문의&nbsp </span>
                         </p>
                       </div>  
                     </div>
@@ -114,5 +114,5 @@
                 </article>
             </section>
         </main>
-<%@ include file="../layout/_footer.jsp" %>   
+<%@ include file="../../layout/_footer.jsp" %>    
 </html>

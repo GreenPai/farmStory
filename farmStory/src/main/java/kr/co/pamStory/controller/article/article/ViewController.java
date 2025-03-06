@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kr.co.pamStory.dto.ArticleDTO;
 import kr.co.pamStory.dto.CommentDTO;
 import kr.co.pamStory.dto.FileDTO;
@@ -28,25 +29,49 @@ public class ViewController extends HttpServlet {
 
 		String no = req.getParameter("no");
 		
-	try {
-		ArticleDTO articledto = service.findArticle(Integer.parseInt(no)); 
-		List<FileDTO> filedtos= fileservice.findFile(no);
-		articledto.setFiles(filedtos);
+		// 카테고리 수신
+		HttpSession session = req.getSession();
+		String cate = (String) session.getAttribute("cate");
 		
-		// 댓글 조회 서비스 호출
-		List<CommentDTO> comments = commentservice.findAllComment(no);
-		System.out.println(comments.toString());
-		
-		
-		req.setAttribute("fileDTOS", filedtos);
-		req.setAttribute("articleDTO", articledto);
-		req.setAttribute("comments", comments);
-		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view.jsp");
-		dispatcher.forward(req, resp);
-		}catch(NumberFormatException e) {
-			resp.sendRedirect("/farmStory/article/list.do");
-		}
+		try {
+			ArticleDTO articledto = service.findArticle(Integer.parseInt(no)); 
+			List<FileDTO> filedtos= fileservice.findFile(no);
+			articledto.setFiles(filedtos);
+			
+			// 댓글 조회 서비스 호출
+			List<CommentDTO> comments = commentservice.findAllComment(no);
+			System.out.println(comments.toString());
+			
+			
+			req.setAttribute("fileDTOS", filedtos);
+			req.setAttribute("articleDTO", articledto);
+			req.setAttribute("comments", comments);
+			
+			// View forward
+			RequestDispatcher dispatcher;
+			if(cate.equals("grow") ) {
+				dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view/view_grow.jsp");			
+			}else if(cate.equals("story")) {
+				dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view/view_story.jsp");
+			}else if(cate.equals("school")) {
+				dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view/view_school.jsp");
+			}else if(cate.equals("food")) {
+				dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view/view_food.jsp");
+			}else if(cate.equals("cook")) {
+				dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view/view_cook.jsp");
+			}else if(cate.equals("qna1")) {
+				dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view/view_qna1.jsp");
+			}else if(cate.equals("qna2")) {
+				dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view/view_qna2.jsp");
+			}else {
+				dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/view/view_notice.jsp");
+			}
+			
+			dispatcher.forward(req, resp);
+
+			}catch(NumberFormatException e) {
+				resp.sendRedirect("/farmStory/article/list.do");
+			}
 	}
 
 	@Override
