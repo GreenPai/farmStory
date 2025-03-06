@@ -40,6 +40,8 @@ public class ArticleDAO extends DBHelper {
 			psmt.setInt(3, dto.getFile());
 			psmt.setString(4, dto.getWriter());
 			psmt.setString(5, dto.getRegip());
+			psmt.setString(6, dto.getCate());
+			
 			psmt.executeUpdate();
 
 			// 글 번호 조회 쿼리 실행
@@ -192,7 +194,8 @@ public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int star
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
 			psmt.setString(1, "%"+articleDTO.getKeyword()+"%");
-			psmt.setInt(2, start);
+			psmt.setString(2, articleDTO.getCate());
+			psmt.setInt(3, start);
 			logger.debug(psmt.toString());
 			
 			rs = psmt.executeQuery();
@@ -280,5 +283,59 @@ public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int star
 		}
 
 	    return postCount;
+
+	public int selectCountArticleByCate(String cate) {
+		int total = 0;
+
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_COUNT_ARTICLE_BY_CATE);
+			psmt.setString(1, cate);
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				total = rs.getInt(1);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return total;
+	}
+
+	public List<ArticleDTO> selectAllArticleByCate(int start, String cate) {
+		List<ArticleDTO> articles = new ArrayList<ArticleDTO>();
+
+		try {
+
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_ALL_ARTICLE_BY_CATE);
+			psmt.setString(1, cate);
+			psmt.setInt(2, start);
+			
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				ArticleDTO dto = new ArticleDTO();
+				dto.setNo(rs.getInt(1));
+				dto.setCate(rs.getString(2));
+				dto.setTitle(rs.getString(3));
+				dto.setContent(rs.getString(4));
+				dto.setComment(rs.getInt(5));
+				dto.setFile(rs.getInt(6));
+				dto.setHit(rs.getInt(7));
+				dto.setWriter(rs.getString(8));
+				dto.setRegip(rs.getString(9));
+				dto.setWdate(rs.getString(10));
+				dto.setNick(rs.getString(11));
+				articles.add(dto);
+			}
+			closeAll();
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return articles;
+
 	}
 }

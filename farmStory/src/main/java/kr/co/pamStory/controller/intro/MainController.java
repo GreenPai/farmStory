@@ -2,7 +2,6 @@ package kr.co.pamStory.controller.intro;
 
 import java.io.IOException;
 import java.util.List;
-
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -22,9 +21,9 @@ public class MainController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		List<ProductDTO> productDTOS = productservice.findBest6Products();
-		System.out.println(productDTOS.toString());
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/intro/main.jsp");
 		dispatcher.forward(req, resp);
 	
 	}
+
 }

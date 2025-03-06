@@ -53,7 +53,7 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("sessUser", userDTO);
 			
 			// 게시판 목록 이동
-			resp.sendRedirect("/farmStory");
+			resp.sendRedirect("/farmStory/index.do");
 		}else {
 			// 회원이 아닐 경우 다시 로그인 페이지 이동
 			resp.sendRedirect("/farmStory/user/login.do?result=100");			

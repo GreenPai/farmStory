@@ -23,6 +23,10 @@ public enum ArticleService {
 		return dao.selectCountArticle();
 	}
 	
+	public int getCountArticleByCate(String cate) {
+		return dao.selectCountArticleByCate(cate); 
+	}
+
 	public List<ArticleDTO> findAllArticle(int start) {
 		return dao.selectAllArticle(start);
 	}
@@ -98,6 +102,11 @@ public enum ArticleService {
 
 	public int getUserArticleCount(String uid) {
 		return dao.selectCountArticle(uid);
+	}
+
+
+	public List<ArticleDTO> findAllArticleByCate(int start, String cate) {
+		return dao.selectAllArticleByCate(start, cate);
 	}
 
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/farmStory/css/temp.css"/>
 </head>
 <%@ include file="../layout/_header.jsp" %>
+
       <main>
           <div>
               <div class="main_slide_container">
