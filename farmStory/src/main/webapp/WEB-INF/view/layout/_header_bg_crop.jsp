@@ -41,7 +41,7 @@
       </div>
 
       <div class="background">
-            <img src="/farmStory/images/sub_top_tit4.png" alt="EVENT" class="event">
+            <img src="/farmStory/images/sub_top_tit3.png" alt="Crop" class="event">
       </div>
      
     </header>
