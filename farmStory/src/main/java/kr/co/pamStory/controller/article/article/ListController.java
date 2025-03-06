@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kr.co.pamStory.dto.ArticleDTO;
 import kr.co.pamStory.dto.PageGroupDTO;
 import kr.co.pamStory.service.ArticleService;
@@ -25,8 +26,25 @@ public class ListController extends HttpServlet {
 		// pg 데이터 수신
 		String pg = req.getParameter("pg");
 		
+		// 카테고리 수신
+		String cate = req.getParameter("cate");
+		
+		HttpSession session = req.getSession();
+
+		// 글 기본 값을 공지사항으로 
+		if((session.getAttribute("cate") == null)) {
+			cate = "notice";
+		}else {
+			if(cate == null) {
+				cate = (String) session.getAttribute("cate");				
+			}
+		}
+		
+		session.setAttribute("cate", cate);
+		
 		// 전체 게시물 갯수 구하기
-		int total = service.getCountArticle();
+		// int total = service.getCountArticle();
+		int total = service.getCountArticleByCate(cate);
 		
 		// 마지막 페이지 번호 구하기
 		int lastPageNum = service.getLastPageNum(total);
@@ -44,7 +62,8 @@ public class ListController extends HttpServlet {
 		int pageStartNum = service.getPageStartNum(total, currentPage);
 
 		// 글목록 데이터 조회
-		List<ArticleDTO> articles = service.findAllArticle(start);
+		// List<ArticleDTO> articles = service.findAllArticle(start);
+		List<ArticleDTO> articles = service.findAllArticleByCate(start,cate);
 		
 		// 데이터 참조 공유
 		req.setAttribute("articles", articles);
@@ -54,8 +73,29 @@ public class ListController extends HttpServlet {
 		req.setAttribute("pageGroupDTO", pageGroupDTO);
 
 		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list.jsp");
+		
+		RequestDispatcher dispatcher;
+		if(cate.equals("grow") ) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_grow.jsp");			
+		}else if(cate.equals("story")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_story.jsp");
+		}else if(cate.equals("school")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_school.jsp");
+		}else if(cate.equals("food")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_food.jsp");
+		}else if(cate.equals("cook")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_cook.jsp");
+		}else if(cate.equals("qna1")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_qna1.jsp");
+		}else if(cate.equals("qna2")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_qna2.jsp");
+		}else {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/list/list_notice.jsp");
+		}
+		
 		dispatcher.forward(req, resp);
+		
+		
 	}
 
 	@Override

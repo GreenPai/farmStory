@@ -12,8 +12,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kr.co.pamStory.dto.ArticleDTO;
 import kr.co.pamStory.dto.FileDTO;
+import kr.co.pamStory.dto.UserDTO;
 import kr.co.pamStory.service.ArticleService;
 import kr.co.pamStory.service.FileService;
 
@@ -28,9 +30,32 @@ public class WriteController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		// 카테고리 수신
+		HttpSession session = req.getSession();
+		String cate = (String) session.getAttribute("cate");
+		
 		// View forward
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write.jsp");
+		RequestDispatcher dispatcher;
+		if(cate.equals("grow") ) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write/write_grow.jsp");			
+		}else if(cate.equals("story")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write/write_story.jsp");
+		}else if(cate.equals("school")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write/write_school.jsp");
+		}else if(cate.equals("food")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write/write_food.jsp");
+		}else if(cate.equals("cook")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write/write_cook.jsp");
+		}else if(cate.equals("qna1")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write/write_qna1.jsp");
+		}else if(cate.equals("qna2")) {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write/write_qna2.jsp");
+		}else {
+			dispatcher = req.getRequestDispatcher("/WEB-INF/view/article/write/write_notice.jsp");
+		}
+		
 		dispatcher.forward(req, resp);
+
 	}
 
 	@Override
@@ -40,6 +65,10 @@ public class WriteController extends HttpServlet {
 		String content = req.getParameter("content");
 		String writer = req.getParameter("writer");
 		String regip = req.getRemoteAddr();
+
+		// 카테고리 수신
+		HttpSession session = req.getSession();
+		String cate = (String) session.getAttribute("cate");
 		
 		// 파일 업로드 서비스 호출
 		List<FileDTO> files = fileService.uploadFile(req);
@@ -51,6 +80,7 @@ public class WriteController extends HttpServlet {
 		dto.setFile(files.size());
 		dto.setWriter(writer);
 		dto.setRegip(regip);
+		dto.setCate(cate);
 		logger.debug(dto.toString());
 		
 		// 글 등록 서비스 호출
@@ -61,8 +91,8 @@ public class WriteController extends HttpServlet {
 			fileDTO.setAno(no);
 			fileService.registeFile(fileDTO);
 		}
-			
+		
 		// 글목록 이동
-		resp.sendRedirect("/farmStory/article/list.do");
+		resp.sendRedirect("/farmStory/article/list.do?cate=" + cate);
 	}
 }

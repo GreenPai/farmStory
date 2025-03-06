@@ -73,50 +73,52 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 </head>
-<%@ include file="../layout/_header_bg.jsp"%>
+<%@ include file="../../layout/_header_bg.jsp" %>
 <main id="notice">
 	<section class="left_section">
 		<aside>
-			<article>
-				<ul>
-					<li><img src="/farmStory/images/sub_aside_cate5_tit.png"
-						alt="커뮤니티"></li>
-				</ul>
-			</article>
+              <article>
+                  <ul>
+                      <li>
+                          <img src="/farmStory/images/sub_aside_cate3_tit.png" alt="농작물이야기" >
+                      </li>
+                  </ul>
+              </article>
+  
+              <article>   
+                  <ul>
+                      <li>
+                          <a href="/farmStory/article/list.do?cate=story">
+                              <img src="/farmStory/images/sub_cate3_lnb1.png" alt="농작물이야기">
+                          </a>
+                      </li>
+                      <li>
+                        <a href="/farmStory/article/list.do?cate=grow">
+                            <img src="/farmStory/images/sub_cate3_lnb2.png" alt="텃밭가꾸기">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/farmStory/article/list.do?cate=school">
+                            <img src="/farmStory/images/sub_cate3_lnb3_ov.png" alt="귀농학교">
+                        </a>
+                      </li>
 
-			<article>
-				<ul>
-					<li><a href="/farmStory/article/list.do"> <img
-							src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
-					</a></li>
-					<li><a href="/farmStory/article/write.do"> <img
-							src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
-					</a></li>
-					<li><a href="/farmStory/article/view.do"> <img
-							src="/farmStory/images/sub_cate5_lnb3_ov.png" alt="나도요리사">
-					</a></li>
-					<li><a href="/farmStory/article/modify.do"> <img
-							src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
-					</a></li>
-					<li><a href="/farmStory/article/qna.do"> <img
-							src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
-					</a></li>
-				</ul>
-			</article>
-		</aside>
+                  </ul>
+              </article>
+            </aside>
 	</section>
 
 	<section class="right_section">
 		<article>
 			<div>
 				<div class="sub_nav_tit">
-					<img src="/farmStory/images/sub_nav_tit_cate5_tit3.png"
-						alt="나도 요리사">
+					<img src="/farmStory/images/sub_nav_tit_cate3_tit3.png"
+						alt="귀농학교">
 				</div>
 				<div>
 					<p class="intro">
-						<img src="/farmStory/images/sub_page_nav_ico.gif" alt="공지사항">
-						HOME > 커뮤니티 > <span class="eco_txt">나도요리사&nbsp </span>
+						<img src="/farmStory/images/sub_page_nav_ico.gif" alt="귀농학교">
+						HOME > 커뮤니티 > <span class="eco_txt">귀농학교&nbsp </span>
 					</p>
 				</div>
 			</div>
@@ -203,4 +205,4 @@ document.addEventListener('DOMContentLoaded', function(){
 		</article>
 	</section>
 </main>
-<%@ include file="../layout/_footer.jsp"%>
+<%@ include file="../../layout/_footer.jsp" %>    
