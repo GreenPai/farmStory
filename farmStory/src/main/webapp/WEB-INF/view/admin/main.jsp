@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,11 +40,11 @@
                         <tbody>
                         	<c:forEach var="product" items="${products}">
 	                            <tr>
-	                                <td>${product.id}</td>
-	                                <td>${product.name}</td>
-	                                <td>${product.category}</td>
-	                                <td>${product.price}원</td>
-	                                <td>${product.stock}</td>
+	                                <td>${product.prodNo}</td>
+	                                <td>${product.prodName}</td>
+	                                <td>${product.cateName}</td>
+	                                <td>${product.prodPrice}원</td>
+	                                <td>${product.prodStock}</td>
 	                                <td>${product.regDate}</td>
 	                            </tr>
                             </c:forEach>
@@ -68,18 +69,20 @@
                             </tr>
                         </thead>
                         <tbody>
+
                        		<c:forEach var="order" items="${orders}">
                                 <tr>
-                                    <td>${order.id}</td>
-                                    <td>${order.productName}</td>
-                                    <td>${order.price}원</td>
-                                    <td>${order.quantity}개</td>
-                                    <td>${order.deliveryFee}원</td>
-                                    <td>${order.totalPrice}원</td>
-                                    <td>${order.userName}</td>
-                                    <td>${order.orderDate}</td>
+									<td>${order.orderNo}</td>
+	                        		<td>${order.prodName}</td>
+	                        		<td>${order.itemPrice}</td>
+		                            <td>${order.itemCount}</td>
+		                            <td>${order.prodDeliveryFee}</td>
+		                            <td>${order.orderTotalPrice}</td>
+		                            <td>${order.orderSender}</td>
+		                            <td>${order.orderDate}</td>
                                 </tr>
                               </c:forEach>
+     
                         </tbody>
                             
                     </table>
@@ -101,12 +104,12 @@
                         <tbody>
                         	<c:forEach var="user" items="${users}">
                             <tr>
-                                <td>${user.id}</td>
+                                <td>${user.uid}</td>
                                 <td>${user.name}</td>
-                                <td>${user.nickname}</td>
-                                <td>${user.phone}</td>
+                                <td>${user.nick}</td>
+                                <td>${user.hp}</td>
                                 <td>${user.email}</td>
-                                <td>${user.level}</td>
+                                <td>${user.userLevel}</td>
                                 <td>${user.regDate}</td>
                             </tr>
                            </c:forEach>
@@ -120,3 +123,4 @@
 <%@ include file="../admin/layout/_footer.jsp" %>
 </body>
 </html>
+

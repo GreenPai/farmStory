@@ -37,6 +37,7 @@ public class CartDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 		
+		
 	}
 
 	public List<CartDTO> SelectCartByUid(String uid) {
@@ -59,6 +60,7 @@ public class CartDAO extends DBHelper {
 				dto.setProdPrice(rs.getInt(7));
 				dto.setProdDeliveryFee(rs.getInt(8));
 				dto.setCartNo(rs.getInt(9));
+				dto.setProdNo(rs.getInt(10));
 				dto.setProdDiscountPrice( (dto.getProdPrice() * (100-dto.getProdDiscount())) / 100);
 				dto.setTotal(dto.getProdPrice() * dto.getCartProdCount());
 				dtos.add(dto);
@@ -75,12 +77,26 @@ public class CartDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(BASKET_SQL.DELETE_CART_BY_CARTNO);
-			psmt.setString(1, cartNo);
+			psmt.setString(1, cartNo);                              
 			psmt.executeUpdate();
 			
 			closeAll();	
 		}catch(Exception e) {
 			logger.error(e.getMessage());
 		}
+	}
+
+	public void deleteCartByUid(String uid) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(BASKET_SQL.DELETE_CART_BY_UID);
+			psmt.setString(1, uid);                              
+			psmt.executeUpdate();
+			
+			closeAll();	
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		
 	}
 }

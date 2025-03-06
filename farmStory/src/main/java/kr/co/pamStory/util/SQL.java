@@ -55,7 +55,7 @@ public class SQL {
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `article`";
 	public static final String SELECT_COUNT_ARTICLE= "SELECT COUNT(*) FROM `article`";
 	
-	public final static String SELECT_ALL_ARTICLE_BY_SEARCH="SELECT" 
+	public final static String SELECT_ALL_ARTICLE_BY_SEARCH="SELECT " 
 																		+ "a.*, "
 																		+ "u.`nick` "
 																		+ "FROM `article` AS a "
@@ -63,7 +63,7 @@ public class SQL {
 	
 	
 	public static final String SELECT_ALL_ARTICLE="SELECT "
-													+"a.*,"
+													+"a.*, "
 													+"u.`nick` "
 													+"FROM `article` AS a "
 													+"JOIN `user` AS u "
@@ -88,13 +88,13 @@ public class SQL {
 															+"WHERE `no` =?" ;
 	
 	
-	public final static String SELECT_COUNT_ARTICLE_FOR_SEARCH = "select count(*) from `article` as a ";
-	public final static String JOIN_FOR_SEARCH_NICK  = "JOIN `user` as u ON a.writer = u.uid ";
-	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE `title` LIKE ? ";
-	public final static String WHERE_FOR_SEARCH_CONTENT = "WHERE `content` LIKE ? ";
-	public final static String WHERE_FOR_SEARCH_WRITER  = "WHERE `nick` LIKE ? ";	
-	public final static String ORDER_FOR_SEARCH  = "ORDER BY `no` DESC ";
-	public final static String LIMIT_FOR_SEARCH  = "LIMIT ?, 10";
+	public final static String SELECT_COUNT_ARTICLE_FOR_SEARCH = "select count( * ) from `article` as a " ;
+	public final static String JOIN_FOR_SEARCH_NICK  = "JOIN `user` as u ON a.writer = u.uid " ;
+	public final static String WHERE_FOR_SEARCH_TITLE   = "WHERE `title` LIKE ? " ;
+	public final static String WHERE_FOR_SEARCH_CONTENT = "WHERE `content` LIKE ? " ;
+	public final static String WHERE_FOR_SEARCH_WRITER  = "WHERE `nick` LIKE ? " ;	
+	public final static String ORDER_FOR_SEARCH  = "ORDER BY `no` DESC " ;
+	public final static String LIMIT_FOR_SEARCH  = "LIMIT ? , 10 " ;
 													
 			
 	public static final String INSERT_ARTICLE = "insert into `article` set "
@@ -116,6 +116,18 @@ public class SQL {
 
 	public static final String SELECT_FILE_BY_ANO = "select * from `file` where `ano`= ?";
 
+	public static final String CHOOSE_FILE_BY_FNO = "select * from `file` where `fno`=?";
+	
+	public static final String SELECT_FILE_BY_SNAME = "select `sName` FROM `FILE` where `ano`=?";
+	
+	public static final String UPDATE_FILE_DOWNLOAD_COUNT = "update `file` set `download` = `download` + 1 where `fno`=?";
+
+	public static final String SELECT_FILE_DOWNLOAD_COUNT = "select download from `file` where `fno`=?";
+	
+	public static final String UPDATE_FILE = "UPDATE `file`  set "
+													+ "`oName`=?, "
+													+ "`sName`=? "
+													+ "WHERE `fno`=?";
 	//comment
 	public static final String INSERT_COMMENT = "insert into `comment` set "
 																+"`parent`=?, "
@@ -152,6 +164,11 @@ public class SQL {
 	
 
 	
+
+
+
+
+
 
 
 

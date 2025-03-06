@@ -55,6 +55,20 @@ public class ImageDAO extends DBHelper {
 		
 		return sname;
 	}
+
+	public void deleteImage(String prodNo) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL2.DELETE_IMAGE);
+			psmt.setString(1, prodNo);
+			psmt.executeUpdate();
+			
+			closeAll();
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+	}
 	
 	
 }

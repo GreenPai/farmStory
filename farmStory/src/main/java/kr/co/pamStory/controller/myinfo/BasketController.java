@@ -1,4 +1,4 @@
-package kr.co.pamStory.controller.basket;
+package kr.co.pamStory.controller.myinfo;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,8 +18,8 @@ import kr.co.pamStory.service.CartService;
 /*
  * 장바구니 리스트 출력 컨트롤러
  * */
-@WebServlet("/basket/basket.do")
-public class basketController extends HttpServlet {
+@WebServlet("/myinfo/basket.do")
+public class BasketController extends HttpServlet {
 
 	private static final long serialVersionUID = 112322313L;
 	private BasketService service = BasketService.INSTANCE;
@@ -61,7 +61,7 @@ public class basketController extends HttpServlet {
 		req.setAttribute("point", point);
 		req.setAttribute("tot", cartDTOS.size());
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/basket/basket.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/info/basket.jsp");
 		dispatcher.forward(req, resp);
 	}
 	

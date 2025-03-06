@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>    
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,70 +41,34 @@
                             </tr>
                         </thead>
                         <tbody>
+                        	<c:forEach var="user" items="${users}">
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td>a101</td>
-                                <td>김유신</td>
-                                <td>유신101</td>
-                                <td>yusin101@naver.com</td>
-                                <td>010-1234-1001</td>
-                                <td>
-                                    <select>
-                                         <option value="level">1</option>
-                                         <option value="level">2</option>
-                                         <option value="level">3</option>
-                                         <option value="level">4</option>
-                                    </select>
-                                </td>
-                                <td>2023-01-01 13:06:14</td>
-                                <td>[상세확인]</td>
+                                <td>${user.uid}</td>
+                                <td>${user.name}</td>
+                                <td>${user.nick}</td>
+                                <td>${user.email}</td>
+                                <td>${user.hp}</td>
+                                <td>${user.userLevel}</td>
+                                <td>${user.regDate}</td>
+                                <td><a href="#">[상세확인]</a></td>
                             </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>a101</td>
-                                <td>김유신</td>
-                                <td>유신101</td>
-                                <td>yusin101@naver.com</td>
-                                <td>010-1234-1001</td>
-                                <td>
-                                    <select>
-                                         <option value="level">1</option>
-                                         <option value="level">2</option>
-                                         <option value="level">3</option>
-                                         <option value="level">4</option>
-                                    </select>
-                                </td>
-                                <td>2023-01-01 13:06:14</td>
-                                <td>[상세확인]</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>a101</td>
-                                <td>김유신</td>
-                                <td>유신101</td>
-                                <td>yusin101@naver.com</td>
-                                <td>010-1234-1001</td>
-                                <td>
-                                    <select>
-                                         <option value="level">1</option>
-                                         <option value="level">2</option>
-                                         <option value="level">3</option>
-                                         <option value="level">4</option>
-                                    </select>
-                                </td>
-                                <td>2023-01-01 13:06:14</td>
-                                <td>[상세확인]</td>
-                            </tr>
+                            </c:forEach>
                         </tbody>
                         
+                        
                     </table>
-                    <div class="page"  >
-                        <p > < [1] [2] [3] [4] [5] ></p>
-                    </div>
+                    <div class="page">
+	                	<c:if test="${pageGroupDTO.start>1}">
+	                    	<a href="farmStory/admin/user/list.do?pg=${pageGroupDTO.start -1}" class="prev">이전</a>
+	                    </c:if>
+	                    <c:forEach var="num" begin="${pageGroupDTO.start}" end="${pageGroupDTO.end }">
+	                    	<a href="/farmStory/admin/user/list.do?pg=${num}" class="num ${currentPage==num ? 'current' : '' }">[${num}] &nbsp;</a>
+	                    </c:forEach>
+	                    	<c:if test="${pageGroupDTO.end<lastPageNum}">
+	                    	<a href="/farmStory/admin/user/list.do?pg=${pageGroupDTO.end + 1}" class="next">다음</a>
+	                    </c:if>
+                </div>
                 </article>
             </section>
 </main>

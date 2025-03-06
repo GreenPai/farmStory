@@ -1,5 +1,7 @@
 package kr.co.pamStory.dto;
 
+import java.util.List;
+
 public class FileDTO {
 	
 	private int fno;
@@ -8,6 +10,16 @@ public class FileDTO {
 	private String sName;
 	private int download;
 	private String rdate;
+	
+	private List<FileDTO> files;
+	
+	public List<FileDTO> getFiles() {
+		return files;
+	}
+	
+	public void setFiles(List<FileDTO> files) {
+		this.files = files;
+	}
 	
 	public int getFno() {
 		return fno;

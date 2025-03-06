@@ -34,14 +34,37 @@ public class SQL2 {
 	public static final String SELECT_USER_LIMIT_3 = "SELECT * FROM `USER` order BY `REGDATE` DESC LIMIT 0,3";
 		
 	// 주문 최신 데이터 3개 출력
-	public static final String SELECT_ORDER_LIMIT_3 = "SELECT * FROM `ORDER` order BY `ORDERDATE` DESC LIMIT 0,3";
+	public static final String SELECT_ORDER_LIMIT_3 = "SELECT o.orderNo, i.sName, p.prodName, oi.itemPrice, oi.itemCount, o.orderTotalPrice, o.orderDate, p.prodDeliveryFee, o.orderSender, p.prodNo "
+													+ "FROM `order` AS o JOIN `orderitem` AS oi ON o.orderNo = oi.orderNo "
+													+ "JOIN `product` AS p ON oi.prodNo = p.prodNo "
+													+ "JOIN `image` AS i ON i.prodNo = p.prodNo "
+													+ "order BY `ORDERDATE` DESC"
+													+ " LIMIT 0, 3";
 
 	// 상품 전체 데이터 출력
-	public static final String SELECT_PRODUCT_ALL = "SELECT p.*, c.cateName FROM `PRODUCT` as p "
-													+ "join category as c on p.cateNo = c.cateNo "
-													+ "order BY `regDate` DESC";
+	public static final String SELECT_PRODUCT_ALL = "SELECT p.*, c.cateName, i.sName FROM `PRODUCT` as p "
+	                                                + "JOIN `category` as c ON p.cateNo = c.cateNo "
+	                                                + "JOIN `image` as i ON p.prodNo = i.prodNo "
+	                                                + "ORDER BY p.regDate DESC";
 
 	public static final String SELECT_ALL_USER = "SELECT * FROM `USER`";
+
+	public static final String DELETE_PRODUCT = "DELETE FROM `PRODUCT` WHERE `PRODNO` = ? ";
+
+	public static final String DELETE_IMAGE = "DELETE FROM `IMAGE` WHERE `PRODNO` = ? ";
+
+	public static final String SELECT_COUNT_PRODUCT = "SELECT COUNT(*) FROM `PRODUCT`";
+
+	// 상품 데이터 6개 출력(페이징)
+	public static final String SELECT_PRODUCT_LIMIT_6 =  "SELECT p.*, c.cateName, i.sName FROM `PRODUCT` as p "
+											            + "JOIN `category` as c ON p.cateNo = c.cateNo "
+											            + "JOIN `image` as i ON p.prodNo = i.prodNo "
+											            + "ORDER BY p.regDate DESC "
+											            + "LIMIT ?, 6";
+
+	public static final String SELECT_COUNT_USER = "SELECT COUNT(*) FROM `USER`";
+
+	public static final String SELECT_ALL_USER_LIMIT_6 = "SELECT * FROM `USER` order BY `REGDATE` DESC LIMIT ?,6";;
 					
 	
 	
