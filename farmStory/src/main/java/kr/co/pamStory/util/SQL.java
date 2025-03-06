@@ -163,7 +163,10 @@ public class SQL {
 														+"`regip`=? "
 														+"WHERE `cno` =?" ;
 
-	public static final String SELECT_ALL_ARTICLE_BY_CATE = "SELECT "
+	// Info
+	public static final String IS_CURRENT_PASSWORD_CORRECT = "SELECT pass FROM `user` WHERE `uid` = ?";
+
+  public static final String SELECT_ALL_ARTICLE_BY_CATE = "SELECT "
 																+"a.*, "
 																+"u.`nick` "
 																+"FROM `article` AS a "

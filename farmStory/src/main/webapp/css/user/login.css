@@ -6,7 +6,7 @@ main {
 main .login {
     width: 359px;
     height: auto;
-    margin: 0px auto 160px auto;
+    margin: 100px auto;
     border: 1px solid #cfded8;
     box-sizing: border-box;
 }
