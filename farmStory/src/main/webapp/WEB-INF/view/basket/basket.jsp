@@ -45,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data.status === "success") {
                     // 성공하면 화면에서도 삭제
                     alert("선택한 상품이 삭제되었습니다.");
-                    window.location.href = "http://localhost:8080/farmStory/basket/basket.do";
+                    // window.location.href = "http://localhost:8080/farmStory/basket/basket.do";
+                    location.href = "./basket/basket.do";
                 } else {
                     alert("삭제 실패! 다시 시도해주세요.");
                 }

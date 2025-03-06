@@ -78,27 +78,27 @@
                         <tbody>
                             <tr>
                                 <td>이름</td>
-                                <td>${name}</td>
+                                <td>${dto.name}</td>
                             </tr>
                             <tr>
                                 <td>아이디</td>
-                                <td>${uid}</td>
+                                <td>${dto.uid}</td>
                             </tr>
                             <tr>
                                 <td>이메일</td>
-                                <td>${email}</td>
+                                <td>${dto.email}</td>
                             </tr>
                             <tr>
                                 <td>가입일</td>
-                                <td>${regDate}</td>
+                                <td>${dto.regDate}</td>
                             </tr>
                         </tbody>
                     </table>
                 </form>
                 <p>고객님의 정보와 일치하는 아이디 입니다.</p>
                 <div>
-                    <a href="#">로그인</a>
-                    <a href="#">비밀번호 찾기</a>
+                    <a href="/farmStory/user/login.do">로그인</a>
+                    <a href="./password.do">비밀번호 찾기</a>
                 </div>
             </section>
         </main>
