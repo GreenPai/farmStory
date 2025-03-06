@@ -106,7 +106,12 @@ public class OrderController extends HttpServlet {
 		List<CartDTO> cartDTOS = cartservice.findCartByUid(uid);;
 		String orderSender = req.getParameter("name");
 		String senderHp = req.getParameter("hp");
-		int usePoint = Integer.parseInt(req.getParameter("usePoint"));
+		
+		int usePoint = 0;
+		if(req.getParameter("usePoint") != "" ) {
+			usePoint = Integer.parseInt(req.getParameter("usePoint"));			
+		}
+		
 		String receiver = req.getParameter("receiver");
 		String receiverHp = req.getParameter("receiverHp");
 		String zip = req.getParameter("zip");
@@ -176,7 +181,7 @@ public class OrderController extends HttpServlet {
 		// 카테고리 비우기
 		cartservice.deleteCartByUid(uid);
 		
-		
+		resp.sendRedirect("/farmStory/myinfo/list.do");
 		
 	}
 	

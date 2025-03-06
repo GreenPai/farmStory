@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>팜스토리 로그인</title>
     <link rel="stylesheet" href="/farmStory/css/layout_bg.css"/>
+    <link rel="stylesheet" href="/farmStory/css/event/event.css"/>
 </head>
 
-<%@ include file="../layout/_header_bg.jsp" %>
+<%@ include file="../layout/_header_bg_intro.jsp" %>
 <main>
         <section class="left_section">
             <aside>

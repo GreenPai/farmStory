@@ -70,7 +70,7 @@ public class ViewController extends HttpServlet {
 			dispatcher.forward(req, resp);
 
 			}catch(NumberFormatException e) {
-				resp.sendRedirect("/farmStory/article/list.do");
+				resp.sendRedirect("/farmStory/myinfo/list.do");
 			}
 	}
 
