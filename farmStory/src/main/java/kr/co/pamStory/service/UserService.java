@@ -1,5 +1,9 @@
 package kr.co.pamStory.service;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.ThreadLocalRandom;
@@ -181,11 +185,7 @@ public enum UserService {
 		return dao.updatePassword(uid, pass1);
 	}
 
-
-	
-
-
-
-
-
 }
+
+
+

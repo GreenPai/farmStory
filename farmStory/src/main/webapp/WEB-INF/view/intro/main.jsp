@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/farmStory/css/layout.css"/>
     <link rel="stylesheet" href="/farmStory/css/temp.css"/>
 </head>
-<%@ include file="WEB-INF/view/layout/_header.jsp" %>
+<%@ include file="../layout/_header.jsp" %>
       <main>
           <div>
               <div class="main_slide_container">
@@ -255,6 +255,6 @@
           </div>
       </main>
 
-<%@ include file="WEB-INF/view/layout/_footer.jsp" %>
+<%@ include file="../layout/_footer.jsp" %>
 
 

@@ -64,7 +64,14 @@ public class SQL2 {
 
 	public static final String SELECT_COUNT_USER = "SELECT COUNT(*) FROM `USER`";
 
-	public static final String SELECT_ALL_USER_LIMIT_6 = "SELECT * FROM `USER` order BY `REGDATE` DESC LIMIT ?,6";;
+	public static final String SELECT_ALL_USER_LIMIT_6 = "SELECT * FROM `USER` order BY `REGDATE` DESC LIMIT ?,6";
+
+	public static final String SELECT_BEST_PRODUCT_6 = "";
+
+	public static final String SELECT_USER = "SELECT * FROM `USER` WHERE `uid` = ?";
+
+	public static final String SELECT_COUNT_USER_BY_UID = "SELECT COUNT(*) FROM article WHERE `writer` = ?";;
+;
 					
 	
 	

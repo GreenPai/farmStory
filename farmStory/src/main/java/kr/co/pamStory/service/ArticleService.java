@@ -96,4 +96,8 @@ public enum ArticleService {
 			dao.deleteArticle(no);
 	}
 
+	public int getUserArticleCount(String uid) {
+		return dao.selectCountArticle(uid);
+	}
+
 }

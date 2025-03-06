@@ -79,9 +79,6 @@
                             </c:forEach>
                         </tbody>
                     </table>
-                    <div class="delete-button-container">
-                        <span>선택삭제</span>
-                    </div>
 
                     <div class="page">
                         <p>< [1] [2] [3] [4] [5] ></p>

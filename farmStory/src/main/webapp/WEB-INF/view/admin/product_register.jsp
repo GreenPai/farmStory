@@ -15,6 +15,20 @@
             margin: 0px auto;
         }
 	</style>
+      <script>
+        // 가격 입력시 포인트 자동 계산
+        function calculatePoints() {
+		    const price = document.getElementsByName('price')[0].value;
+		    if (price && !isNaN(price) && price > 0) {
+		        const points = Math.floor(price * 0.01);
+		        document.getElementsByName('point_display')[0].value = points; // 화면에 표시
+		        document.getElementsByName('point')[0].value = points; // 실제 데이터 전송
+		    } else {
+		        document.getElementsByName('point_display')[0].value = '';
+		        document.getElementsByName('point')[0].value = '';
+		    }
+		}
+    </script>
 </head>
 <%@ include file="../admin/layout/_header.jsp" %>
 <main>
@@ -45,13 +59,15 @@
                                 <tr>
                                     <td>가격</td>
                                     <td>
-                                        <input type="text" name="price">
+                                        <input type="text" name="price" oninput="calculatePoints()">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>포인트</td>
                                     <td>
-                                        <input type="text" name="point">
+                                        <input type="text" name="point_display" disabled readonly placeholder="">
+                                        <input type="hidden" name="point">
+                                        포인트는 가격의 1%
                                     </td>
                                 </tr>
                                 <tr>
