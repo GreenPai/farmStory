@@ -6,6 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import kr.co.pamStory.dto.ArticleDTO;
 import kr.co.pamStory.dto.PointDTO;
 import kr.co.pamStory.dto.UserDTO;
 import kr.co.pamStory.util.BASKET_SQL;
@@ -88,7 +89,39 @@ public class UserDAO extends DBHelper {
 	}
 	
 	public UserDTO selectUser(String uid) {
-		return null;
+		
+		UserDTO userDTO = null;
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL2.SELECT_USER);
+			psmt.setString(1, uid);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				userDTO = new UserDTO();
+				userDTO.setUid(rs.getString(1));
+				userDTO.setPass(rs.getString(2));
+				userDTO.setName(rs.getString(3));
+				userDTO.setNick(rs.getString(4));
+				userDTO.setEmail(rs.getString(5));
+				userDTO.setHp(rs.getString(6));
+				userDTO.setRole(rs.getString(7));
+				userDTO.setZip(rs.getString(8));
+				userDTO.setAddr1(rs.getString(9));
+				userDTO.setAddr2(rs.getString(10));
+				userDTO.setRegip(rs.getString(11));
+				userDTO.setRegDate(rs.getString(12));
+				userDTO.setLeaveDate(rs.getString(13));
+				userDTO.setUserPoint(rs.getInt(14));
+				userDTO.setUserLevel(rs.getInt(15));
+			}
+			closeAll();
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		return userDTO;
 	}
 	
 	public UserDTO selectUser(UserDTO dto) {

@@ -100,9 +100,13 @@ public enum ArticleService {
 			dao.deleteArticle(no);
 	}
 
+	public int getUserArticleCount(String uid) {
+		return dao.selectCountArticle(uid);
+	}
+
+
 	public List<ArticleDTO> findAllArticleByCate(int start, String cate) {
 		return dao.selectAllArticleByCate(start, cate);
 	}
-
 
 }

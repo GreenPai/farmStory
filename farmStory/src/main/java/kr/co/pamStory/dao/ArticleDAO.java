@@ -2,6 +2,8 @@ package kr.co.pamStory.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import kr.co.pamStory.dto.ArticleDTO;
 import kr.co.pamStory.util.DBHelper;
 import kr.co.pamStory.util.SQL;
+import kr.co.pamStory.util.SQL2;
 
 public class ArticleDAO extends DBHelper {
 	private static final ArticleDAO INSTANCE = new ArticleDAO();
@@ -262,6 +265,25 @@ public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int star
 
 	}
 
+	public int selectCountArticle(String uid) {
+		int postCount = 0;
+	    
+	    try {
+			conn = getConnection();
+	        psmt = conn.prepareStatement(SQL2.SELECT_COUNT_USER_BY_UID);
+	        psmt.setString(1, uid);
+	        rs = psmt.executeQuery();
+
+	        if (rs.next()) {
+	            postCount = rs.getInt(1);  // 게시글 수를 가져옴
+	        }
+	        closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+
+	    return postCount;
+
 	public int selectCountArticleByCate(String cate) {
 		int total = 0;
 
@@ -314,5 +336,6 @@ public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int star
 			logger.error(e.getMessage());
 		}
 		return articles;
+
 	}
 }

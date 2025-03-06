@@ -16,6 +16,7 @@ public class UserDTO {
 	private String leaveDate;
 	private int userPoint;
 	private int userLevel;
+	private int postCount;
 	
 	
 	public int getUserPoint() {
@@ -115,7 +116,13 @@ public class UserDTO {
 				+ ", regip=" + regip + ", regDate=" + regDate + ", leaveDate=" + leaveDate + ", userPoint=" + userPoint
 				+ ", userLevel=" + userLevel + "]";
 	}
-	
+    public int getPostCount() {
+        return postCount;
+    }
+
+    public void setPostCount(int postCount) {
+        this.postCount = postCount;
+    }
 	
 	
 }

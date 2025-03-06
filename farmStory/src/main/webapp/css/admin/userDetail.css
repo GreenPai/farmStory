@@ -1,0 +1,79 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* 밝고 깨끗한 색상 */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 55%;
+    max-width: 850px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 12px;  /* 부드러운 둥근 모서리 */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* 깊고 부드러운 그림자 */
+    padding: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);  /* 마우스를 올리면 살짝 떠오르는 효과 */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* 그림자 강도 증가 */
+}
+
+.header {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px; /* 간격 축소 */
+    letter-spacing: 2px;  /* 글자 간격을 늘려서 타이틀을 더욱 눈에 띄게 */
+}
+
+.user-detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px;  /* 항목 간의 간격 줄이기 */
+    margin-bottom: 20px;  /* 전체적인 여백 축소 */
+    font-size: 12px;  /* 글자 크기 줄이기 */
+}
+
+.user-detail dt {
+    font-weight: 600;
+    color: #34495e;
+    margin: 0;  /* 마진 제거 */
+}
+
+.user-detail dd {
+    margin: 0;
+    color: #7f8c8d;
+    font-weight: 400;
+    line-height: 1.3;  /* 줄 간격 줄이기 */
+}
+
+.user-detail dt, .user-detail dd {
+    padding: 6px 0;  /* 수직 패딩 줄이기 */
+}
+
+.close-btn {
+    display: block;
+    width: 160px;
+    padding: 12px;
+    background-color: #3498db;  /* 깔끔한 파란색 */
+    color: white;
+    text-align: center;
+    border-radius: 30px; /* 부드럽고 둥근 버튼 */
+    margin: 30px auto 0;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+    background-color: #2980b9;  /* 어두운 파란색으로 변경 */
+    transform: translateY(-3px); /* 버튼 올라오는 효과 */
+}
+
+.close-btn:active {
+    transform: translateY(1px); /* 클릭 시 내려가는 효과 */
+}

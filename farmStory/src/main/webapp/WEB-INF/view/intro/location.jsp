@@ -7,6 +7,18 @@
 </head>
 
 <%@ include file="../layout/_header_bg.jsp" %>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0595dc9f1a8606862e6db7fadd03b131"></script>
+<script>
+		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+		var options = { //지도를 생성할 때 필요한 기본 옵션
+			center : new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+			level : 3
+		//지도의 레벨(확대, 축소 정도)
+		};
+
+		var map = new window.kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+</script>
 <main>
         <section class="left_section">
             <aside>
@@ -58,8 +70,7 @@
                     <br>
 
                     <p class="eco_txt">찾아오시는길</p>
-                    <img src="/farmStory/images/map.png" alt="지도">
-                    <p>
+                    <div id="map" style="width: 100%; height: 400px;"></div>
                   </div>
                 </div>
             </article>
