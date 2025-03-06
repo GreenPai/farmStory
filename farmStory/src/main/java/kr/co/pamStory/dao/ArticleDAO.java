@@ -283,7 +283,8 @@ public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int star
 		}
 
 	    return postCount;
-
+	}
+	
 	public int selectCountArticleByCate(String cate) {
 		int total = 0;
 
