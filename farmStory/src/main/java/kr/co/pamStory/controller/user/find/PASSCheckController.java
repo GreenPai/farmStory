@@ -17,8 +17,8 @@ import jakarta.servlet.http.HttpSession;
 import kr.co.pamStory.dto.UserDTO;
 import kr.co.pamStory.service.UserService;
 
-@WebServlet("/find/check/userid.do")
-public class IDCheckController extends HttpServlet{
+@WebServlet("/find/check/password.do")
+public class PASSCheckController extends HttpServlet{
 
 	private static final long serialVersionUID = 11231245521L;
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -27,11 +27,11 @@ public class IDCheckController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		String name = req.getParameter("name");
+		String uid = req.getParameter("uid");
 		String email = req.getParameter("email");
 		String code = "";
 
-		UserDTO dto = userservice.findUserByNameAndEmail(name,email);
+		UserDTO dto = userservice.findUserByUidAndEmail(uid,email);
 		
 		if(dto.getUid().equals("인증실패")) {
 			System.out.println("검증 오류");

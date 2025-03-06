@@ -12,6 +12,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import ch.qos.logback.classic.Logger;
 import kr.co.pamStory.dao.UserDAO;
 import kr.co.pamStory.dto.UserDTO;
 
@@ -99,11 +100,15 @@ public enum UserService {
 	public UserDTO findUserByNameAndEmail(String name, String email) {
 		return dao.selectUserByNameAndEmail(name, email);
 	}
-
+	
+	public UserDTO findUserByUidAndEmail(String uid, String email) {
+		return dao.selectUserByUidAndEmail(uid, email);
+	}
+/*
 	public UserDTO resultFindId(String name, String uid, String email, String regDate) {
 		return dao.selectResultFindId(name, uid, email, regDate);
 	}
-
+*/
 	public List<UserDTO> findLatest3Users() {
 		return dao.selectLatest3Users();
 	}
@@ -111,6 +116,13 @@ public enum UserService {
 	public int findUserPoint(String uid) {
 		return dao.selectUserPoint(uid);
 	}
+
+	public boolean modifyPassword(String uid, String pass1) {
+		return dao.updatePassword(uid, pass1);
+	}
+
+
+	
 
 
 

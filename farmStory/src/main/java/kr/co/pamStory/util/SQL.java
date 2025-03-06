@@ -8,8 +8,20 @@ public class SQL {
 	// user
 	public static final String SELECT_COUNT_USER = "select COUNT(*) from `user` ";
 	public static final String SELECT_USER_BY_NAME_AND_EMAIL = "SELECT "
-																+ "	`uid` "
+																+ "`name`,"
+																+ "	`uid`,"
+																+ "`email`,"
+																+ "`regDate` "
 																+ "FROM `user` WHERE `name`= ? AND `email` = ? ";
+	
+	public static final String SELECT_USER_BY_UID_AND_EMAIL = "SELECT "
+																+ "`uid`,"
+																+ "`pass` "
+																+ "FROM `user` WHERE `uid`= ? AND `email` = ? ";
+	public static final String UPDATE_PASSWORD = "UPDATE `user` "
+													+ "SET `pass` = ? "
+													+ "WHERE `uid` = ?";
+	/*
 	public static final String SELECT_RESULT_FIND_ID = "SELECT "
 														+ "	`name`,"
 														+ "	`uid`,"
@@ -17,6 +29,8 @@ public class SQL {
 														+ "	`regDate` "
 														+ "FROM `user` "
 														+ "WHERE `name` = ? AND `uid` = ? AND `email` = ? AND `regDate` = ?";
+	*/
+	
 	
 	public static final String WHERE_UID = "where `uid`=?";
 	public static final String WHERE_NICK = "where `nick`=?";
@@ -134,6 +148,10 @@ public class SQL {
 														+"`writer`=?, "
 														+"`regip`=? "
 														+"WHERE `cno` =?" ;
+
+	
+
+	
 
 
 

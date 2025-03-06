@@ -54,7 +54,9 @@
 		btnAuthCode.onclick = async function(){
 
 			event.preventDefault();
-			const authCode = formRegister.authCode.value;
+			const authCode = formRegister.authCode.value;			
+					
+			
 			if(code === authCode) {
 				codeResult.innerText = ' 인증에 성공하셨습니다.';
 				codeResult.style.color = 'green';
@@ -114,20 +116,8 @@
 		
 		next.onclick = function(event) {
 			event.preventDefault();
-			if(nextBtnClick) {
-				
-				// 작성 이메일 
-				const email = formRegister.email.value;
-			    
-			    const formData = new URLSearchParams();
-			    formData.append("email", email);
-
-			    const response = fetch('/farmStory/find/resultUserId.do', {
-			        method: 'POST',
-			        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-			        body: formData
-			    });
-					
+			if(nextBtnClick == true) {
+				location.href = "./resultUserId.do";	
 			}else{
 				alert("인증하세요");
 				return;
