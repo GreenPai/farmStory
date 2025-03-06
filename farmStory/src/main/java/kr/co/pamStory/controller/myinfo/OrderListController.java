@@ -41,7 +41,7 @@ public class OrderListController extends HttpServlet {
 		
 		//전체 상품 갯수 구하기
 		int total = service.getCountOrder(uid);
-		System.out.println(total);
+		
 		//마지막페이지 번호 구하기
 		int lastPageNum = service.getLastPageNum(total);
 		
@@ -58,7 +58,7 @@ public class OrderListController extends HttpServlet {
 		int pageStartNum = service.getPageStartNum(total, currentPage);
 		
 		// 제품목록 데이터 조회
-		List<OrderDTO> orders = service.findAllOrder(start);
+		List<OrderDTO> orders = service.findAllOrder(start, uid);
 		System.out.println(orders);
 		req.setAttribute("tot", total);
 		req.setAttribute("orders", orders);

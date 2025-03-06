@@ -56,9 +56,8 @@
       }
 
       header > #link > div:nth-child(1){
-        position: absolute;
-        top: 17px;
-        left: 610px;      
+        float:right;
+        margin-top: 17px;      
       }
 
       header > #link > div > article > .logo {

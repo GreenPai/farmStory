@@ -5,7 +5,7 @@
 <title>팜스토리 로그인</title>
 <link rel="stylesheet" href="/farmStory/css/layout_bg.css" />
 </head>
-<%@ include file="../layout/_header_bg.jsp"%>
+<%@ include file="./layout/_header_bg_intro.jsp" %>
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8655d93046b5ed7b57441e72274b9656"></script>
 <main>

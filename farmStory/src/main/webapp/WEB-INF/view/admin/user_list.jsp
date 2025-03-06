@@ -25,7 +25,7 @@
 	        // 사용자의 상세 정보를 가져오는 URL을 설정 (예시: userDetail.jsp?uid=uid)
 	        var url = "/farmStory/admin/detail.do?uid=" + uid;
 	        // 팝업 창 옵션 설정
-	        var popupOptions = "width=600,height=1000,scrollbars=yes,resizable=yes";
+	        var popupOptions = "width=600,height=700,scrollbars=yes,resizable=yes";
 	
 	        // 팝업 창 열기
 	        window.open(url, "UserDetailPopup", popupOptions);
@@ -71,17 +71,20 @@
             </tbody>
         </table>
     </article>
+    <div class="page">
+                	<c:if test="${pageGroupDTO.start>1}">
+                    <a href="/farmStory/admin/user/list.do?pg=${pageGroupDTO.start -1}" class="prev">이전</a>
+                    </c:if>
+                    <c:forEach var="num" begin="${pageGroupDTO.start}" end="${pageGroupDTO.end }">
+                    <a href="/farmStory/admin/user/list.do?pg=${num}" class="num ${currentPage==num ? 'current' : '' }">[${num}] &nbsp;</a>
+                    </c:forEach>
+                    <c:if test="${pageGroupDTO.end<lastPageNum}">
+                    <a href="/farmStory/admin/user/list.do?pg=${pageGroupDTO.end + 1}" class="next">다음</a>
+                    </c:if>
+                </div>
 </section>
 </main>
 <%@ include file="../admin/layout/_footer.jsp" %>
 
-<!-- 팝업을 열기 위한 스크립트 -->
-<script>
-    function openUserDetailPopup(uid) {
-        var url = "/farmStory/admin/detail.do?uid=" + uid;
-        var popupOptions = "width=600,height=400,scrollbars=yes,resizable=yes";
-        window.open(url, "UserDetailPopup", popupOptions);
-    }
-</script>
 </body>
 </html>

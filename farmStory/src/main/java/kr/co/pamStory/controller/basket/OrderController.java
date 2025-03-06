@@ -173,7 +173,7 @@ public class OrderController extends HttpServlet {
 			
 			orderitemservice.register(orderItemDTO);
 			
-			// 제품 재고 줄이기
+			// 제품 재고 줄이기 / 제품 판매량 늘리기
 			productsevice.minusProduct(cartDTO.getProdNo(), cartDTO.getCartProdCount());
 		}
 

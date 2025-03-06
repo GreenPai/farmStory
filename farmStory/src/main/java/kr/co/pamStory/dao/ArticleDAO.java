@@ -339,4 +339,44 @@ public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int star
 		return articles;
 
 	}
+
+	public List<ArticleDTO> selectArticleByCateLimit5(String cate) {
+		List<ArticleDTO> articles = new ArrayList<ArticleDTO>();
+
+		try {
+
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_ALL_ARTICLE_BY_CATE_LIMIT_5);
+			psmt.setString(1, cate);
+			
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				ArticleDTO dto = new ArticleDTO();
+				dto.setNo(rs.getInt(1));
+				dto.setCate(rs.getString(2));
+				if(rs.getString(3).length() > 8) {
+					dto.setTitle(rs.getString(3).substring(0,8) + "...");					
+				}else {
+					dto.setTitle(rs.getString(3));
+				}
+			
+				dto.setContent(rs.getString(4));
+				dto.setComment(rs.getInt(5));
+				dto.setFile(rs.getInt(6));
+				dto.setHit(rs.getInt(7));
+				dto.setWriter(rs.getString(8));
+				dto.setRegip(rs.getString(9));
+				dto.setWdate(rs.getString(10).substring(0,11));
+				dto.setNick(rs.getString(11));
+				articles.add(dto);
+			}
+			closeAll();
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return articles;
+
+	}
 }

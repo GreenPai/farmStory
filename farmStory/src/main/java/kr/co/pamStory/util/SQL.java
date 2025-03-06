@@ -72,6 +72,16 @@ public class SQL {
 													+"ORDER BY `no` desc "
 													+"LIMIT ?, 10";
 	
+	public static final String SELECT_ALL_ARTICLE_BY_CATE_LIMIT_5 = "SELECT "
+																	+"a.*, "
+																	+"u.`nick` "
+																	+"FROM `article` AS a "
+																	+"JOIN `user` AS u "
+																	+"ON a.writer=u.uid "
+																	+ "where `cate` = ? "
+																	+"ORDER BY `no` desc "
+																	+"LIMIT 5";
+	
 	public static final String SELECT_ARTICLE_BY_NO = "SELECT "
 																	+ " a.*, u.`nick` "
 																	+ "FROM `article` As a "
@@ -178,6 +188,7 @@ public class SQL {
 	public static final String UPDATE_BY_CNO_BY_CNO_AND_CONTENT = "UPDATE `comment` SET"
 														+"`content`=? "
 														+"WHERE `cno` =?" ;
+
 
 
 	

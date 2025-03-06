@@ -11,18 +11,23 @@ public class BASKET_SQL {
 	public static final String SELECT_ALL_PRODUCT = "SELECT p.*, i.sName, c.cateName "
 													+ "FROM `product` as p "
 													+ "join `image` as i on p.prodNo = i.prodNo "
-													+ "join `category` as c on p.cateNo=c.cateNo";
+													+ "join `category` as c on p.cateNo=c.cateNo "
+													+ "order by `prodNo` desc";
 	// 카테고리 별 상품 
 	public static final String SELECT_ALL_PRODUCT_BY_CATENO = "SELECT p.*, i.sName, c.cateName "
 																+ "FROM `product` as p "
 																+ "join `image` as i on p.prodNo = i.prodNo "
 																+ "join `category` as c on p.cateNo=c.cateNo "
-																+ "WHERE c.`cateno` = ? ";
+																+ "WHERE c.`cateno` = ? "
+																+ "order by `prodNo` desc ";
 	// 상품번호에 맞는 상품 탐색
 	public static final String SELECT_PRODUCT_BY_PRODNO =	"SELECT * FROM `product` WHERE `prodno` = ? ";
 	
 	// 상품번호에 맞는 재고량 변화
-	public static final String MODIFY_PRODUCT_STOCK = "UPDATE `product` SET `prodstock` =  `prodstock` - ? WHERE `prodNo` = ? ";;
+	public static final String MODIFY_PRODUCT_STOCK = "UPDATE `product`"
+														+ " SET `prodstock` =  `prodstock` - ?, "
+														+ "`prodSold` = `prodSold` + ? "
+														+ "WHERE `prodNo` = ? ";
 
 	// 상품 번호에 맞는 이미지 이름 탐색
 	public static final String SELECT_SNAME_BY_PRODNO = "SELECT `sname` FROM `image` where `prodno` = ? ";
@@ -69,7 +74,17 @@ public class BASKET_SQL {
 													+ "FROM `order` AS o JOIN `orderitem` AS oi ON o.orderNo = oi.orderNo "
 													+ "JOIN `product` AS p ON oi.prodNo = p.prodNo "
 													+ "JOIN `image` AS i ON i.prodNo = p.prodNo "
-													+ "WHERE o.uid = 'admin'  LIMIT ?, 6";
+													+ "WHERE o.uid = ? "
+													+ "order by `orderNo` desc "
+													+ "  LIMIT ?, 6";
+
+	public static final String SELECT_ORDER_LIMIT_6_ADMIN = "SELECT o.orderNo, i.sName, p.prodName, oi.itemPrice, oi.itemCount, o.orderTotalPrice, o.orderDate, p.prodDeliveryFee, o.orderSender, p.prodNo "
+																+ "FROM `order` AS o JOIN `orderitem` AS oi ON o.orderNo = oi.orderNo "
+																+ "JOIN `product` AS p ON oi.prodNo = p.prodNo "
+																+ "JOIN `image` AS i ON i.prodNo = p.prodNo "
+																+ "order by `orderNo` desc "
+																+ "  LIMIT ?, 6";
+
 	/*
 	 * --------------------------------------------------
 	 * Point

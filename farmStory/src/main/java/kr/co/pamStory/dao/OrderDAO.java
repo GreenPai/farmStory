@@ -124,13 +124,14 @@ public class OrderDAO  extends DBHelper {
 		return total;
 	}
 
-	public List<OrderDTO> selectAllOrder(int start) {
+	public List<OrderDTO> selectAllOrder(int start, String uid) {
 		
 		List<OrderDTO> dtos = new ArrayList<>();
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(BASKET_SQL.SELECT_ORDER_LIMIT_6);
-			psmt.setInt(1, start);
+			psmt.setString(1, uid);
+			psmt.setInt(2, start);
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
@@ -153,6 +154,38 @@ public class OrderDAO  extends DBHelper {
 			logger.error(e.getMessage());
 		}
 		return dtos;
+	}
+	
+	public List<OrderDTO> selectAllOrder(int start) {
+		List<OrderDTO> dtos = new ArrayList<>();
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(BASKET_SQL.SELECT_ORDER_LIMIT_6_ADMIN);
+			psmt.setInt(1, start);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				OrderDTO dto = new OrderDTO();
+				dto.setOrderNo(rs.getInt(1));
+				dto.setSname(rs.getString(2));
+				dto.setProdName(rs.getString(3));
+				dto.setItemPrice(rs.getInt(4));
+				dto.setItemCount(rs.getInt(5));
+				dto.setOrderTotalPrice(rs.getInt(4) * rs.getInt(5));
+				dto.setOrderDate(rs.getString(7).substring(0,10));
+				dto.setProdDeliveryFee(rs.getInt(8));
+				dto.setOrderSender(rs.getString(9));
+				dto.setProdNo(rs.getInt(10));
+				dtos.add(dto);
+			}
+
+			closeAll();
+		}catch(Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		return dtos;
+		
 	}
 
 	

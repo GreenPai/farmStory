@@ -82,8 +82,9 @@ public class BasketDAO extends DBHelper{
 				dto.setProdDiscount(rs.getInt(8));
 				dto.setProdDeliveryFee(rs.getInt(9));
 				dto.setProdContent(rs.getString(10));
-				dto.setImagesName(rs.getString(11));
-				dto.setCateName(rs.getString(12));
+				dto.setRegDate(rs.getString(11));
+				dto.setImagesName(rs.getString(12));
+				dto.setCateName(rs.getString(13));
 				
 				// 실제 할인된 판매 가격
 				dto.setProdDiscountPrice(rs.getInt(4) * (100 - rs.getInt(8)) / 100);

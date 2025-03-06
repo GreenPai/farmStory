@@ -36,7 +36,6 @@ public class MainController extends HttpServlet{
 		
 		// 주문 리스트 3개
 		List<OrderDTO> orderDTOS = orderservice.findLatest3Orders();
-		System.out.println(orderDTOS.toString());
 		
 		// 데이터 뷰로 전달
 		req.setAttribute("products", productDTOS);

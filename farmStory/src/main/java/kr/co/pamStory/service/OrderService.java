@@ -74,6 +74,10 @@ public enum OrderService {
 		return total - start;
 	}
 
+	public List<OrderDTO> findAllOrder(int start, String uid) {
+		return dao.selectAllOrder(start, uid);
+	}
+
 	public List<OrderDTO> findAllOrder(int start) {
 		return dao.selectAllOrder(start);
 	}

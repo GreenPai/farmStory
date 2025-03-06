@@ -81,8 +81,16 @@
                     </table>
 
                     <div class="page">
-                        <p>< [1] [2] [3] [4] [5] ></p>
-                    </div>
+	                	<c:if test="${pageGroupDTO.start>1}">
+	                    <a href="/farmStory/admin/order/list.do?pg=${pageGroupDTO.start -1}" class="prev">이전</a>
+	                    </c:if>
+	                    <c:forEach var="num" begin="${pageGroupDTO.start}" end="${pageGroupDTO.end }">
+	                    <a href="/farmStory/admin/order/list.do?pg=${num}" class="num ${currentPage==num ? 'current' : '' }">[${num}] &nbsp;</a>
+	                    </c:forEach>
+	                    <c:if test="${pageGroupDTO.end<lastPageNum}">
+	                    <a href="/farmStory/admin/order/list.do?pg=${pageGroupDTO.end + 1}" class="next">다음</a>
+	                    </c:if>
+               		</div>
                 </article>
             </section>
     </main>
