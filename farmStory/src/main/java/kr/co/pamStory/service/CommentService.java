@@ -25,11 +25,19 @@ public enum CommentService {
 		return dao.selectAllComment(parent);
 	}
 
-	public void modifyComment(CommentDTO dto) {
+	public void modifyComment(CommentDTO dto) throws Exception{
+		try {
 		dao.updateComment(dto);
+		}catch(Exception e) {
+			throw new Exception("댓글 수정 실패", e);
+		}
 	}
 
 	public void deleteComment(String cno) {
 		dao.deleteComment(cno);
+	}
+
+	public void modifyComment(String cnoStr, String content) {
+		dao.updateCommnet(cnoStr, content);
 	}
 }

@@ -7,29 +7,28 @@
 <title>글보기</title>
 <link rel="stylesheet" href="/farmStory/css/layout_bg.css" />
 <link rel="stylesheet" href="/farmStory/css/farm/community.css" />
-
 <script>
 document.addEventListener('DOMContentLoaded', function(){
 	console.log('DOMContentLoaded...');
-	
+
 	const commentList = document.getElementsByClassName('commentList')[0];
-	
+
+
 	// 댓글 등록
 	formComment.onsubmit = function(e){
 		e.preventDefault();
-		
+
 		// 입력한 데이터 가져오기
 		const parent = formComment.parent.value;
 		const writer = formComment.writer.value;
 		const content = formComment.content.value;
-		
+
 		// 폼 데이터 생성
 		const formData = new FormData();
 		formData.append('parent', parent);
 		formData.append('writer', writer);
 		formData.append('content', content);
-		console.log(formData);
-		
+
 		// 서버 전송
 		fetch('/farmStory/comment/write.do', {
 			method: 'POST',
@@ -37,43 +36,134 @@ document.addEventListener('DOMContentLoaded', function(){
 		})
 		.then(response => response.json())
 		.then(data => {
-			console.log(data);
-			
 			// 동적 태그 생성
 			if(data != null){
-				
 				alert('댓글이 등록 되었습니다.');
-				
-				//입력 필드 비우기
-				const article = `<article>
-			                        <span class='date'>\${data.wdate}</span>
-			                        <span class='nick'>\${data.nick}</span>
-			                        <p class='content'>\${data.content}</p>
-			                        <div>
-			                            <a href='#' class='remove'>삭제</a>
-			                            <a href='#' class='modify'>수정</a>
-			                        </div>
-			                     </article>`;
-			                     
-				commentList.insertAdjacentHTML('beforeend', article);    					
+
+				// 입력 필드 비우기
+				const article = `<article data-cno="${data.cno}">
+					<span class='date'>${data.wdate}</span>
+					<span class='nick'>${data.nick}</span>
+					<p class='content'>${data.content}</p>
+					<div>
+						<a href='#' class='remove'>삭제</a>
+						<a href='#' class='modify' data-cno='${data.cno}'>수정</a>
+					</div>
+				</article>`;
+
+				commentList.insertAdjacentHTML('beforeend', article);
 			}else{
 				alert('댓글 등록 실패 했습니다.');
 			}
-			
 		})
 		.catch(err => {
 			console.log(err);
 		});
 	};
-	
-	});
 
+	// 댓글 수정 및 취소 (이벤트 위임 방식)
+	commentList.addEventListener('click', function(event) {
+		const target = event.target;
+		const article = target.closest('article');
+		
+		// 댓글 수정 버튼 클릭 시
+		if (target.classList.contains('modify')) {
+			const cno = target.getAttribute('data-cno');
+			console.log("수정버튼클릭-댓글id(cno):",cno);
+			const content = article.querySelector('.content').innerText;
+			const date = article.querySelector('.date').innerText;
+			const nick = article.querySelector('.nick').innerText;
+
+			// 기존 내용 백업
+			const originalContent = article.innerHTML;
+
+			// 수정 폼 생성
+			const editForm = `
+			    <div class="editForm">
+			        <input type="hidden" name="cno" value="${cno}">
+			        <textarea name="content">${content}</textarea>
+			        <button class="saveBtn">저장</button>
+			        <button class="cancelBtn">취소</button>
+			    </div>
+			`;
+
+
+			// 기존 내용을 수정 폼으로 변경
+			article.innerHTML = editForm;
+
+			// 저장 버튼 클릭 시 댓글 수정 처리
+			article.querySelector('.saveBtn').addEventListener('click', function() {
+			    // const cno = article.querySelector('input[name="cno"]').value;  // input에서 가져옴
+			    const newContent = article.querySelector('textarea').value;
+			
+			    console.log("저장 버튼 클릭- 댓글 id(cno):", cno);
+			    console.log("저장 버튼 클릭- 수정할 내용:",newContent);
+			    
+			 	// 폼 데이터 생성
+			    const formData2 = new FormData();
+			    formData2.append('cno', cno);  // 이미 cno가 정의되어 있음
+			    formData2.append('content', newContent);
+
+			    // 서버 전송
+			    fetch('/farmStory/comment/modify.do', {
+			        method: 'POST',
+			        body: formData2
+			    })
+			    
+			    
+			    
+    /*
+    const formData = new FormData();
+    formData.append('cno', cno);
+    formData.append('content', newContent);
+    console.log([...formData]);
+
+    fetch('/farmStory/comment/modify.do', {
+        method: 'POST',
+        body: formData
+
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            alert('댓글이 수정되었습니다.');
+            article.innerHTML = `
+                <span class='date'>${data.wdate}</span>
+                <span class='nick'>${data.nick}</span>
+                <p class='content'>${data.content}</p>
+                <div>
+                    <a href='#' class='remove' data-cno='${cno}'>삭제</a>
+                    <a href='#' class='modify' data-cno='${cno}'>수정</a>
+
+                </div>
+            `;
+        } else {
+            alert('댓글 수정 실패');
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        alert('댓글 수정 실패');
+    });
+    
+    */
+});
+
+
+			// 취소 버튼 클릭 시 원래 내용으로 복원
+			article.querySelector('.cancelBtn').addEventListener('click', function() {
+				article.innerHTML = originalContent;
+			});
+		}
+	});
+});
 </script>
 
 
 
+
 </head>
-<%@ include file="../../layout/_header_bg.jsp" %>
+<%@ include file="../../layout/_header_bg.jsp"%>
 <main id="notice">
 	<section class="left_section">
 		<aside>
@@ -86,32 +176,22 @@ document.addEventListener('DOMContentLoaded', function(){
 
 			<article>
 				<ul>
-                      <li>
-                        <a href="/farmStory/article/list.do?cate=notice">
-                            <img src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/farmStory/article/list.do?cate=food">
-                          <img src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/farmStory/article/list.do?cate=cook">
-                          <img src="/farmStory/images/sub_cate5_lnb3_ov.png" alt="나도요리사">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/farmStory/article/list.do?cate=qna1">
-                          <img src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/farmStory/article/list.do?cate=qna2">
-                          <img src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
-                        </a>
-                      </li>
-                  </ul>
+					<li><a href="/farmStory/article/list.do?cate=notice"> <img
+							src="/farmStory/images/sub_cate5_lnb1.png" alt="공지사항">
+					</a></li>
+					<li><a href="/farmStory/article/list.do?cate=food"> <img
+							src="/farmStory/images/sub_cate5_lnb2.png" alt="오늘의식단">
+					</a></li>
+					<li><a href="/farmStory/article/list.do?cate=cook"> <img
+							src="/farmStory/images/sub_cate5_lnb3_ov.png" alt="나도요리사">
+					</a></li>
+					<li><a href="/farmStory/article/list.do?cate=qna1"> <img
+							src="/farmStory/images/sub_cate5_lnb4.png" alt="1:1고객문의">
+					</a></li>
+					<li><a href="/farmStory/article/list.do?cate=qna2"> <img
+							src="/farmStory/images/sub_cate5_lnb5.png" alt="자주묻는 질문">
+					</a></li>
+				</ul>
 			</article>
 		</aside>
 	</section>
@@ -182,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function(){
 						<div>
 							<a
 								href="/farmStory/comment/delete.do?cno=${comment.cno}&parent=${articleDTO.no}"
-								class="remove">삭제</a> <a href="#" class="modify">수정</a>
+								class="remove">삭제</a> <a href="#" class="modify" data-cno="${comment.cno}">수정</a>
 						</div>
 					</article>
 				</c:forEach>
@@ -213,4 +293,4 @@ document.addEventListener('DOMContentLoaded', function(){
 		</article>
 	</section>
 </main>
-<%@ include file="../../layout/_footer.jsp" %>    
+<%@ include file="../../layout/_footer.jsp"%>
