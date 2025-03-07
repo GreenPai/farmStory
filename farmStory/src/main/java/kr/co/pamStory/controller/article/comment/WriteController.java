@@ -24,11 +24,6 @@ public class WriteController extends HttpServlet {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-	}
-
-	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		// 데이터수신
@@ -47,7 +42,7 @@ public class WriteController extends HttpServlet {
 
 		// 서비스 호출
 		CommentDTO savedCommentDTO = service.registeComment(dto);
-		System.out.println("커맨드 DTO "  + savedCommentDTO.toString());
+		
 		// JSON 출력
 		PrintWriter printWriter = resp.getWriter();
 

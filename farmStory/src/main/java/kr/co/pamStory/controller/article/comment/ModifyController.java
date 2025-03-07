@@ -51,59 +51,8 @@ public class ModifyController extends HttpServlet {
 	    String cnoStr = req.getParameter("cno");
 	    String content = req.getParameter("content");
 	    
-	    System.out.println(cnoStr);
-	    System.out.println(content);
-	   
 	    service.modifyComment(cnoStr, content);
 	    
-	    /*
-	    System.out.println("서버에서 받은 댓글id(cno):"+cnoStr);
-
-	    // cno가 null이거나 빈 값이면 오류 응답
-	    if (cnoStr == null || cnoStr.isEmpty()) {
-	    	System.out.println("서버에서 cno값이 없음!");
-	        resp.setContentType("application/json;charset=UTF-8");
-	        PrintWriter out = resp.getWriter();
-	        out.write("{\"status\":\"error\", \"message\":\"cno 값이 없습니다.\"}");
-	        out.flush();
-	        out.close();
-	        return;
-	    }
-		
-		// 데이터 수신
-		int cno = Integer.parseInt(cnoStr);
-		String content = req.getParameter("content");
-		String writer = req.getParameter("writer");
-		String regip = req.getRemoteAddr();
-
-		// dto 생성
-		CommentDTO dto = new CommentDTO();
-		dto.setCno(cno);
-		dto.setContent(content);
-		dto.setWriter(writer);
-		dto.setRegip(regip);
-
-		System.out.println(dto.toString());
-
-		try {
-		// 글 수정 서비스 호출
-		service.modifyComment(dto);
-		
-		//성공 응답
-		resp.setContentType("application/json;charset=UTF-8");
-		PrintWriter out = resp.getWriter();
-		out.write("{\"status\":\"success\",\"message\":\"댓글 수정이 완료되었습니다.\"}");
-		out.flush();
-		out.close();
-		}catch(Exception e) {
-			//실패 응답
-			resp.setContentType("application/json;charset=UTF-8");
-			PrintWriter out = resp.getWriter();
-			out.write("{\"status\":\"error\",\"message\":\"댓글 수정이 실패되었습니다.\"}");
-			out.flush();
-			out.close();
-		}
-		
-*/
+	    
 	}
 }

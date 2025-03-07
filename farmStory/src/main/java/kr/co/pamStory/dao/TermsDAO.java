@@ -1,7 +1,5 @@
 package kr.co.pamStory.dao;
 
-import java.util.List;
-
 import kr.co.pamStory.dto.TermsDTO;
 import kr.co.pamStory.util.DBHelper;
 import kr.co.pamStory.util.SQL;
@@ -39,15 +37,4 @@ public class TermsDAO extends DBHelper {
 		return dto;
 	}
 	
-	public List<TermsDTO> selectAllTerms() {
-		return null;
-	}
-	
-	public void updateTerms(TermsDTO dto) {
-		
-	}
-	
-	public void deleteTerms(int no) {
-		
-	}
 }

@@ -31,7 +31,6 @@ public class CheckController extends HttpServlet {
 		String value = req.getParameter("value");
 	
 		// 수신된 데이터 반드시 출력해보기
-		System.out.println("type : " + type + ", value : " + value); // 시스템 콘솔 이용
 		logger.debug("type : " + type + ", value : " + value); // 로거 이용
 		
 		// 카운트 조회하기

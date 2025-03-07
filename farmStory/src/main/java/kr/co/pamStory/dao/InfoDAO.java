@@ -17,22 +17,6 @@ public class InfoDAO extends DBHelper {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-
-/*
-	public InfoDTO selectInfoUid(String uid) {
-
-		InfoDTO dto = new InfoDTO();
-
-		try {
-			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.SELECT_INFO_UID);
-		}catch (Exception e) {
-			logger.error(e.getMessage());
-		}
-		return dto;
-
-	}
-*/
 	public boolean updateInfoPass(String pass, String passOK) {
 
 		// 기본값 false

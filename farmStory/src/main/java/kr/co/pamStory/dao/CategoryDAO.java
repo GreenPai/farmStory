@@ -7,7 +7,6 @@ import kr.co.pamStory.dto.ArticleDTO;
 import kr.co.pamStory.dto.CategoryDTO;
 import kr.co.pamStory.util.DBHelper;
 import kr.co.pamStory.util.SQL;
-import kr.co.pamStory.util.SQL2;
 
 public class CategoryDAO extends DBHelper{
 	private static final CategoryDAO INSTANCE = new CategoryDAO();
@@ -24,7 +23,7 @@ public class CategoryDAO extends DBHelper{
 		CategoryDTO dto = null;
 		try{
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL2.SELECT_CATEGORY_BY_CATENAME);
+			psmt = conn.prepareStatement(SQL.SELECT_CATEGORY_BY_CATENAME);
 			psmt.setString(1, cateName);
 			rs = psmt.executeQuery();
 			if (rs.next()) {

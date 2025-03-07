@@ -7,8 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import kr.co.pamStory.dto.ProductDTO;
-import kr.co.pamStory.util.BASKET_SQL;
 import kr.co.pamStory.util.DBHelper;
+import kr.co.pamStory.util.SQL;
 
 public class BasketDAO extends DBHelper{
 	
@@ -30,7 +30,7 @@ public class BasketDAO extends DBHelper{
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(BASKET_SQL.SELECT_ALL_PRODUCT);
+			rs = stmt.executeQuery(SQL.SELECT_ALL_PRODUCT);
 			while(rs.next()) {
 				ProductDTO dto = new ProductDTO();
 				dto.setProdNo(rs.getInt(1));
@@ -66,7 +66,7 @@ public class BasketDAO extends DBHelper{
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.SELECT_ALL_PRODUCT_BY_CATENO);
+			psmt = conn.prepareStatement(SQL.SELECT_ALL_PRODUCT_BY_CATENO);
 			psmt.setString(1, cateNo);
 			rs = psmt.executeQuery();
 			

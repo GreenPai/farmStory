@@ -26,65 +26,10 @@
 		}
 		
 		formRegister.submit();
-		//alert("비밀번호가 변경되었습니다.");
-		//location.href = "/farmStory/user/login.do";
-	}
-	
-	/*
-	const passResult = document.getElementsByClassName('passResult')[0];
-	
-	let nextBtnClick = false;
-	
-	next.onclick = function(event) {
-		event.preventDefault();
-		if(nextBtnClick == true) {
-			location.href = "./resultUserId.do";	
-		}else{
-			alert("변경할 비밀번호를 입력하세요.");
-			return;
-		}
-		
-		if(result > 0) {
-			System.out.println("<script>alert('비밀번호가 성공적으로 변경되었습니다!');"
-					+ "location.href='./login.do'");
-		}else {
-			System.out.println("<script>alert('비밀번호 변경 실패. 다시 시도해주세요.');"
-					+ "location.href='./password.do'");
-		}
 
 	}
-	formRegister.pass2.addEventListener('focusout', function(){
-		
-		const value1 = formRegister.pass1.value;
-		const value2 = formRegister.pass2.value;
-		
-		if(!value1.match(rePass)){
-			passResult.innerText = '비밀번호는 숫자, 소문자, 대문자, 특수문자 조합 8자리';
-			passResult.style.color = 'red';
-			isPassOk = false;
-			return;
-		}
-		
-		if(value1 === value2){
-			passResult.innerText = '사용 가능한 비밀번호 입니다.';
-			passResult.style.color = 'green';
-			isPassOk = true;
-		}else{
-			passResult.innerText = '비밀번호가 일치하지 않습니다.';
-			passResult.style.color = 'red';
-			isPassOk = false;
-		}
-	});
-	// 최종 폼 전송 이벤트
-	formRegister.onsubmit = function(e){
-		
-		// 2) 비밀번호 유효성 검사 결과
-		if(!isPassOk){
-			return false;
-		}
-	};
 	
-	*/
+
 	});
 </script>
 

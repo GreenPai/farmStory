@@ -26,15 +26,12 @@ public class UserDetailController extends HttpServlet{
 		String uid =  req.getParameter("uid");
 		UserDTO dto = service.findUser(uid);
 		
-		System.out.println(dto.toString());
-		
 		// 해당 사용자가 작성한 게시글 수 가져오기
 	    int postCount = articleservice.getUserArticleCount(uid);
 
 	    // DTO에 게시글 수 설정
 	    dto.setPostCount(postCount);
 
-		
 		req.setAttribute("dto", dto);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/admin/userDetail.jsp");

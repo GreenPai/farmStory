@@ -111,42 +111,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			    })
 			    
 			    
-			    
-    /*
-    const formData = new FormData();
-    formData.append('cno', cno);
-    formData.append('content', newContent);
-    console.log([...formData]);
-
-    fetch('/farmStory/comment/modify.do', {
-        method: 'POST',
-        body: formData
-
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            alert('댓글이 수정되었습니다.');
-            article.innerHTML = `
-                <span class='date'>${data.wdate}</span>
-                <span class='nick'>${data.nick}</span>
-                <p class='content'>${data.content}</p>
-                <div>
-                    <a href='#' class='remove' data-cno='${cno}'>삭제</a>
-                    <a href='#' class='modify' data-cno='${cno}'>수정</a>
-
-                </div>
-            `;
-        } else {
-            alert('댓글 수정 실패');
-        }
-    })
-    .catch(err => {
-        console.log(err);
-        alert('댓글 수정 실패');
-    });
-    
-    */
+			
 });
 
 

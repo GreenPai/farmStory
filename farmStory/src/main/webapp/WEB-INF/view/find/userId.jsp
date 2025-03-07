@@ -16,9 +16,6 @@
 		const btnSendEmail = document.getElementById('btnSendEmail');
 		const emailResult = document.querySelector('.emailResult'); 
 		const codeResult = document.querySelector('.codeResult'); 
-		// const emailResult = document.querySelector('.emailResult');
-		// const auth = document.querySelector('.auth');
-		// let preventDoubleClick = false;
 		const btnAuthCode = document.getElementById('btnAuthCode');
 		
 		let preventDoubleClick = false;
@@ -68,53 +65,6 @@
 				codeResult.style.color = 'red';
 			} 			
 		}
-		
-		
-		/*
-		const btnAuthEmail = document.getElementById('btnAuthEmail');
-		const authResult = document.querySelector('.authResult');
-
-		btnAuthEmail.onclick = async function(){
-		    const authCode = formFindId.auth.value;
-		    
-		    const formData = new URLSearchParams();
-		    formData.append("authCode", authCode);
-
-		    const response = await fetch('/yourApp/user/verifyAuthCode.do', {
-		        method: 'POST',
-		        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-		        body: formData
-		    });
-
-		    const data = await response.json();
-
-		    if(data.result > 0) {
-		        authResult.innerText = '인증번호가 확인되었습니다.';
-		        authResult.style.color = 'green';
-		        // 이제 아이디 찾기 요청을 서버에 보낼 수 있습니다.
-		    } else {
-		        authResult.innerText = '유효하지 않은 인증번호입니다.';
-		        authResult.style.color = 'red';
-		    }
-		}
-		*/
-		
-		
-		// 이메일 인증 처리 끝
-		// 5. 이메일 유효성 검사 (중복/인증처리 포함) 끝
-		
-		//formRegister.onsubmit = function(e) {
-			
-		//	if(!isEmailOk) {
-		//		return false;
-		//	}
-		//}
-		
-		//const next = document.getElementById('next');
-		//const name = document.getElementsByName('name')[0];
-		//const email = document.getElementsByName('email')[0];
-		//const button = document.getElementsByTagName('button')[0];
-		
 		
 		next.onclick = function(event) {
 			event.preventDefault();

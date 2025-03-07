@@ -41,8 +41,8 @@ public class LoginCheckFilter implements Filter {
 		HttpSession session = request.getSession();		
 		UserDTO userDTO = (UserDTO) session.getAttribute("sessUser");
 		
-		if(path.startsWith("/user") && !path.contains("logout.do")) {
-			System.out.println(path);
+		if(path.startsWith("/user") && !path.contains("logout.do") && !path.contains("login.do")){
+			
 			if(path.contains("product")) {
 				return;
 			}

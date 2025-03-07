@@ -10,6 +10,6 @@
             <p>
                 <a href="/farmStory/index.do"><span>HOME |</span></a>
                 <a href="/farmStory/user/logout.do"><span>로그아웃 |</span></a>
-                <a href="#"><span>고객센터&nbsp;</span></a>
+                <a href="/farmStory/article/list.do?cate=qna1"><span>고객센터&nbsp;</span></a>
             </p>
         </header>

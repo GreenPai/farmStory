@@ -7,10 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import kr.co.pamStory.dto.ProductDTO;
-import kr.co.pamStory.util.BASKET_SQL;
 import kr.co.pamStory.util.DBHelper;
-
-import kr.co.pamStory.util.SQL2;
+import kr.co.pamStory.util.SQL;
 
 public class ProductDAO extends DBHelper {
 	private static final ProductDAO INSTANCE = new ProductDAO();
@@ -27,7 +25,7 @@ public class ProductDAO extends DBHelper {
 		int no = 0;
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL2.INSERT_PRODUCT);
+			psmt = conn.prepareStatement(SQL.INSERT_PRODUCT);
 			psmt.setInt(1, dto.getCateNo());
 			psmt.setString(2, dto.getProdName());
 			psmt.setInt(3, dto.getProdPrice());
@@ -40,7 +38,7 @@ public class ProductDAO extends DBHelper {
 
 			// 제품 번호 조회 쿼리 실행
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SQL2.SELECT_MAX_NO);
+			rs = stmt.executeQuery(SQL.SELECT_MAX_NO_PRODUCT);
 			if(rs.next()) {
 				no = rs.getInt(1);
 			}
@@ -60,7 +58,7 @@ public class ProductDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.SELECT_PRODUCT_BY_PRODNO);
+			psmt = conn.prepareStatement(SQL.SELECT_PRODUCT_BY_PRODNO);
 			psmt.setString(1, prodNo);
 			
 			rs = psmt.executeQuery();
@@ -94,7 +92,7 @@ public class ProductDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SQL2.SELECT_PRODUCT_LIMIT_3);
+			rs = stmt.executeQuery(SQL.SELECT_PRODUCT_LIMIT_3);
 			
 			while(rs.next()) {
 				ProductDTO dto = new ProductDTO();
@@ -127,7 +125,7 @@ public class ProductDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SQL2.SELECT_PRODUCT_ALL);
+			rs = stmt.executeQuery(SQL.SELECT_PRODUCT_ALL);
 			
 			while (rs.next()) {
 				ProductDTO dto = new ProductDTO();
@@ -157,7 +155,7 @@ public class ProductDAO extends DBHelper {
 	public void deleteProduct(String prodNo) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL2.DELETE_PRODUCT);
+			psmt = conn.prepareStatement(SQL.DELETE_PRODUCT);
 			psmt.setString(1, prodNo);
 			psmt.executeUpdate();
 			
@@ -174,7 +172,7 @@ public class ProductDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SQL2.SELECT_COUNT_PRODUCT);
+			rs = stmt.executeQuery(SQL.SELECT_COUNT_PRODUCT);
 			if (rs.next()) {
 				total = rs.getInt(1);
 			}
@@ -190,7 +188,7 @@ public class ProductDAO extends DBHelper {
 		List<ProductDTO> dtos = new ArrayList<>();
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL2.SELECT_PRODUCT_LIMIT_6);
+			psmt = conn.prepareStatement(SQL.SELECT_PRODUCT_LIMIT_6);
 			psmt.setInt(1, start);
 			rs = psmt.executeQuery();
 			
@@ -222,7 +220,7 @@ public class ProductDAO extends DBHelper {
 	public void ModifProductStock(int prodNo, int cartProdCount) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.MODIFY_PRODUCT_STOCK);
+			psmt = conn.prepareStatement(SQL.MODIFY_PRODUCT_STOCK);
 			psmt.setInt(1, cartProdCount);
 			psmt.setInt(2, cartProdCount);
 			psmt.setInt(3, prodNo);
@@ -239,7 +237,7 @@ public class ProductDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SQL2.SELECT_BEST_PRODUCT_6);
+			rs = stmt.executeQuery(SQL.SELECT_BEST_PRODUCT_6);
 			
 			while(rs.next()) {
 				ProductDTO dto = new ProductDTO();

@@ -96,8 +96,7 @@ public class ModifyController extends HttpServlet {
 		dto.setWriter(writer);
 		dto.setRegip(regip);
 		
-		System.out.println(dto.toString());
-
+		
 		// 글 수정 서비스 호출
 		service.modifyArticle(dto);
 		

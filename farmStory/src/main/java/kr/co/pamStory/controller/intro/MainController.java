@@ -26,13 +26,9 @@ public class MainController extends HttpServlet {
 		String error = req.getParameter("result");
 		
 		List<ProductDTO> productDTOS = productservice.findBest6Products();
-		
 		List<ArticleDTO> storys = articleserice.findByCateLimit5("story");
 		List<ArticleDTO> grows = articleserice.findByCateLimit5("grow");
-		
 		List<ArticleDTO> schools = articleserice.findByCateLimit5("school");
-		
-		
 		List<ArticleDTO> notices = articleserice.findByCateLimit5("notice");
 		
 		req.setAttribute("products", productDTOS);

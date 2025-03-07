@@ -33,7 +33,7 @@ public class DeleteController extends HttpServlet{
 				
 		//파일 삭제 서비스 호출
 		fileservice.deleteFile(req, sname);
-		System.out.println(sname);
+		
 		//게시글 삭제 서비스 호출
 		service.deleteArticle(no);
 				

@@ -57,7 +57,8 @@
 	
 </style>
 <%@ include file="./layout/_header_bg_event.jsp" %>
-<main>
+  <!-- 메인 시작선-->
+    <main>
         <section class="left_section">
             <aside>
               <article>
@@ -112,4 +113,5 @@
             </article>
         </section>
     </main>
+    <!-- 메인 끝선-->
 <%@ include file="../layout/_footer.jsp" %>       

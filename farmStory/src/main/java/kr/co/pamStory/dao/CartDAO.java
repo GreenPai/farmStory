@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import kr.co.pamStory.dto.CartDTO;
-import kr.co.pamStory.util.BASKET_SQL;
 import kr.co.pamStory.util.DBHelper;
 import kr.co.pamStory.util.SQL;
 
@@ -26,7 +25,7 @@ public class CartDAO extends DBHelper {
 			
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.INSERT_CART);
+			psmt = conn.prepareStatement(SQL.INSERT_CART);
 			psmt.setString(1, dto.getUid());
 			psmt.setInt(2, dto.getProdNo());
 			psmt.setInt(3, dto.getCartProdCount());
@@ -46,7 +45,7 @@ public class CartDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.SELECT_CART_BY_UID);
+			psmt = conn.prepareStatement(SQL.SELECT_CART_BY_UID);
 			psmt.setString(1, uid);
 			rs = psmt.executeQuery();
 			while(rs.next()) {
@@ -76,7 +75,7 @@ public class CartDAO extends DBHelper {
 	public void deleteCart(String cartNo) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.DELETE_CART_BY_CARTNO);
+			psmt = conn.prepareStatement(SQL.DELETE_CART_BY_CARTNO);
 			psmt.setString(1, cartNo);                              
 			psmt.executeUpdate();
 			
@@ -89,7 +88,7 @@ public class CartDAO extends DBHelper {
 	public void deleteCartByUid(String uid) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.DELETE_CART_BY_UID);
+			psmt = conn.prepareStatement(SQL.DELETE_CART_BY_UID);
 			psmt.setString(1, uid);                              
 			psmt.executeUpdate();
 			

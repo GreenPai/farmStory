@@ -44,10 +44,6 @@ public class ChangePasswordController extends HttpServlet {
 		String uid = req.getParameter("uid");
 		String pass1 = req.getParameter("pass1");
 		String pass2 = req.getParameter("pass2");
-		System.out.println(uid);
-		
-		
-		//UserDTO dto = userservice.modifyPassWord(uid, pass, pass1, pass2);
 		
 		// 비밀번호 불일치 시 경고창 후 이전 페이지로 이동
         if (!pass1.equals(pass2)) {
@@ -66,8 +62,6 @@ public class ChangePasswordController extends HttpServlet {
 
         req.getSession().invalidate();  // 세션 종료
         
-		//RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/find/changePassword.jsp");
-		//dispatcher.forward(req, resp);
 	}
 }
 

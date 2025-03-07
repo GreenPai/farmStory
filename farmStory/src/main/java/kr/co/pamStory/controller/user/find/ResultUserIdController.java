@@ -36,39 +36,10 @@ public class ResultUserIdController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		String email = req.getParameter("email");
-		System.out.println(email);
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/view/find/resultUserId.jsp");
 		dispatcher.forward(req, resp);
-		/*
-		// 데이터 수신
-		String name = req.getParameter("name");
-		String uid = req.getParameter("uid");
-		String email = req.getParameter("email");
-		String regDate = req.getParameter("regDate");
 		
-		// DTO 생성
-		UserDTO dto = new UserDTO();
-		dto.setName(name);
-		dto.setUid(uid);
-		dto.setEmail(email);
-		dto.setRegDate(regDate);
-		
-		// 서비스 호출
-		UserDTO userDTO = service.resultFindId(name, uid, email, regDate);
-		
-		if(userDTO != null) {
-			req.setAttribute("name", userDTO.getName());
-			req.setAttribute("uid", userDTO.getUid());
-			req.setAttribute("email", userDTO.getEmail());
-			req.setAttribute("regDate", userDTO.getRegDate());
-			
-			resp.sendRedirect("/find/resultUserId.jsp");
-		}else {
-			resp.sendRedirect("/find/userId.jsp");
-		}
-		
-		*/
 		
 	}
 }

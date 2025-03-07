@@ -18,15 +18,4 @@ public enum TermsService {
 		return dao.selectTerms(no);
 	}
 	
-	public List<TermsDTO> findAllTerms() {
-		return dao.selectAllTerms();
-	}
-	
-	public void modifyTerms(TermsDTO dto) {
-		dao.updateTerms(dto);
-	}
-	
-	public void deleteTerms(int no) {
-		dao.deleteTerms(no);
-	}
 }

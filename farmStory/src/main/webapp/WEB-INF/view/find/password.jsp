@@ -14,9 +14,6 @@
 		const btnSendEmail = document.getElementById('btnSendEmail');
 		const emailResult = document.querySelector('.emailResult'); 
 		const codeResult = document.querySelector('.codeResult'); 
-		// const emailResult = document.querySelector('.emailResult');
-		// const auth = document.querySelector('.auth');
-		// let preventDoubleClick = false;
 		const btnAuthCode = document.getElementById('btnAuthCode');
 		
 		let preventDoubleClick = false;
@@ -42,7 +39,6 @@
 			if(data.uid != "인증실패") {
 		        emailResult.innerText = ' 이메일로 인증번호를 발송했습니다.';
 		        emailResult.style.color = 'green';
-		        //auth.style.display = 'block'; // 인증번호 입력란 보이기
 		        preventDoubleClick = false;
 			} else {		        
 		        emailResult.innerText = ' 이메일이 일치하지 않습니다.';

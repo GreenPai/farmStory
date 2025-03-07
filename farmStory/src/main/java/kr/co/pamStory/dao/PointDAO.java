@@ -4,8 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import kr.co.pamStory.dto.PointDTO;
-import kr.co.pamStory.util.BASKET_SQL;
 import kr.co.pamStory.util.DBHelper;
+import kr.co.pamStory.util.SQL;
 
 public class PointDAO extends DBHelper{
 	private static final PointDAO INSTANCE = new PointDAO();
@@ -23,7 +23,7 @@ public class PointDAO extends DBHelper{
 	public void insertPoint(PointDTO pointDTO) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.INSERT_POINT);
+			psmt = conn.prepareStatement(SQL.INSERT_POINT);
 			psmt.setString(1, pointDTO.getUid());
 			psmt.setInt(2, pointDTO.getPoint());
 			psmt.setString(3, pointDTO.getPointDesc());

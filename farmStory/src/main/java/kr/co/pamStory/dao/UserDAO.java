@@ -9,10 +9,8 @@ import org.slf4j.LoggerFactory;
 import kr.co.pamStory.dto.ArticleDTO;
 import kr.co.pamStory.dto.PointDTO;
 import kr.co.pamStory.dto.UserDTO;
-import kr.co.pamStory.util.BASKET_SQL;
 import kr.co.pamStory.util.DBHelper;
 import kr.co.pamStory.util.SQL;
-import kr.co.pamStory.util.SQL2;
 
 public class UserDAO extends DBHelper {
 	private static final UserDAO INSTANCE = new UserDAO();
@@ -61,16 +59,6 @@ public class UserDAO extends DBHelper {
 			sql.append(SQL.WHERE_HP);
 		}
 		
-		// String - 불변
-		/* String name = "한결";
-		 * name = "한결1";
-		 * name = "한결2";
-		 * 한결 -> 한결1 -> 한결2 -> 한결3 
-		 * 
-		 * StringBuilder 
-		 * select COUNT(*) from `user` where `uid`=?   
-		 * */
-		
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(sql.toString());
@@ -94,7 +82,7 @@ public class UserDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL2.SELECT_USER);
+			psmt = conn.prepareStatement(SQL.SELECT_USER_BY_UID);
 			psmt.setString(1, uid);
 			rs = psmt.executeQuery();
 			if (rs.next()) {
@@ -164,7 +152,7 @@ public class UserDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SQL2.SELECT_ALL_USER);
+			rs = stmt.executeQuery(SQL.SELECT_ALL_USER);
 			
 			while(rs.next()) {
 				UserDTO dto = new UserDTO();
@@ -263,45 +251,13 @@ public class UserDAO extends DBHelper {
 		return dto;
 	}
 	
-	/*
-	public UserDTO selectResultFindId(String name, String uid, String email, String regDate) {
-		UserDTO dto = null;
-		
-		try {
-			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.SELECT_RESULT_FIND_ID);
-			psmt.setString(1, name);
-			psmt.setString(2, uid);
-			psmt.setString(3, email);
-			psmt.setString(4, regDate);
-			
-			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
-				dto = new UserDTO();
-				dto.setName(rs.getString(1));
-				dto.setUid(rs.getString(2));
-				dto.setEmail(rs.getString(3));
-				dto.setRegDate(rs.getString(4));
-			}
-			
-			closeAll();
-			
-		}catch (Exception e) {
-			logger.error(e.getMessage());
-		}
-		
-		
-		return dto;
-	}
-	*/
 	public List<UserDTO> selectLatest3Users() {
 		List<UserDTO> dtos = new ArrayList<>();
 		
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs =  stmt.executeQuery(SQL2.SELECT_USER_LIMIT_3);
+			rs =  stmt.executeQuery(SQL.SELECT_USER_LIMIT_3);
 			while(rs.next()) {
 				UserDTO dto = new UserDTO();
 				dto.setUid(rs.getString(1));
@@ -331,7 +287,7 @@ public class UserDAO extends DBHelper {
 		int point = 0;
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.SELECT_POINT_BY_UID);
+			psmt = conn.prepareStatement(SQL.SELECT_POINT_BY_UID);
 			psmt.setString(1, uid);
 			rs =  psmt.executeQuery();
 			while(rs.next()) {
@@ -344,37 +300,7 @@ public class UserDAO extends DBHelper {
 		return point;
 	}
 
-	/*
-	public UserDTO updatePassWord(String uid, String pass, String pass1, String pass2) {
-		UserDTO dto = null;
-		
-		try {
-			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.UPDATE_PASSWORD);
-			psmt.setString(1, pass);
-			psmt.setString(2, uid);
-			
-			int result = psmt.executeUpdate();
-			
-			if(result > 0) {
-				System.out.println("<script>alert('비밀번호가 성공적으로 변경되었습니다!');"
-						+ "location.href='./login.do';</script>");
-			}else {
-				System.out.println("<script>alert('비밀번호 변경 실패. 다시 시도해주세요.');"
-						+ "location.href='./password.do';</script>");
-			}
-			
-			closeAll();
-			
-			
-			
-		}catch (Exception e) {
-			logger.error(e.getMessage());
-		}
-		return dto;
-
-	}
-	*/
+	
 	public boolean updatePassword(String uid, String pass1) {
 		// 기본값 false
 		boolean isUpdated = false;
@@ -406,7 +332,7 @@ public class UserDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SQL2.SELECT_COUNT_USER);
+			rs = stmt.executeQuery(SQL.SELECT_COUNT_USER);
 			if (rs.next()) {
 				total = rs.getInt(1);
 			}
@@ -421,7 +347,7 @@ public class UserDAO extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL2.SELECT_ALL_USER_LIMIT_6);
+			psmt = conn.prepareStatement(SQL.SELECT_ALL_USER_LIMIT_6);
 			psmt.setInt(1, start);
 			rs =  psmt.executeQuery();
 			while(rs.next()) {
@@ -453,7 +379,7 @@ public class UserDAO extends DBHelper {
 	public void modifyPoint(PointDTO pointDTO) {
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.MODIFY_POINT);
+			psmt = conn.prepareStatement(SQL.MODIFY_POINT);
 			psmt.setInt(1, pointDTO.getPoint());
 			psmt.setString(2, pointDTO.getUid());
 			psmt.executeUpdate();

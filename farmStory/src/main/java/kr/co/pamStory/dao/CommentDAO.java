@@ -87,7 +87,6 @@ public class CommentDAO extends DBHelper {
 			rs=psmt.executeQuery();
 			
 			while(rs.next()) {
-				System.out.println("dto실행");
 				CommentDTO dto= new CommentDTO();
 				dto.setCno(rs.getInt(1));
 				dto.setParent(rs.getInt(2));

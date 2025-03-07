@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import kr.co.pamStory.dto.ArticleDTO;
 import kr.co.pamStory.util.DBHelper;
 import kr.co.pamStory.util.SQL;
-import kr.co.pamStory.util.SQL2;
 
 public class ArticleDAO extends DBHelper {
 	private static final ArticleDAO INSTANCE = new ArticleDAO();
@@ -270,7 +269,7 @@ public List<ArticleDTO> selectAllArticleBySearch(ArticleDTO articleDTO, int star
 	    
 	    try {
 			conn = getConnection();
-	        psmt = conn.prepareStatement(SQL2.SELECT_COUNT_USER_BY_UID);
+	        psmt = conn.prepareStatement(SQL.SELECT_COUNT_USER_BY_UID);
 	        psmt.setString(1, uid);
 	        rs = psmt.executeQuery();
 

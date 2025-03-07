@@ -12,45 +12,6 @@
 <link rel="stylesheet" href="/farmStory/css/myinfo/info.css" />
 </head>
 <script>
-/*
-	//유효성 검사에 사용할 정규표현식
-	const reUid = /^[a-z]+[a-z0-9]{4,19}$/g;
-	const rePass = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{5,16}$/;
-	const reName = /^[가-힣]{2,10}$/
-	const reNick = /^[a-zA-Zㄱ-힣0-9][a-zA-Zㄱ-힣0-9]*$/;
-	const reEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-	const reHp = /^01(?:0|1|[6-9])-(?:\d{4})-\d{4}$/;
-
-	// 2. 비밀번호 유효성 검사
-	document.addEventListener('DOMContentLoaded', function() {
-
-		const formRegister = document.getElementById('formRegister');
-		const pass = formRegister.querySelector('[name="pass"]');
-		const passOK = formRegister.querySelector('[name="passOK"]');
-		const passResult = document.querySelector('.passResult');
-
-		const passResult = document.querySelector('.passResult');
-		let pass = document.getElementsByName("pass")[0];
-		let passOK = document.getElementsByName("passOK")[0];
-		let modify = document.getElementById("modify");
-		let formRegister = document.getElementsByName("formRegister")[0];
-
-		modify.onclick = function() {
-			if (pass.value !== passOK.value) {
-				alert("비밀번호가 일치하지 않습니다.");
-				return false;
-			} else if (pass.value === "" || passOK.value === "") {
-				alert("비밀번호를 입력해 주세요.");
-				return false;
-			}
-
-			formRegister.submit();
-			//alert("비밀번호가 변경되었습니다.");
-			//location.href = "/farmStory/user/login.do";
-		}
-
-	});
-	*/
 	document.addEventListener('DOMContentLoaded', function() {
 	    const modify = document.getElementById("modify");
 	    let formRegister = document.getElementsByName("formRegister")[0];

@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           <th style="width: 76.19px;" >할인</th>
                           <th style="width: 76.19px;" >포인트</th>
                           <th style="width: 76.19px;" >가격</th>
-                          <th style="width: 76.19px;" >소개</th>
+                          <th style="width: 76.19px;" >소계</th>
                         </thead>
                         <tbody>
 	                        <c:if test="${empty carts}">
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		                            <td class="table_gray_txt">${cart.cartProdCount}</td>
 		                            <td class="table_gray_txt">${cart.prodDiscount }%</td>
 		                            <td class="table_gray_txt">${cart.prodPoint}P</td>
-		                            <td class="table_gray_txt">${cart.prodPrice }</td>
+		                            <td class="table_gray_txt">${cart.prodPrice }원</td>
 		                            <td>${cart.prodDiscountPrice}<span class="table_gray_txt">원</span></td>
 		                        </tr>
                         	</c:forEach>
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       </tr>
                       <tr>
                         <td>전체주문금액</td>
-                        <td class="red_tt">${finalPrice}</td>
+                        <td class="red_tt">${finalPrice}원</td>
                       </tr>
 
                     </table>

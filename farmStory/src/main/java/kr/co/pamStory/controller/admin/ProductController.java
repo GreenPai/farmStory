@@ -27,7 +27,6 @@ public class ProductController extends HttpServlet{
 		
 		//전체 게시물 갯수 구하기
 		int total = service.getCountProduct();
-		System.out.println(total);
 		
 		//마지막페이지 번호 구하기
 		int lastPageNum = service.getLastPageNum(total);

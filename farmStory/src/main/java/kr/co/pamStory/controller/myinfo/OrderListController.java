@@ -59,7 +59,6 @@ public class OrderListController extends HttpServlet {
 		
 		// 제품목록 데이터 조회
 		List<OrderDTO> orders = service.findAllOrder(start, uid);
-		System.out.println(orders);
 		req.setAttribute("tot", total);
 		req.setAttribute("orders", orders);
 		req.setAttribute("currentPage", currentPage);

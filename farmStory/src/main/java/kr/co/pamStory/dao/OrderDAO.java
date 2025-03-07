@@ -11,10 +11,8 @@ import org.slf4j.LoggerFactory;
 
 import kr.co.pamStory.dto.OrderDTO;
 import kr.co.pamStory.dto.ProductDTO;
-import kr.co.pamStory.util.BASKET_SQL;
 import kr.co.pamStory.util.DBHelper;
 import kr.co.pamStory.util.SQL;
-import kr.co.pamStory.util.SQL2;
 
 public class OrderDAO  extends DBHelper {
 	private static final OrderDAO INSTANCE = new OrderDAO();
@@ -32,7 +30,7 @@ public class OrderDAO  extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SQL2.SELECT_ORDER_LIMIT_3);
+			rs = stmt.executeQuery(SQL.SELECT_ORDER_LIMIT_3);
 			
 			while(rs.next()) {
 				OrderDTO dto = new OrderDTO();
@@ -61,7 +59,7 @@ public class OrderDAO  extends DBHelper {
 		int generatedKey= 0;
 		try {
 			conn=getConnection();
-			psmt=conn.prepareStatement(BASKET_SQL.INSERT_ORDER ,Statement.RETURN_GENERATED_KEYS);
+			psmt=conn.prepareStatement(SQL.INSERT_ORDER ,Statement.RETURN_GENERATED_KEYS);
 			psmt.setString(1, dto.getUid());
 			psmt.setInt(2, dto.getOrderTotalPrice());
 			psmt.setString(3, dto.getOrderAddr());
@@ -95,7 +93,7 @@ public class OrderDAO  extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(BASKET_SQL.SELECT_COUNT_ORDER);
+			rs = stmt.executeQuery(SQL.SELECT_COUNT_ORDER);
 			if (rs.next()) {
 				total = rs.getInt(1);
 			}
@@ -111,7 +109,7 @@ public class OrderDAO  extends DBHelper {
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.SELECT_COUNT_ORDER_BY_UID);
+			psmt = conn.prepareStatement(SQL.SELECT_COUNT_ORDER_BY_UID);
 			psmt.setString(1, uid);
 			rs = psmt.executeQuery();
 			if (rs.next()) {
@@ -129,7 +127,7 @@ public class OrderDAO  extends DBHelper {
 		List<OrderDTO> dtos = new ArrayList<>();
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.SELECT_ORDER_LIMIT_6);
+			psmt = conn.prepareStatement(SQL.SELECT_ORDER_LIMIT_6);
 			psmt.setString(1, uid);
 			psmt.setInt(2, start);
 			rs = psmt.executeQuery();
@@ -160,7 +158,7 @@ public class OrderDAO  extends DBHelper {
 		List<OrderDTO> dtos = new ArrayList<>();
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(BASKET_SQL.SELECT_ORDER_LIMIT_6_ADMIN);
+			psmt = conn.prepareStatement(SQL.SELECT_ORDER_LIMIT_6_ADMIN);
 			psmt.setInt(1, start);
 			rs = psmt.executeQuery();
 			
