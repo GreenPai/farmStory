@@ -1,1 +1,18 @@
+# macOS 시스템 파일 무시
 .DS_Store
+
+# 빌드 파일
+/build/
+/target/
+
+# IDE 설정 파일
+/.idea/
+/*.iml
+/.vscode/
+/*.class
+
+# 로그 파일
+*.log
+
+# 환경 설정 파일
+*.env
