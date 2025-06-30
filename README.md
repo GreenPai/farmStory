@@ -79,7 +79,8 @@
   <img alt="MySQL"  src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" height="28"/>
 </p>
 
-
+### 8. 🎥 시연 영상
+👉 [FarmStory 시연 영상 보러가기](https://www.youtube.com/watch?v=nLPs7Au-SXg)
 
 
 
