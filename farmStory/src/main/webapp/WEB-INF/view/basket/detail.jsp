@@ -11,7 +11,7 @@
 	document.addEventListener('DOMContentLoaded', function(){
 		
 		total.innerText = Number(total.innerText).toLocaleString()+"원";
-		price.innerText = Number(price.innerText).toLocaleString()+"원";
+		// price.innerText = Number(price.innerText).toLocaleString()+"원";
 		fee.innerText = Number(fee.innerText).toLocaleString()+"원";
 		
 		let prodprice = `${product.prodDiscountPrice}`;
@@ -111,7 +111,7 @@
                             </tr>
                             <tr>
                               <td>판매가격</td>
-                              <td id="price">${product.prodDiscountPrice}원</td>
+                              <td id="price">${product.prodPrice}원 / 할인(${product.prodDiscount}%)</td>
                             </tr>
                             <tr>
                               <td>구매수량</td>

@@ -38,7 +38,10 @@ public class LoginController extends HttpServlet {
 		// 데이터 수신
 		String uid = req.getParameter("uid");
 		String pass = req.getParameter("pass");
-
+		
+		System.out.println(uid);
+		System.out.println(pass);
+		
 		// DTO 생성
 		UserDTO dto = new UserDTO();
 		dto.setUid(uid);
@@ -46,6 +49,7 @@ public class LoginController extends HttpServlet {
 		
 		// 서비스 호출	
 		UserDTO userDTO = service.findUser(dto);
+		System.out.println(userDTO);
 
 		if(userDTO != null) {
 			// 회원이 맞을 경우 세션 저장

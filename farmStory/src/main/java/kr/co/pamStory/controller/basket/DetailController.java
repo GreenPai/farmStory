@@ -31,6 +31,8 @@ public class DetailController extends HttpServlet {
 		// 제품 탐색
 		ProductDTO product = productservice.findProductByProdNo(prodNo); 
 		
+		System.out.println("product 상품 : " + product);
+		
 		// 이미지 탐색
 		String imageName = imageservice.findImageSnameByProdNo(prodNo);
 		

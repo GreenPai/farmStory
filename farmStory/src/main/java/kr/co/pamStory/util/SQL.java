@@ -346,7 +346,7 @@ public class SQL {
 	// 상품 데이터 6개 출력(페이징)
 	public static final String SELECT_PRODUCT_LIMIT_6 =  "SELECT p.*, c.cateName, i.sName FROM `PRODUCT` as p "
 											            + "JOIN `category` as c ON p.cateNo = c.cateNo "
-											            + "JOIN `image` as i ON p.prodNo = i.prodNo "
+											            + "LEFT JOIN `image` as i ON p.prodNo = i.prodNo "
 											            + "ORDER BY p.regDate DESC "
 											            + "LIMIT ?, 6";
 
